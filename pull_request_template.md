@@ -2,12 +2,12 @@ Type of change
 
     [ ] New feature
     [ ] Bug Fix
-    [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+    [ ] Breaking change
 
 What does this fix or Change:
 
 
-Neccesary checkmarks:
+Necessary checkmarks:
 
     [ ] All Tests are Passing
     [ ] The code will run locally
@@ -16,7 +16,6 @@ Implements/Fixes/Connected Issues:
 
     description closes #
     connects issue #
-
 
 Testing Changes
 
@@ -32,4 +31,3 @@ Checklist:
     [ ] I have added tests that prove my fix is effective or that my feature works
     [ ] New and existing unit tests pass locally with my changes
     [ ] Any dependent changes have been merged and published in downstream modules
- 
