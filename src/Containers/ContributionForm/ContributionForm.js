@@ -17,6 +17,10 @@ class ContributionForm extends Component {
     this.setState({ [event.targetname]: event.target.value })
   }
 
+  handleClick = (event) => {
+    console.log("submit!")
+  }
+
   render() {
     return (
       <>
@@ -64,6 +68,7 @@ class ContributionForm extends Component {
             value={this.state.phoneNum}
             onChange={event => this.handleChange(event)}
           />
+          <button onClick={(event) => this.handleClick(event)}>Submit</button>
         </form>
       </>
     )
