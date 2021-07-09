@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+import './_app.scss';
 import ContributionForm from '../ContributionForm/ContributionForm'
 
 function App() {
