@@ -18,7 +18,7 @@ class ContributionForm extends Component {
   }
 
   handleClick = (event) => {
-    console.log("submit!")
+    console.log("submit! later include error handling and POST request")
   }
 
   render() {
