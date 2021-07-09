@@ -8,11 +8,6 @@ function ContributionForm(props) {
   const [address, setAddress] = useState('')
   const [phoneNum, setPhoneNum] = useState('')
 
-
-  const handleChange = (event) => {
-    this.setState({ [event.targetname]: event.target.value })
-  }
-
   const handleClick = (event) => {
     console.log("submit! later include error handling and POST request")
   }
@@ -25,43 +20,43 @@ function ContributionForm(props) {
           type='text'
           placeholder='First Name'
           name='firstName'
-          value={this.state.firstName}
-          onChange={event => this.handleChange(event)}
+          value={firstName}
+          onChange={event => setFirstName(event.target.value)}
         />
         <input
           type='text'
           placeholder='Last Name'
           name='lastName'
-          value={this.state.lastName}
-          onChange={event => this.handleChange(event)}
+          value={lastName}
+          onChange={event => setLastName(event.target.value)}
         />
         <input
           type='text'
           placeholder='Specialty'
           name='specialty'
-          value={this.state.specialty}
-          onChange={event => this.handleChange(event)}
+          value={specialty}
+          onChange={event => setSpecialty(event.target.value)}
         />
         <input
           type='text'
           placeholder='Insurance'
           name='insurance'
-          value={this.state.insurance}
-          onChange={event => this.handleChange(event)}
+          value={insurance}
+          onChange={event => setInsurance(event.target.value)}
         />
         <input
           type='text'
           placeholder='Address'
           name='address'
-          value={this.state.address}
-          onChange={event => this.handleChange(event)}
+          value={address}
+          onChange={event => setAddress(event.target.value)}
         />
         <input
           type='text'
           placeholder='Phone Number'
           name='phoneNum'
-          value={this.state.phoneNum}
-          onChange={event => this.handleChange(event)}
+          value={phoneNum}
+          onChange={event => setPhoneNum(event.target.value)}
         />
         <button onClick={(event) => this.handleClick(event)}>Submit</button>
       </form>
