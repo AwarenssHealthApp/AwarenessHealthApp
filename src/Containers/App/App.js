@@ -8,7 +8,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <ContributionForm />
+      <Switch>
+        <ContributionForm />
+      </Switch>
     </div>
   );
 }
