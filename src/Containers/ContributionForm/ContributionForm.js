@@ -8,9 +8,9 @@ function ContributionForm(props) {
   const [address, setAddress] = useState('')
   const [phoneNum, setPhoneNum] = useState('')
 
-  const handleClick = (event) => {
-    console.log("submit! later include error handling and POST request")
-  }
+  // const handleClick = (event) => {
+  //   console.log("submit! later include error handling and POST request")
+  // }
 
   return (
     <>
