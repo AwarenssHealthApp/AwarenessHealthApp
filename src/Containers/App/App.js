@@ -31,13 +31,13 @@ function App() {
               return(
                 <>
                   <Link to='/doctors'>
-                    <button>Doctors</button>
+                    <button id='doctors-button'>Doctors</button>
                   </Link>
                   <Link to='/mental_health_professionals'>
-                    <button>Mental Health Professionals</button>
+                    <button id='mental-health-pros-button'>Mental Health Professionals</button>
                   </Link>
                   <Link to='/submit'>
-                    <button>Submit</button>
+                    <button id='submit-button'>Submit</button>
                   </Link>
                   <main>
                     <p>A place to find queer affirming support</p>
