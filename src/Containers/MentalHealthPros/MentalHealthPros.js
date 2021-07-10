@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { mentalHealthProfessionals } from '../../mockData'
+import Cards from '../../Components/Cards/Cards'
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState(mentalHealthProfessionals)
