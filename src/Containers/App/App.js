@@ -2,7 +2,7 @@ import React from 'react'
 import './_app.scss';
 import ContributionForm from '../ContributionForm/ContributionForm'
 import Doctors from '../Doctors/Doctors'
-import MentalHealthProfessionals from '../MentalHealthPros/MentalHealthPros'
+import MentalHealthPros from '../MentalHealthPros/MentalHealthPros'
 
 import { Route, Switch, Link } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ function App() {
         }} />
         <Route path='/mental_health_professionals' render={() => {
           return(
-            <MentalHealthProfessionals />
+            <MentalHealthPros />
           )
         }} />
         <Route exact path ='/' render={() => {
