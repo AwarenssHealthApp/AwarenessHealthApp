@@ -10,13 +10,12 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "x11": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "cy:run": "npx cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "cypress": "./node_modules/.bin/cypress open"
   },
@@ -39,10 +38,7 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
-=======
     "cypress": "^7.5.0",
->>>>>>> 10df9448b0926533dc40dbfb2b281ac6a50d1bf9
     "start-server-and-test": "^1.12.6"
   }
 }
