@@ -10,13 +10,14 @@ orbs:
   # NOTE: Environment variables containing the necessary secrets can be setup in the CircleCI UI
   # See here https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project
   heroku: circleci/heroku@1.2
+  cypress: cypress-io/cypress@1
 
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
   # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  sample:
+  build:
     jobs:
       - node/test
       - heroku/deploy-via-git:
@@ -28,3 +29,8 @@ workflows:
               # This sample config runs this job on any branch matching the regex below, however, it's more likely you want to only run this job on master.
               # only: /.*-heroku-deploy/ # Delete this line
               only: main  # Uncomment this line
+      - cypress/install:
+          build: "npm run build"
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:3000'
