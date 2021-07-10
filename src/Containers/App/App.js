@@ -27,6 +27,12 @@ function App() {
         <Route exact path ='/' render={() => {
           return(
             <>
+              <Link to='/doctors'>
+                <button>Doctors</button>
+              </Link>
+              <Link to='/mental_health_professionals'>
+                <button>Mental Health Professionals</button>
+              </Link>
             </>
           )
         }} />
