@@ -3,6 +3,10 @@ describe('router', () => {
     cy.visit('http://localhost:3000')
   })
 
+  it('should have a url of "/"', () => {
+    cy.location('pathname').should('eq', '/')
+  })
+
   it('should display the title on the main page', () => {
     cy.get('h1').should('contain', 'Head to Toe')
   })
