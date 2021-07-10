@@ -2,6 +2,8 @@ import React from 'react'
 import './_app.scss';
 import ContributionForm from '../ContributionForm/ContributionForm'
 import Doctors from '../Doctors/Doctors'
+import MentalHealthProfessionals from '../MentalHealthPros/MentalHealthPros'
+
 import { Route, Switch, Link } from 'react-router-dom'
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
         }} />
         <Route path='/mental_health_professionals' render={() => {
           return(
-            <h1>Mental Health Professionals go here</h1>
+            <MentalHealthProfessionals />
           )
         }} />
         <Route exact path ='/' render={() => {
