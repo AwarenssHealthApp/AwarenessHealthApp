@@ -9,39 +9,44 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <nav>
+          <Switch>
+            <Route path='/submit' render={() => {
+              return(
+                <ContributionForm />
+              )
+            }} />
+            <Route path='/doctors' render={() => {
+              return(
+                <Doctors />
+              )
+            }} />
+            <Route path='/mental_health_professionals' render={() => {
+              return(
+                <MentalHealthPros />
+              )
+            }} />
+            <Route exact path ='/' render={() => {
+              return(
+                <>
+                  <Link to='/doctors'>
+                    <button>Doctors</button>
+                  </Link>
+                  <Link to='/mental_health_professionals'>
+                    <button>Mental Health Professionals</button>
+                  </Link>
+                  <Link to='/submit'>
+                    <button>Submit</button>
+                  </Link>
+                </>
+              )
+            }} />
+          </Switch>
+        </nav>
       </header>
-      <Switch>
-        <Route path='/submit' render={() => {
-          return(
-            <ContributionForm />
-          )
-        }} />
-        <Route path='/doctors' render={() => {
-          return(
-            <Doctors />
-          )
-        }} />
-        <Route path='/mental_health_professionals' render={() => {
-          return(
-            <MentalHealthPros />
-          )
-        }} />
-        <Route exact path ='/' render={() => {
-          return(
-            <>
-              <Link to='/doctors'>
-                <button>Doctors</button>
-              </Link>
-              <Link to='/mental_health_professionals'>
-                <button>Mental Health Professionals</button>
-              </Link>
-              <Link to='/submit'>
-                <button>Submit</button>
-              </Link>
-            </>
-          )
-        }} />
-      </Switch>
+      <main>
+
+      </main>
     </div>
   );
 }
