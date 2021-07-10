@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Head to Toe</h1>
         <nav>
           <Switch>
             <Route path='/submit' render={() => {
@@ -45,7 +46,7 @@ function App() {
         </nav>
       </header>
       <main>
-
+        <p>A place to find queer affirming support</p>
       </main>
     </div>
   );
