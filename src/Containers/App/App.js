@@ -3,7 +3,6 @@ import './_app.scss';
 import ContributionForm from '../ContributionForm/ContributionForm'
 import Doctors from '../Doctors/Doctors'
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros'
-
 import { Route, Switch, Link } from 'react-router-dom'
 
 function App() {
@@ -35,6 +34,9 @@ function App() {
               </Link>
               <Link to='/mental_health_professionals'>
                 <button>Mental Health Professionals</button>
+              </Link>
+              <Link to='/submit'>
+                <button>Submit</button>
               </Link>
             </>
           )
