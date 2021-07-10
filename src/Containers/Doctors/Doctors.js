@@ -6,7 +6,6 @@ const Doctors = () => {
   return(
     <h1>Doctors here</h1>
   )
-
 }
 
 export default Doctors
