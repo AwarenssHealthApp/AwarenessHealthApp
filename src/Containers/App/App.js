@@ -9,7 +9,11 @@ function App() {
       <header className="App-header">
       </header>
       <Switch>
-        <ContributionForm />
+        <Route path='/submit' render={() => {
+          return(
+            <ContributionForm />
+          )
+        }} />
       </Switch>
     </div>
   );
