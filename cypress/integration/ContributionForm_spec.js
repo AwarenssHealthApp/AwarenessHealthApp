@@ -1,6 +1,6 @@
 describe('ContributionForm', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000/submit')
   })
   it('Should have a controlled input field for first name whose value reflects the data typed into the form', () => {
     cy.get('form input[name="firstName"]').type('Betty')
