@@ -1,6 +1,7 @@
 import React from 'react'
 import './_app.scss';
 import ContributionForm from '../ContributionForm/ContributionForm'
+import Doctors from '../Doctors/Doctors'
 import { Route, Switch, Link } from 'react-router-dom'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         }} />
         <Route path='/doctors' render={() => {
           return(
-            <h1>Doctors go here</h1>
+            <Doctors />
           )
         }} />
         <Route path='/mental_health_professionals' render={() => {
