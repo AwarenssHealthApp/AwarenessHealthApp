@@ -24,6 +24,12 @@ function App() {
             <h1>Mental Health Professionals go here</h1>
           )
         }} />
+        <Route exact path ='/' render={() => {
+          return(
+            <>
+            </>
+          )
+        }} />
       </Switch>
     </div>
   );
