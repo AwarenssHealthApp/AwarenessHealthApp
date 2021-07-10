@@ -39,15 +39,15 @@ function App() {
                   <Link to='/submit'>
                     <button>Submit</button>
                   </Link>
+                  <main>
+                    <p>A place to find queer affirming support</p>
+                  </main>
                 </>
               )
             }} />
           </Switch>
         </nav>
       </header>
-      <main>
-        <p>A place to find queer affirming support</p>
-      </main>
     </div>
   );
 }
