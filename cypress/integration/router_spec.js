@@ -33,4 +33,25 @@ describe('router', () => {
       .go('back')
       .location('pathname').should('eq', '/')
   })
+
+  it('should display the mental health pro page when the mental health pro button is pressed', () => {
+    cy.get('#mental-health-pros-button').click()
+      .location('pathname').should('eq', '/mental_health_professionals')
+      .get('h1').last().should('contain', 'Mental health professionals here')
+  })
+
+  it('should return to the main page when the back button is clicked', () => {
+    cy.get('#mental-health-pros-button').click()
+      .location('pathname').should('eq', '/mental_health_professionals')
+      .go('back')
+      .location('pathname').should('eq', '/')
+  })
+
+  it('should display the sumbit page when the sumbit button is pressed', () => {
+    cy.get('#submit-button').click()
+      .location('pathname').should('eq', '/submit')
+      .get('h2').should('contain', 'Contribution Form')
+      .get('form input[name="firstName"]')
+  })
+
 })
