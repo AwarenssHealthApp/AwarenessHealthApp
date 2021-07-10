@@ -14,6 +14,11 @@ function App() {
             <ContributionForm />
           )
         }} />
+        <Route path='/doctors' render={() => {
+          return(
+            <h1>Doctors go here</h1>
+          )
+        }} />
       </Switch>
     </div>
   );
