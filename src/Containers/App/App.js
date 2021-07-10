@@ -19,6 +19,11 @@ function App() {
             <h1>Doctors go here</h1>
           )
         }} />
+        <Route path='/mental_health_professionals' render={() => {
+          return(
+            <h1>Mental Health Professionals go here</h1>
+          )
+        }} />
       </Switch>
     </div>
   );
