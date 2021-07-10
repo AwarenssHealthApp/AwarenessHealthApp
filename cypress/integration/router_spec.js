@@ -21,4 +21,8 @@ describe('router', () => {
     cy.get('p').should('contain', 'A place to find queer affirming support')
   })
 
+  it('should display the doctors page when the doctor button is pressed', () => {
+    cy.get('#doctors-button').click()
+      .location('pathname').should('eq', '/doctors')
+  })
 })
