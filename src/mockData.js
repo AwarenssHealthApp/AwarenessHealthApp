@@ -75,3 +75,52 @@ const doctors = [
     }
   }
 ]
+
+const mentalHealthProfessionals = [
+  {
+    "type": "mental health professionals",
+    "id": "1",
+    "attributes": {
+      "first_name": "Dani",
+      "last_name": "Higgins",
+      "street": "3003 East 3rd Avenue",
+      "unit": "B-106",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80206",
+      "phone": "7206139116",
+      "vetted": "false",
+      "specialty": [
+        "Transgener", "Trauma", "PTSD", "ADHD"
+      ],
+      "insurance": [
+        "Out of Network"
+      ],
+      "cost": "Sliding scale: $80-120"
+    }
+  },
+  {
+    "type": "mental health professionals",
+    "id": "2",
+    "attributes": {
+      "first_name": "Caitlin",
+      "last_name": "Flood",
+      "street": "Whole Hearted Nest 2305 Canyon",
+      "unit": "null",
+      "city": "Boulder",
+      "state": "CO",
+      "zip": "80302",
+      "phone": "7209826483",
+      "vetted": "false",
+      "specialty": [
+        "EMDR level 1 and 2", "Trauma Informed", "Queer Informed"
+      ],
+      "insurance": [
+        "Out of Network"
+      ],
+      "cost": "$150"
+    }
+  }
+]
+
+export { doctors, mentalHealthProfessionals }
