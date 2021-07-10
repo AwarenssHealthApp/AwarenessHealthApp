@@ -39,6 +39,10 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
+    "cypress": "^7.5.0",
+>>>>>>> 10df9448b0926533dc40dbfb2b281ac6a50d1bf9
     "start-server-and-test": "^1.12.6"
   }
 }
