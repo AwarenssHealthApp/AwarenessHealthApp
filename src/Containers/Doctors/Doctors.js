@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { doctors } from '../../mockData'
+import Cards from '../../Components/Cards/Cards'
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState(doctors)
   const allDoctors = doctorList.map(doctor => {
     return(
-      <Card
+      <Cards
       id={doctor.id}
       key={doctor.id}
       firstName={doctor.attributes.first_name}
