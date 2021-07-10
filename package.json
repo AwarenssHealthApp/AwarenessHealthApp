@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "start-server-and-test": "^1.12.6",
-    "cypress": "^7.5.0"
+    "cypress": "^7.5.0",
+    "start-server-and-test": "^1.12.6"
   }
 }
