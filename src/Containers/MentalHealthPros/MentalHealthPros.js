@@ -25,7 +25,7 @@ const MentalHealthPros = () => {
     )
   })
   return(
-    <h1>Mental health professionals here</h1>
+    <h2>Mental health professionals here</h2>
   )
 }
 

@@ -24,7 +24,7 @@ describe('router', () => {
   it('should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
-      .get('h1').last().should('contain', 'Doctors here')
+      .get('h2').last().should('contain', 'Doctors here')
   })
 
   it('should return to the main page when the back button is clicked', () => {
@@ -37,7 +37,7 @@ describe('router', () => {
   it('should display the mental health pro page when the mental health pro button is pressed', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
-      .get('h1').last().should('contain', 'Mental health professionals here')
+      .get('h2').last().should('contain', 'Mental health professionals here')
   })
 
   it('should return to the main page when the back button is clicked', () => {
@@ -53,5 +53,4 @@ describe('router', () => {
       .get('h2').should('contain', 'Contribution Form')
       .get('form input[name="firstName"]')
   })
-
 })
