@@ -35,6 +35,9 @@ const Doctors = () => {
   //     />
   //   )
   // })
+
+  //map over doctors and get first names to make sure data is coming correctly from backend
+  //do not need this code once cards are in place
   const allDoctors = doctorList.map(doctor => {
     return(
       <>
@@ -42,10 +45,11 @@ const Doctors = () => {
       </>
     )
   })
+
   return(
     <>
       <h2>Doctors here</h2>
-      <p>{allDoctors}</p>
+      <section>{allDoctors}</section>
     </>
   )
 }
