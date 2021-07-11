@@ -1,5 +1,5 @@
 const retrievePageData = (type, state) => {
-  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medicalprofessionals?type=${type}&state=${state}`)
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=${type}&state=${state}`)
     .then(response => {
       if(!response.ok) {
         throw new Error('Unable to retrieve server data')
