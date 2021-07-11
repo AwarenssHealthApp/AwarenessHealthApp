@@ -35,8 +35,18 @@ const Doctors = () => {
   //     />
   //   )
   // })
+  const allDoctors = doctorList.map(doctor => {
+    return(
+      <>
+        <p>{doctor.first_name}</p>
+      </>
+    )
+  })
   return(
-    <h2>Doctors here</h2>
+    <>
+      <h2>Doctors here</h2>
+      <p>{allDoctors}</p>
+    </>
   )
 }
 
