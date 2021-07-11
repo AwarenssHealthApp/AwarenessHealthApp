@@ -47,7 +47,7 @@ const MentalHealthPros = () => {
 
   return(
     <>
-      <h2>All mental health professionals here</h2>
+      <h2>Mental health professionals here</h2>
       <section>{allMentalHealthPros}</section>
     </>
   )
