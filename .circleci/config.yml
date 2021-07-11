@@ -3,16 +3,18 @@ orbs:
   node: circleci/node@4.1
   heroku: circleci/heroku@1.2
   cypress: cypress-io/cypress@1
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+        cache-path: -/project/node_modules
+        override-ci-command: npm install
+      - run: npm run test 
 workflows:
   build:
     jobs:
-      test:
-        executor: node/default
-        steps:
-          - checkout
-          - node/install-packages:
-            cache-path: -/project/node_modules
-            override-ci-command: npm install
       - node/test
       - heroku/deploy-via-git:
           force: true
