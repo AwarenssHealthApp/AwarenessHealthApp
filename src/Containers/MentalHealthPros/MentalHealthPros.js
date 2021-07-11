@@ -37,8 +37,19 @@ const MentalHealthPros = () => {
   //     />
   //   )
   // })
+  const allMentalHealthPros = mentalHealthProsList.map(mhp => {
+    return(
+      <>
+        <p>{mhp.first_name}</p>
+      </>
+    )
+  })
+
   return(
-    <h2>Mental health professionals here</h2>
+    <>
+      <h2>All mental health professionals here</h2>
+      <section>{allMentalHealthPros}</section>
+    </>
   )
 }
 
