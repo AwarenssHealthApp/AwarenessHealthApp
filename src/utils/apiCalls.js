@@ -1,5 +1,5 @@
-const retrievePageData = (path) => {
-  return fetch(`https://head-to-toe-be.herokuapp.com/${path}`)
+const retrievePageData = (type, state) => {
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medicalprofessionals?type=${type}&state=${state}`)
     .then(response => {
       if(!response.ok) {
         throw new Error('Unable to retrieve server data')
@@ -10,7 +10,7 @@ const retrievePageData = (path) => {
 }
 
 const addContribution = (newData) => {
-  return fetch('https://head-to-toe-be.herokuapp.com/', {
+  return fetch('https://head-to-toe-be.herokuapp.com/api/v1/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
