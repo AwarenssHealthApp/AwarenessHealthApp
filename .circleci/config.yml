@@ -6,6 +6,13 @@ orbs:
 workflows:
   build:
     jobs:
+      test:
+        executor: node/default
+        steps:
+          - checkout
+          - node/install-packages:
+            cache-path: -/project/node_modules
+            override-ci-command: npm install
       - node/test
       - heroku/deploy-via-git:
           force: true
