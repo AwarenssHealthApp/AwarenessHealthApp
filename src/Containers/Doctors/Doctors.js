@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { doctors } from '../../mockData'
-import Cards from '../../Components/Cards/Cards'
+import React from 'react'
+ // { useState } from 'react'
+// import { doctors } from '../../mockData'
+// import Cards from '../../Components/Cards/Cards'
 
 const Doctors = () => {
   // const [doctorList, setDoctorList] = useState(doctors.attributes.list)
