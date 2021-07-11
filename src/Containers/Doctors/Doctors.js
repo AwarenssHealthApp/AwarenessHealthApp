@@ -1,10 +1,21 @@
-import React from 'react'
- // { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { retrievePageData } from '../../utils/apiCalls'
 // import { doctors } from '../../mockData'
 // import Cards from '../../Components/Cards/Cards'
 
 const Doctors = () => {
-  // const [doctorList, setDoctorList] = useState(doctors.attributes.list)
+  const [doctorList, setDoctorList] = useState([])
+
+  useEffect(() => {
+    let mounted = true;
+    retrievePageData('doctor', 'Colorado')
+      .then(doctors => {
+        if(mounted) {
+          setDoctorList(doctors.data.attributes.list)
+        }
+      })
+    return () => mounted = false;
+  }, [])
   // const allDoctors = doctorList.map(doctor => {
   //   return(
   //     <Cards
