@@ -1,0 +1,23 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1
+  heroku: circleci/heroku@1.2
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - node/test
+      - heroku/deploy-via-git:
+          force: true
+          requires:
+            - node/test
+          filters:
+            branches:
+              only: main
+      - cypress/install:
+          build: "npm run build"
+      - cypress/run:
+          requires:
+            - cypress/install
+          start: npm start
+          wait-on: 'http://localhost:3000'
