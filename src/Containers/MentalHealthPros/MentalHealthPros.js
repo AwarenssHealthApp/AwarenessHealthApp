@@ -1,10 +1,22 @@
-import React from 'react'
- // { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { retrievePageData } from '../../utils/apiCalls'
 // import { mentalHealthProfessionals } from '../../mockData'
 // import Cards from '../../Components/Cards/Cards'
 
 const MentalHealthPros = () => {
-  // const [mentalHealthProsList, setMentalHealthProsList] = useState(mentalHealthProfessionals.attributes.list)
+  const [mentalHealthProsList, setMentalHealthProsList] = useState([])
+
+  useEffect(() => {
+    let mounted = true;
+    retrievePageData('mhp', 'Colorado')
+      .then(mhps => {
+        if(mounted) {
+          setMentalHealthProsList(mhps.data.attributes.list)
+        }
+      })
+    return () => mounted = false;
+  }, [])
+
   // const allMentalHealthPros = mentalHealthProsList.map(mentalHealthPro => {
   //   return(
   //     <Cards
