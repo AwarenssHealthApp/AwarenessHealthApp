@@ -16,8 +16,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, speciality,
            {zip}
            {phoneNum}
         </p>
-        <button className='accept-button'></button>
-        <button className='deny-button'></button>
+        <button className='accept-button'>Accept</button>
+        <button className='deny-button'>Deny</button>
       </article>
     </section>
   )
