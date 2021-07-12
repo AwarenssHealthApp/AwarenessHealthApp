@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { retrievePageData } from '../../utils/apiCalls'
-// import { mentalHealthProfessionals } from '../../mockData'
 import Card from '../../Components/Cards/Cards'
 
 const MentalHealthPros = () => {
