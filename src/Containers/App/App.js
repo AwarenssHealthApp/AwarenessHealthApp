@@ -1,15 +1,17 @@
 import React from 'react'
-import './_app.scss';
+
 import ContributionForm from '../ContributionForm/ContributionForm'
 import Doctors from '../Doctors/Doctors'
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros'
 import { Route, Switch, Link } from 'react-router-dom'
+import './_app.scss';
+import background from '../../assets/images/peacefulOceanImage.png';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Head to Toe</h1>
+        <h1>Head To Toe</h1>
         <nav>
           <Link to='/doctors'>
             <button id='doctors-button'>Doctors</button>
