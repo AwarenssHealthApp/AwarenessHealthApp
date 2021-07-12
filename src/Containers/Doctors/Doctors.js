@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Card from '../../Components/Cards/Cards'
 import { retrievePageData } from '../../utils/apiCalls'
-// import { doctors } from '../../mockData'
-import Cards from '../../Components/Cards/Cards'
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -18,7 +17,7 @@ const Doctors = () => {
   }, [])
   const allDoctors = doctorList.map(doctor => {
     return(
-      <Cards
+      <Card
       id={doctor.id}
       key={doctor.id}
       firstName={doctor.first_name}
