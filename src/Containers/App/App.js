@@ -9,9 +9,9 @@ import background from '../../assets/images/peacefulOceanImage.png';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Head To Toe</h1>
+    <div className='App'>
+      <header >
+        <h1 className='App-title'>Head To Toe</h1>
         <nav>
           <Link to='/doctors'>
             <button id='doctors-button'>Doctors</button>
