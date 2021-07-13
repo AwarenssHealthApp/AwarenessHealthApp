@@ -16,8 +16,15 @@ describe('Show landing page of Head To Toe', () => {
   cy.url().should('eq', 'http://localhost:3000/')
   });
 
-it('should display the title on the main page', () => {
-  cy.get('h1').should('contain', 'Head To Toe')
+  it('Should be show a background image covering the whole page', () => {
+    cy.get('.App').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/peacefulOceanImage.dfb3c4eb.png")')
   });
+
+  it('should display the title on the main page', () => {
+  cy.get('h1').should('contain', 'Head To Toe')
+    .get('.App-title').should('have.css', 'font-family', 'opendyslexic')
+  });
+
+
 
 })
