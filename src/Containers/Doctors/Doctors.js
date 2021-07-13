@@ -38,7 +38,7 @@ const Doctors = () => {
 
   return(
     <>
-      <h2>Doctors here</h2>
+      <h2 className='dr-sub-title'>Doctors here</h2>
       <section>{allDoctors}
       <Link to='/'>
       <button className='home-button'>Home</button>
