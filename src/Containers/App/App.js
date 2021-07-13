@@ -1,10 +1,10 @@
-import React from 'react'
-import ContributionForm from '../ContributionForm/ContributionForm'
-import Doctors from '../Doctors/Doctors'
-import MentalHealthPros from '../MentalHealthPros/MentalHealthPros'
-import { Route, Switch, Link } from 'react-router-dom'
+import React from 'react';
+import ContributionForm from '../ContributionForm/ContributionForm';
+import Doctors from '../Doctors/Doctors';
+import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
+import { Route, Switch, Link } from 'react-router-dom';
 import './_app.scss';
-import background from '../../assets/images/peacefulOceanImage.png'
+import background from '../../assets/images/peacefulOceanImage.png';
 
 
 function App() {
