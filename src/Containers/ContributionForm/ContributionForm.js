@@ -17,7 +17,7 @@ function ContributionForm(props) {
       insurance &&
       address &&
       phoneNum) {
-        const newData = {
+        const data = {
           firstName,
           lastName,
           specialty,
@@ -25,20 +25,28 @@ function ContributionForm(props) {
           address,
           phoneNum
         }
-        addContribution(newData)
-        this.clearInputs()
+        this.sendRequest(data)
       } else {
         setError('Please fill out all input fields')
       }
   }
 
-  clearInputs = () => {
+  const clearInputs = () => {
     setFirstName('')
     setLastName('')
     setSpecialty('')
     setInsurance('')
     setAddress('')
     setPhoneNum('')
+  }
+
+  const sendRequest = (data) => {
+    addContribution(data)
+      .then(this.clearInputs())
+      //confirmation of submission?
+      .catch(error => {
+        setError(error)
+      })
   }
 
   return (
