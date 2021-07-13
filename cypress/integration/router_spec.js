@@ -8,7 +8,7 @@ describe('router', () => {
   })
 
   it('should display the title on the main page', () => {
-    cy.get('h1').should('contain', 'Head to Toe')
+    cy.get('h1').should('contain', 'Head To Toe')
   })
 
   it('should display the navigation buttons on the main page', () => {
