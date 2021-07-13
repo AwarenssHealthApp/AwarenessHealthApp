@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../../Components/Cards/Cards';
+import Card from '../../Components/Card/Card';
 import { retrievePageData } from '../../utils/apiCalls';
 import { Link } from 'react-router-dom';
 

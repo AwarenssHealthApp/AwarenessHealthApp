@@ -39,7 +39,8 @@ describe('Show landing page of Head To Toe', () => {
       .get('#mental-health-pros-button').click()
         .location('pathname').should('eq', '/mental_health_professionals')
 
-      .get('#submit-button').click()      .location('pathname').should('eq', '/submit')
+      .get('#submit-button').click()
+      .location('pathname').should('eq', '/submit')
   });
 
   it('Should display the mission statement of our project', () => {
@@ -47,4 +48,4 @@ describe('Show landing page of Head To Toe', () => {
       .get('.mission').should('contain', 'A')
   });
 
-})
+});
