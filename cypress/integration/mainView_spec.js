@@ -20,11 +20,31 @@ describe('Show landing page of Head To Toe', () => {
     cy.get('.App').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/peacefulOceanImage.dfb3c4eb.png")')
   });
 
-  it('should display the title on the main page', () => {
-  cy.get('h1').should('contain', 'Head To Toe')
+  it('Should display the title on the main page', () => {
+  cy.get('.App-title').should('be.visible', 'Head To Toe')
+    .get('.App-title').should('contain', 'Head To Toe')
     .get('.App-title').should('have.css', 'font-family', 'opendyslexic')
   });
 
+  it('Should display the form, dr and mhp buttons for user', () => {
+    cy.get('.App-buttons').should('be.visible')
+      .get('.App-buttons').should('contain', 't')
+      .get('.App-buttons').should('have.css', 'font-family', 'opendyslexic')
+  });
 
+  it('Should allow the user to navigate away to their chosen page upon click', () => {
+    cy.get('#doctors-button').click()
+      .location('pathname').should('eq', '/doctors')
+
+      .get('#mental-health-pros-button').click()
+        .location('pathname').should('eq', '/mental_health_professionals')
+
+      .get('#submit-button').click()      .location('pathname').should('eq', '/submit')
+  });
+
+  it('Should display the mission statement of our project', () => {
+    cy.get('.mission').should('be.visible')
+      .get('.mission').should('contain', 'A')
+  });
 
 })
