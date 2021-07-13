@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
   const [firstName, setFirstName] = useState('')
@@ -7,10 +8,28 @@ function ContributionForm(props) {
   const [insurance, setInsurance] = useState('')
   const [address, setAddress] = useState('')
   const [phoneNum, setPhoneNum] = useState('')
+  const [error, setError] = useState('')
 
-  // const handleClick = (event) => {
-  //   console.log("submit! later include error handling and POST request")
-  // }
+  const handleClick = (event) => {
+    if(firstName &&
+      lastName &&
+      specialty &&
+      insurance &&
+      address &&
+      phoneNum) {
+        const newData = {
+          firstName,
+          lastName,
+          specialty,
+          insurance,
+          address,
+          phoneNum
+        }
+        addContribution(newData)
+      } else {
+        setError('Please fill out all input fields')
+      }
+  }
 
   return (
     <>
