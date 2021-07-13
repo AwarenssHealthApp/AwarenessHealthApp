@@ -2,33 +2,42 @@ import React, { useState } from 'react'
 import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [specialty, setSpecialty] = useState('')
-  const [insurance, setInsurance] = useState('')
-  const [address, setAddress] = useState('')
-  const [phoneNum, setPhoneNum] = useState('')
-  const [error, setError] = useState('')
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [specialty, setSpecialty] = useState(null)
+  const [insurance, setInsurance] = useState(null)
+  const [address, setAddress] = useState(null)
+  const [phoneNum, setPhoneNum] = useState(null)
+  const [error, setError] = useState(null)
 
   const handleClick = (event) => {
+    event.preventDefault()
     if(firstName &&
       lastName &&
-      specialty &&
       insurance &&
-      address &&
+      state &&
       phoneNum) {
         const data = {
-          firstName,
-          lastName,
-          specialty,
+          first_name: firstName,
+          last_name: lastName,
+          specialties: specialty,
           insurance,
           address,
-          phoneNum
+          phoneNum,
         }
         this.sendRequest(data)
       } else {
         setError('Please fill out all input fields')
       }
+  }
+
+  const sendRequest = (data) => {
+    addContribution(data)
+    .then(clearInputs())
+    //confirmation of submission?
+    .catch(error => {
+      setError(error)
+    })
   }
 
   const clearInputs = () => {
@@ -38,15 +47,6 @@ function ContributionForm(props) {
     setInsurance('')
     setAddress('')
     setPhoneNum('')
-  }
-
-  const sendRequest = (data) => {
-    addContribution(data)
-      .then(this.clearInputs())
-      //confirmation of submission?
-      .catch(error => {
-        setError(error)
-      })
   }
 
   return (
@@ -95,7 +95,7 @@ function ContributionForm(props) {
           value={phoneNum}
           onChange={event => setPhoneNum(event.target.value)}
         />
-        <button onClick={(event) => this.handleClick(event)}>Submit</button>
+        <button onClick={(event) => handleClick(event)}>Submit</button>
       </form>
     </>
   )
