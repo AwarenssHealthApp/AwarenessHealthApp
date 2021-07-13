@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { retrievePageData } from '../../utils/apiCalls';
-import Card from '../../Components/Cards/Cards';
+import Card from '../../Components/Card/Card';
 import { Link } from 'react-router-dom';
 
 const MentalHealthPros = () => {
