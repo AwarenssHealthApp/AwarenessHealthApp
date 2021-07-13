@@ -1,4 +1,3 @@
-import React from 'react';
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
@@ -8,7 +7,8 @@ import './_app.scss';
 import background from '../../assets/images/peacefulOceanImage.png';
 
 
-function App() {
+function App(props) {
+
   return (
     <div className='App' style={{
             backgroundImage: `url(${background})`}}>
@@ -25,6 +25,7 @@ function App() {
             <Link to='/submit'>
               <button className='App-buttons' id='submit-button'>Submit</button>
             </Link>
+            <button onClick={props.toggleDarkMode}>Dark Mode</button>
           </nav>
         </header>
         <Switch>
