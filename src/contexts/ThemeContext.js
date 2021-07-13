@@ -16,6 +16,12 @@ const ThemeContextProvider = (props) => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
   }
+
+  return (
+    <ThemeContext.Provider value={{ light, dark, darkMode, toggleDarkMode }}>
+      {props.children}
+    </ThemeContext.Provider>
+  )
 }
 
 export default ThemeContextProvider
