@@ -26,9 +26,19 @@ function ContributionForm(props) {
           phoneNum
         }
         addContribution(newData)
+        this.clearInputs()
       } else {
         setError('Please fill out all input fields')
       }
+  }
+
+  clearInputs = () => {
+    setFirstName('')
+    setLastName('')
+    setSpecialty('')
+    setInsurance('')
+    setAddress('')
+    setPhoneNum('')
   }
 
   return (
