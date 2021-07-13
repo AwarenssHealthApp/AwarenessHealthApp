@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { retrievePageData } from '../../utils/apiCalls'
-import Card from '../../Components/Cards/Cards'
+import { retrievePageData } from '../../utils/apiCalls';
+import Card from '../../Components/Cards/Cards';
+import { Link } from 'react-router-dom';
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
@@ -39,8 +40,13 @@ const MentalHealthPros = () => {
 
   return(
     <>
-      <h2>Mental health professionals here</h2>
-      <section>{allMentalHealthPros}</section>
+      <h2 className='mhp-sub-title'>Mental health professionals here</h2>
+      <section>{allMentalHealthPros}
+        <Link to='/'>
+        <button className='home-button'>Home</button>
+        </Link>
+      </section>
+
     </>
   )
 }

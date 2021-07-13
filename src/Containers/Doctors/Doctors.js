@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../../Components/Cards/Cards'
-import { retrievePageData } from '../../utils/apiCalls'
+import Card from '../../Components/Cards/Cards';
+import { retrievePageData } from '../../utils/apiCalls';
+import { Link } from 'react-router-dom';
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -38,7 +39,11 @@ const Doctors = () => {
   return(
     <>
       <h2>Doctors here</h2>
-      <section>{allDoctors}</section>
+      <section>{allDoctors}
+      <Link to='/'>
+      <button className='home-button'>Home</button>
+      </Link>
+      </section>
     </>
   )
 }
