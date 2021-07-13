@@ -44,7 +44,7 @@ function App() {
         <Route exact path ='/' render={() => {
           return(
             <main>
-              <p>A place to find queer affirming support</p>
+              <p className='mission'>A place to find queer affirming support</p>
             </main>
           )
         }} />
