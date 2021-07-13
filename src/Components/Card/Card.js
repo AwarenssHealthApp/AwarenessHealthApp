@@ -1,5 +1,5 @@
 import React from 'react';
-import './_cards.scss';
+import './_card.scss';
 
 const Card = ({ firstName, lastName, street, unit, city, state, zip, speciality, phoneNum, key, vetted }) => {
   return (
@@ -16,8 +16,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, speciality,
            {zip}
            {phoneNum}
         </p>
-        <button className='accept-button'>Accept</button>
-        <button className='deny-button'>Deny</button>
+        <button className='accept-button'>Love</button>
+        <button className='deny-button'>Don't Love</button>
       </article>
     </section>
   )
