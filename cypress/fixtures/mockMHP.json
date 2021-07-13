@@ -1,0 +1,68 @@
+{
+    "data": {
+        "id": null,
+        "type": "mhp",
+        "attributes": {
+            "list": [
+                {
+                    "id": 62,
+                    "first_name": "panda",
+                    "last_name": "Dodrio",
+                    "state": "Massachusetts",
+                    "city": "Hamillside",
+                    "street": "32521 Green Freeway",
+                    "unit": "Apt. 942",
+                    "zip": "10385",
+                    "phone": "234-456-2244",
+                    "vetted": true,
+                    "cost": "$123-150",
+                    "specialties": [
+                        {
+                            "id": 3,
+                            "name": "Celestial"
+                        }
+                    ],
+                    "insurances": [
+                        {
+                            "id": 8,
+                            "company": "O'Keefe-Price"
+                        },
+                        {
+                            "id": 9,
+                            "company": "Conn-Erdman"
+                        }
+                    ]
+                },
+                {
+                    "id": 141,
+                    "first_name": "beaver",
+                    "last_name": "Nidoqueen",
+                    "state": "Massachusetts",
+                    "city": "North Nolan",
+                    "street": "95980 Vandervort Keys",
+                    "unit": "Suite 347",
+                    "zip": "10385",
+                    "phone": "234-456-2244",
+                    "vetted": true,
+                    "cost": "$123-150",
+                    "specialties": [
+                        {
+                            "id": 2,
+                            "name": "Orc"
+                        },
+                        {
+                            "id": 11,
+                            "name": "Abyssal"
+                        }
+                    ],
+                    "insurances": [
+                        {
+                            "id": 5,
+                            "company": "Herman-Bogan"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
