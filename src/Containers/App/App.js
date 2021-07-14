@@ -1,19 +1,19 @@
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
+import DarkMode from '../../Components/DarkMode/DarkMode';
 import { Route, Switch, Link } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
 import './_app.scss';
 import background from '../../assets/images/peacefulOceanImage.png';
 
 
-function App(props) {
-
+function App() {
   return (
     <div className='App' style={{
             backgroundImage: `url(${background})`}}>
       <ThemeContextProvider>
-        <header >
+        <header>
           <h1 className='App-title'>Head To Toe</h1>
           <nav className='nav-bar'>
             <Link to='/doctors'>
@@ -25,7 +25,7 @@ function App(props) {
             <Link to='/submit'>
               <button className='App-buttons' id='submit-button'>Submit</button>
             </Link>
-            <button onClick={props.toggleDarkMode}>Dark Mode</button>
+            <DarkMode />
           </nav>
         </header>
         <Switch>
