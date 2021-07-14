@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-function DarkMode() {
+function DarkModeSwitch() {
   const { toggleDarkMode } = useContext(ThemeContext)
   return (
     <>
@@ -10,4 +10,4 @@ function DarkMode() {
   )
 }
 
-export default DarkMode
+export default DarkModeSwitch
