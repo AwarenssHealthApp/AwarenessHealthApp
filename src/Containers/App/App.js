@@ -1,7 +1,7 @@
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
-import DarkMode from '../../Components/DarkMode/DarkMode';
+import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { Route, Switch, Link } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
 import './_app.scss';
@@ -25,7 +25,7 @@ function App() {
             <Link to='/submit'>
               <button className='App-buttons' id='submit-button'>Submit</button>
             </Link>
-            <DarkMode />
+            <DarkModeSwitch />
           </nav>
         </header>
         <Switch>
