@@ -2,25 +2,24 @@ import React, { useState } from 'react'
 import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
-  const [firstName, setFirstName] = useState(null)
-  const [lastName, setLastName] = useState(null)
-  const [specialties, setSpecialties] = useState(null)
-  const [insurances, setInsurances] = useState(null)
-  const [street, setStreet] = useState(null)
-  const [unit, setUnit] = useState(null)
-  const [city, setCity] = useState(null)
-  const [state, setState] = useState(null)
-  const [zip, setZip] = useState(null)
-  const [phone, setPhone] = useState(null)
-  const [error, setError] = useState(null)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [specialties, setSpecialties] = useState('')
+  const [insurances, setInsurances] = useState('')
+  const [street, setStreet] = useState('')
+  const [unit, setUnit] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [zip, setZip] = useState('')
+  const [phone, setPhone] = useState('')
+  const [error, setError] = useState('')
 
   const handleClick = (event) => {
     event.preventDefault()
     if(firstName &&
       lastName &&
       insurances &&
-      state &&
-      phone) {
+      state) {
         const data = {
           first_name: firstName,
           last_name: lastName,
@@ -33,18 +32,18 @@ function ContributionForm(props) {
           zip: zip,
           phone: phone,
         }
-        this.sendRequest(data)
+        setError(null)
+        sendRequest(data)
       } else {
-        setError('Please fill out all input fields')
+        setError('At a minimum, please fill out the First Name, Last Name, Insurances, and State fields for this provider.')
       }
   }
 
   const sendRequest = (data) => {
     addContribution(data)
     .then(clearInputs())
-    //confirmation of submission?
     .catch(error => {
-      setError(error)
+      setError(error.message)
     })
   }
 
@@ -136,6 +135,9 @@ function ContributionForm(props) {
           onChange={event => setPhone(event.target.value)}
         />
         <button onClick={(event) => handleClick(event)}>Submit</button>
+        {error &&
+          <p>{error}</p>
+        }
       </form>
     </>
   )
