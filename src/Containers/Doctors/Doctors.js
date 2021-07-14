@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../../Components/Cards/Cards'
-import { retrievePageData } from '../../utils/apiCalls'
+import React, { useState, useEffect, useContext } from 'react';
+import Card from '../../Components/Card/Card';
+import { retrievePageData } from '../../utils/apiCalls';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -35,11 +37,18 @@ const Doctors = () => {
     )
   })
 
+  const { darkMode, light, dark } = useContext(ThemeContext);
+  const theme = darkMode ? dark : light;
+
   return(
-    <>
-      <h2>Doctors here</h2>
-      <section>{allDoctors}</section>
-    </>
+    <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
+      <h2 className='dr-sub-title'>Doctors here</h2>
+      <section>{allDoctors}
+      <Link to='/'>
+      <button className='home-button'>Home</button>
+      </Link>
+      </section>
+    </div>
   )
 }
 

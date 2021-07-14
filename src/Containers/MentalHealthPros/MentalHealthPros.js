@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { retrievePageData } from '../../utils/apiCalls'
-import Card from '../../Components/Cards/Cards'
+import React, { useState, useEffect, useContext } from 'react';
+import { retrievePageData } from '../../utils/apiCalls';
+import Card from '../../Components/Card/Card';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
@@ -37,11 +39,18 @@ const MentalHealthPros = () => {
     )
   })
 
+  const { darkMode, light, dark } = useContext(ThemeContext);
+  const theme = darkMode ? dark : light
+
   return(
-    <>
-      <h2>Mental health professionals here</h2>
-      <section>{allMentalHealthPros}</section>
-    </>
+    <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
+      <h2 className='mhp-sub-title'>Mental health professionals here</h2>
+      <section>{allMentalHealthPros}
+        <Link to='/'>
+        <button className='home-button'>Home</button>
+        </Link>
+      </section>
+    </div>
   )
 }
 
