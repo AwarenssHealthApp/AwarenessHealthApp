@@ -4,26 +4,34 @@ import { addContribution } from '../../utils/apiCalls'
 function ContributionForm(props) {
   const [firstName, setFirstName] = useState(null)
   const [lastName, setLastName] = useState(null)
-  const [specialty, setSpecialty] = useState(null)
-  const [insurance, setInsurance] = useState(null)
-  const [address, setAddress] = useState(null)
-  const [phoneNum, setPhoneNum] = useState(null)
+  const [specialties, setSpecialties] = useState(null)
+  const [insurances, setInsurances] = useState(null)
+  const [street, setStreet] = useState(null)
+  const [unit, setUnit] = useState(null)
+  const [city, setCity] = useState(null)
+  const [state, setState] = useState(null)
+  const [zip, setZip] = useState(null)
+  const [phone, setPhone] = useState(null)
   const [error, setError] = useState(null)
 
   const handleClick = (event) => {
     event.preventDefault()
     if(firstName &&
       lastName &&
-      insurance &&
+      insurances &&
       state &&
-      phoneNum) {
+      phone) {
         const data = {
           first_name: firstName,
           last_name: lastName,
-          specialties: specialty,
-          insurance,
-          address,
-          phoneNum,
+          specialties: specialties,
+          insurances: insurances,
+          street: street,
+          unit: unit,
+          city: city,
+          state: state,
+          zip: zip,
+          phone: phone,
         }
         this.sendRequest(data)
       } else {
@@ -43,10 +51,14 @@ function ContributionForm(props) {
   const clearInputs = () => {
     setFirstName('')
     setLastName('')
-    setSpecialty('')
-    setInsurance('')
-    setAddress('')
-    setPhoneNum('')
+    setSpecialties('')
+    setInsurances('')
+    setStreet('')
+    setUnit('')
+    setCity('')
+    setState('')
+    setZip('')
+    setPhone('')
   }
 
   return (
@@ -70,30 +82,58 @@ function ContributionForm(props) {
         <input
           type='text'
           placeholder='Specialty'
-          name='specialty'
-          value={specialty}
-          onChange={event => setSpecialty(event.target.value)}
+          name='specialties'
+          value={specialties}
+          onChange={event => setSpecialties(event.target.value)}
         />
         <input
           type='text'
           placeholder='Insurance'
-          name='insurance'
-          value={insurance}
-          onChange={event => setInsurance(event.target.value)}
+          name='insurances'
+          value={insurances}
+          onChange={event => setInsurances(event.target.value)}
         />
         <input
           type='text'
-          placeholder='Address'
-          name='address'
-          value={address}
-          onChange={event => setAddress(event.target.value)}
+          placeholder='Street'
+          name='street'
+          value={street}
+          onChange={event => setStreet(event.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Unit'
+          name='unit'
+          value={unit}
+          onChange={event => setUnit(event.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='City'
+          name='city'
+          value={city}
+          onChange={event => setCity(event.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='State'
+          name='state'
+          value={state}
+          onChange={event => setState(event.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Zip Code'
+          name='zip'
+          value={zip}
+          onChange={event => setZip(event.target.value)}
         />
         <input
           type='text'
           placeholder='Phone Number'
-          name='phoneNum'
-          value={phoneNum}
-          onChange={event => setPhoneNum(event.target.value)}
+          name='phone'
+          value={phone}
+          onChange={event => setPhone(event.target.value)}
         />
         <button onClick={(event) => handleClick(event)}>Submit</button>
       </form>
