@@ -23,14 +23,14 @@ function ContributionForm(props) {
         const data = {
           first_name: firstName,
           last_name: lastName,
-          specialties: specialties,
+          specialties: specialties || null,
           insurances: insurances,
-          street: street,
-          unit: unit,
-          city: city,
+          street: street || null,
+          unit: unit || null,
+          city: city || null,
           state: state,
-          zip: zip,
-          phone: phone,
+          zip: zip || null,
+          phone: phone || null,
         }
         setError(null)
         sendRequest(data)
