@@ -7,6 +7,7 @@ import SearchBar from '../../Components/SearchBar/SearchBar'
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
+  const [filteredDoctorList, setFilteredDoctorList] = useState([])
 
   useEffect(() => {
     let mounted = true;
@@ -18,7 +19,10 @@ const Doctors = () => {
       })
     return () => mounted = false;
   }, [])
-  const allDoctors = doctorList.map(doctor => {
+
+  const doctorsToDisplay = filteredDoctorList.length ? filteredDoctorList : doctorList
+
+  const allDoctors = doctorsToDisplay.map(doctor => {
     return(
       <Card
       id={doctor.id}
