@@ -6,7 +6,7 @@ export const DropDown = () => {
 
   return (
     <>
-      <label for='state-select'>Choose a state:</label>
+      <label htmlFor='state-select'>Choose a state:</label>
 
       <select name='state' id='state-select' onChange={event => setState(event.target.value)}>
           <option value=''>--Please choose an option--</option>

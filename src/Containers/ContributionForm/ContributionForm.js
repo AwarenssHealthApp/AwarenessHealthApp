@@ -9,6 +9,8 @@ function ContributionForm(props) {
   const [lastName, setLastName] = useState('')
   const [specialties, setSpecialties] = useState('')
   const [insurances, setInsurances] = useState('')
+  const [cost, setCost] = useState('')
+  const [profession, setProfession] = useState('')
   const [street, setStreet] = useState('')
   const [unit, setUnit] = useState('')
   const [city, setCity] = useState('')
@@ -21,12 +23,15 @@ function ContributionForm(props) {
     if(firstName &&
       lastName &&
       insurances &&
-      state) {
+      state &&
+      profession) {
         const data = {
           first_name: firstName,
           last_name: lastName,
+          profession: profession,
           specialties: specialties || null,
-          insurances: insurances,
+          insurance: insurances,
+          cost: cost || null,
           street: street || null,
           unit: unit || null,
           city: city || null,
@@ -54,6 +59,8 @@ function ContributionForm(props) {
     setLastName('')
     setSpecialties('')
     setInsurances('')
+    setCost('')
+    setProfession('')
     setStreet('')
     setUnit('')
     setCity('')
@@ -80,6 +87,14 @@ function ContributionForm(props) {
           value={lastName}
           onChange={event => setLastName(event.target.value)}
         />
+        <div>
+          <label htmlFor='profession-select'>Select their profession:</label>
+          <select name='profession' id='profession-select' onChange={event => setProfession(event.target.value)}>
+              <option value=''>--Please choose an option--</option>
+              <option value='mhp'>Mental Health Professional</option>
+              <option value='doctor'>Doctor</option>
+          </select>
+        </div>
         <input
           type='text'
           placeholder='Specialty'
@@ -93,6 +108,13 @@ function ContributionForm(props) {
           name='insurances'
           value={insurances}
           onChange={event => setInsurances(event.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Cost'
+          name='cost'
+          value={cost}
+          onChange={event => setCost(event.target.value)}
         />
         <input
           type='text'
@@ -116,13 +138,6 @@ function ContributionForm(props) {
           onChange={event => setCity(event.target.value)}
         />
         <DropDown />
-        <input
-          type='text'
-          placeholder='State'
-          name='state'
-          value={state}
-          onChange={event => setState(event.target.value)}
-        />
         <input
           type='text'
           placeholder='Zip Code'
