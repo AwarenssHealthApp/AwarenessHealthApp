@@ -3,12 +3,19 @@ import React, { useState } from 'react'
 const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
   const [searchInput, setSearchInput] = useState('')
 
-  const filterDoctors = (doctorList) => {
+  const handleSearch = (event) => {
+    event.preventDefault()
+    const searchResults = filterDoctors()
+    setFilteredDoctorList(searchResults)
+  }
+
+  const filterDoctors = () => {
     const filteredDoctors = doctorList.filter(doctor => {
       return doctor.insurances.filter(insurance => {
         return insurance.company.toUpperCase().includes(searchInput.toUpperCase)
       })
     })
+    return filteredDoctors
   }
 
   return(
@@ -20,7 +27,7 @@ const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
         value={searchInput}
         onChange={event => setSearchInput(event.target.value)}
       />
-
+      <button onClick={(event) =>  handleSearch(event)}>Submit</button>
     </form>
   )
 }
