@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import { StateSelectContext } from '../../contexts/StateSelectContext';
 import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
+  const { state, setState } = useContext(StateSelectContext)
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [specialties, setSpecialties] = useState('')
@@ -10,7 +12,7 @@ function ContributionForm(props) {
   const [street, setStreet] = useState('')
   const [unit, setUnit] = useState('')
   const [city, setCity] = useState('')
-  const [state, setState] = useState('')
+  // const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
@@ -114,9 +116,7 @@ function ContributionForm(props) {
           value={city}
           onChange={event => setCity(event.target.value)}
         />
-        <DropDown
-          onChange={event => setState(event.target.value)}
-        />
+        <DropDown />
         <input
           type='text'
           placeholder='State'

@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { StateSelectContext } from '../../contexts/StateSelectContext';
 
-export const DropDown = (props) => {
-  const {
-    onChange
-  } = props
+export const DropDown = () => {
+  const { setState } = useContext(StateSelectContext)
 
   return (
     <>
       <label for='state-select'>Choose a state:</label>
 
-      <select name='state' id='state-select'>
+      <select name='state' id='state-select' onChange={event => setState(event.target.value)}>
           <option value=''>--Please choose an option--</option>
           <option value='Alabama'>Alabama</option>
           <option value='Alaska'>Alaska</option>
