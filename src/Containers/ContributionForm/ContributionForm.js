@@ -7,8 +7,8 @@ function ContributionForm(props) {
   const { state, setState } = useContext(StateSelectContext)
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
-  const [specialties, setSpecialties] = useState('')
-  const [insurances, setInsurances] = useState('')
+  const [specialties, setSpecialties] = useState([])
+  const [insurances, setInsurances] = useState([])
   const [cost, setCost] = useState('')
   const [profession, setProfession] = useState('')
   const [street, setStreet] = useState('')
@@ -37,12 +37,13 @@ function ContributionForm(props) {
           city: city || null,
           state: state,
           zip: zip || null,
-          phone: phone || null,
+          phone: phone || null
         }
+        console.log(data)
         setError(null)
         sendRequest(data)
       } else {
-        setError('At a minimum, please fill out the First Name, Last Name, Insurances, and State fields for this provider.')
+        setError('At a minimum, please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider.')
       }
   }
 
@@ -100,14 +101,14 @@ function ContributionForm(props) {
           placeholder='Specialty'
           name='specialties'
           value={specialties}
-          onChange={event => setSpecialties(event.target.value)}
+          onChange={event => setSpecialties([event.target.value])}
         />
         <input
           type='text'
           placeholder='Insurance'
           name='insurances'
           value={insurances}
-          onChange={event => setInsurances(event.target.value)}
+          onChange={event => setInsurances([event.target.value])}
         />
         <input
           type='text'
