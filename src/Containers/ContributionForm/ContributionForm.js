@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
@@ -112,6 +113,9 @@ function ContributionForm(props) {
           name='city'
           value={city}
           onChange={event => setCity(event.target.value)}
+        />
+        <DropDown
+          onChange={event => setState(event.target.value)}
         />
         <input
           type='text'
