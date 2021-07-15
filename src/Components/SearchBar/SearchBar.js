@@ -11,8 +11,8 @@ const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
 
   const filterDoctors = () => {
     const filteredDoctors = doctorList.filter(doctor => {
-      return doctor.insurances.filter(insurance => {
-        return insurance.company.toUpperCase().includes(searchInput.toUpperCase)
+      return doctor.insurances.find(insurance => {
+        return insurance.company.toUpperCase().includes(searchInput.toUpperCase())
       })
     })
     return filteredDoctors
@@ -27,7 +27,7 @@ const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
         value={searchInput}
         onChange={event => setSearchInput(event.target.value)}
       />
-      <button onClick={(event) =>  handleSearch(event)}>Submit</button>
+      <button onClick={(event) => handleSearch(event)}>Search</button>
     </form>
   )
 }
