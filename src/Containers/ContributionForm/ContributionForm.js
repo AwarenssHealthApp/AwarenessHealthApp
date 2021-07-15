@@ -12,7 +12,6 @@ function ContributionForm(props) {
   const [street, setStreet] = useState('')
   const [unit, setUnit] = useState('')
   const [city, setCity] = useState('')
-  // const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
