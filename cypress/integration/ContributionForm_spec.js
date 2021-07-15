@@ -43,7 +43,7 @@ describe('ContributionForm View', () => {
     cy.get('form input[name="city"]').type('Paris')
       .get('form input[name="city"]').should('have.value', 'Paris')
   });
-  it('Should have a controlled input field for address whose value reflects the data typed into the form', () => {
+  it('Should have a controlled input field for state whose value reflects the data typed into the form', () => {
     cy.get('form input[name="state"]').type('KA')
       .get('form input[name="state"]').should('have.value', 'KA')
   });
