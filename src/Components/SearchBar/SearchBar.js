@@ -7,6 +7,7 @@ const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
     event.preventDefault()
     const searchResults = filterDoctors()
     setFilteredDoctorList(searchResults)
+    setSearchInput('')
   }
 
   const filterDoctors = () => {
