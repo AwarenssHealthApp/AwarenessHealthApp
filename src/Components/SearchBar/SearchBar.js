@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SearchBar = () => {
+const SearchBar = ({  }) => {
   const [searchInput, setSearchInput] = useState('')
 
   return(
