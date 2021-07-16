@@ -3,7 +3,7 @@ describe('Doctors Display', () => {
   beforeEach(() => {
     cy.fixture('mockDr.json')
       .then(mockData => {
-        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=South+Dakota', {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctors&state=South%Dakota', {
           statusCode: 201,
           delay: 100,
           body: mockData
@@ -30,7 +30,7 @@ describe('Doctors Display', () => {
   it('Should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').should('contain', 'Doctors')
       .get('#doctors-button').click()
-      
+
 
       .location('pathname').should('eq', '/doctors')
       .get('h2').last().should('contain', 'Doctors here')
@@ -43,9 +43,10 @@ describe('Doctors Display', () => {
 
       .get('.provider-card').should('be.visible')
       .get('.first-name').should('be.visible')
-      .get('.first-name').should('contain', 'gnat')
-      .get('.last-name').should('contain', 'Slowpoke')
-      .get('.address').should('contain', 'Daphnechester')
+      .get('.first-name').should('contain', 'sea lion')
+      .get('.last-name').should('contain', 'Drowzee')
+      .get('.address').should('contain', 'Raymon')
+  
     });
 
 
