@@ -23,23 +23,37 @@ describe('ContributionForm View', () => {
   })
 
   it('Should have a controlled input field for specialty whose value reflects the data typed into the form', () => {
-    cy.get('form input[name="specialty"]').type('trans health')
-      .get('form input[name="specialty"]').should('have.value', 'trans health')
+    cy.get('form input[name="specialties"]').type('trans health')
+      .get('form input[name="specialties"]').should('have.value', 'trans health')
   });
 
   it('Should have a controlled input field for insurance whose value reflects the data typed into the form', () => {
-    cy.get('form input[name="insurance"]').type('sliding scale')
-      .get('form input[name="insurance"]').should('have.value', 'sliding scale')
+    cy.get('form input[name="insurances"]').type('sliding scale')
+      .get('form input[name="insurances"]').should('have.value', 'sliding scale')
   });
-
-  it('Should have a controlled input field for address whose value reflects the data typed into the form', () => {
-    cy.get('form input[name="address"]').type('123 Main St')
-      .get('form input[name="address"]').should('have.value', '123 Main St')
+  it('Should have a controlled input field for street whose value reflects the data typed into the form', () => {
+    cy.get('form input[name="street"]').type('123 Main St')
+      .get('form input[name="street"]').should('have.value', '123 Main St')
   });
-
+  it('Should have a controlled input field for unit whose value reflects the data typed into the form', () => {
+    cy.get('form input[name="unit"]').type('A')
+      .get('form input[name="unit"]').should('have.value', 'A')
+  });
+  it('Should have a controlled input field for city whose value reflects the data typed into the form', () => {
+    cy.get('form input[name="city"]').type('Paris')
+      .get('form input[name="city"]').should('have.value', 'Paris')
+  });
+  it('Should have a controlled input field for state whose value reflects the data typed into the form', () => {
+    cy.get('form select[name="state"]').select('Kansas')
+      .get('form select[name="state"]').should('have.value', 'Kansas')
+  });
+  it('Should have a controlled input field for zip code whose value reflects the data typed into the form', () => {
+    cy.get('form input[name="zip"]').type('00000')
+      .get('form input[name="zip"]').should('have.value', '00000')
+  });
   it('Should have a controlled input field for phone number whose value reflects the data typed into the form', () => {
-    cy.get('form input[name="phoneNum"]').type('1-800-GOOD-DOC')
-      .get('form input[name="phoneNum"]').should('have.value', '1-800-GOOD-DOC')
+    cy.get('form input[name="phone"]').type('1-800-GOOD-DOC')
+      .get('form input[name="phone"]').should('have.value', '1-800-GOOD-DOC')
   });
 
   it('should display the sumbit page when the sumbit button is pressed', () => {

@@ -10,10 +10,12 @@ const retrievePageData = (type, state) => {
 }
 
 const addContribution = (newData) => {
-  return fetch('https://head-to-toe-be.herokuapp.com/api/v1/', {
+  return fetch('https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'api-key': 'aidanisthebest',
+      'Accept': 'application/json'
     },
     body: JSON.stringify(newData),
   })

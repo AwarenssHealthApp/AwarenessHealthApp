@@ -4,6 +4,7 @@ import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
 import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { Route, Switch, Link } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
+import StateSelectContextProvider from '../../contexts/StateSelectContext';
 import './_app.scss';
 import background from '../../assets/images/peacefulOceanImage.png';
 
@@ -31,7 +32,9 @@ function App() {
         <Switch>
           <Route path='/submit' render={() => {
             return(
-              <ContributionForm />
+              <StateSelectContextProvider>
+                <ContributionForm />
+              </StateSelectContextProvider>
             )
           }} />
           <Route path='/doctors' render={() => {

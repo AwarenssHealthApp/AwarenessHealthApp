@@ -29,12 +29,12 @@ describe('Doctors Display', () => {
   it('Should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').should('contain', 'Doctors')
       .get('#doctors-button').click()
-      
+
       .location('pathname').should('eq', '/doctors')
       .get('h2').last().should('contain', 'Doctors here')
   });
 
-  it('Should display the list of mhp providers for our users to see', () => {
+  it('Should display the list of doctors for our users to see', () => {
     cy.get('#doctors-button').should('be.visible')
       .get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
