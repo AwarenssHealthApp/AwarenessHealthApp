@@ -99,7 +99,7 @@ describe('Mental Health Professionals Display', () => {
     cy.get('#mental-health-pros-button').click()
       .get('form input[name="search"]').type('S')
       .get('#search-button').click()
-      .get('section').children('.provider-card-wrapper').should('have.length', 12)
+      .get('section').children('.provider-card-wrapper').should('have.length', 8)
 
       .get('form input[name="search"]').type('rerum')
       .get('#search-button').click()
