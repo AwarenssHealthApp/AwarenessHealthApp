@@ -3,9 +3,8 @@ describe('Mental Health Professionals Display', () => {
   beforeEach(() => {
     cy.fixture('mockMHP.json')
       .then(mockMHP => {
-        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=mhp&state=Massachusetts', {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=mhp&state=Colorado', {
           statusCode: 201,
-          delay: 100,
           body: mockMHP
         })
       })
@@ -31,7 +30,7 @@ describe('Mental Health Professionals Display', () => {
       .get('#mental-health-pros-button').click()
 
       .location('pathname').should('eq', '/mental_health_professionals')
-      .get('h2').last().should('contain', 'Mental')
+      .get('.mhp-sub-title').should('contain', 'Mental')
   });
 
   it('Should toggle between light and dark mode on click of dark mode button', () => {
@@ -49,13 +48,13 @@ describe('Mental Health Professionals Display', () => {
   it('Should display the list of mhp providers for our users to see', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
-      .get('h2').last().should('contain', 'Mental')
+      .get('.mhp-sub-title').should('contain', 'Mental')
 
       .get('.provider-card').should('be.visible')
       .get('.first-name').should('be.visible')
-      .get('.first-name').should('contain', 'beetle')
-      .get('.last-name').should('contain', 'Machoke')
-      .get('.address').should('contain', 'Schamberger')
+      .get('.first-name').should('contain', 'panda')
+      .get('.last-name').should('contain', 'Dodrio')
+      .get('.address').should('contain', 'Hamillside')
       .get('.all-mhp').should('have.length', 1)
     });
 
@@ -99,9 +98,9 @@ describe('Mental Health Professionals Display', () => {
     cy.get('#mental-health-pros-button').click()
       .get('form input[name="search"]').type('S')
       .get('#search-button').click()
-      .get('section').children('.provider-card-wrapper').should('have.length', 8)
+      .get('section').children('.provider-card-wrapper').should('have.length', 2)
 
-      .get('form input[name="search"]').type('rerum')
+      .get('form input[name="search"]').type('herman')
       .get('#search-button').click()
       .get('section').children('.provider-card-wrapper').should('have.length', 1)
   })
