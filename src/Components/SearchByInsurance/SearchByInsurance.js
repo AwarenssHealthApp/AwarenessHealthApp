@@ -2,11 +2,16 @@ import React, { useState } from 'react'
 
 const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   const [searchInput, setSearchInput] = useState('')
+  const [error, setError] = useState('')
 
   const handleSearch = (event) => {
     event.preventDefault()
     const searchResults = filterProvider()
-    setFilteredProviderList(searchResults)
+    if (searchResults.length) {
+      setFilteredProviderList(searchResults)
+    } else {
+      setError(`Sorry! We don\'t have any results for ${searchInput}`)
+    }
     setSearchInput('')
   }
 
@@ -29,6 +34,8 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
         onChange={event => setSearchInput(event.target.value)}
       />
       <button onClick={(event) => handleSearch(event)}>Search</button>
+      {error &&
+        <p>{error}</p>}
     </form>
   )
 }
