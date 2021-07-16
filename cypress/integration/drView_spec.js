@@ -82,4 +82,37 @@ describe('Doctors Display', () => {
       .get('.home-button').click()
       .location('pathname').should('eq', '/')
   });
+
+  it('Should have a controlled input field for first name whose value reflects the data typed into the form', () => {
+    cy.get('#doctors-button').click()
+      .get('form input[name="search"]').type('Reichel')
+      .get('form input[name="search"]').should('have.value', 'Reichel')
+  });
+
+  it('Should clear the inputs when the search button is clicked', () => {
+    cy.get('#doctors-button').click()
+      .get('form input[name="search"]').type('S')
+      .get('#search-button').should('be.visible')
+      .get('#search-button').should('contain', 'Search')
+      .get('#search-button').click()
+      .get('form input[name="search"]').should('have.value', '')
+  })
+
+  it.only('Should be able to filter the cards based on the search parameter', () => {
+    cy.get('#doctors-button').click()
+      .get('form input[name="search"]').type('S')
+      .get('#search-button').click()
+      .get('section').children('.provider-card-wrapper').should('have.length', 8)
+
+      .get('form input[name="search"]').type('nobis')
+      .get('#search-button').click()
+      .get('section').children('.provider-card-wrapper').should('have.length', 1)
+  })
+
+  it('Should be give an error message when there are no matching search results', () => {
+    cy.get('#doctors-button').click()
+      .get('form input[name="search"]').type('bogus insurance')
+      .get('#search-button').click()
+      .get('#search-error-message').should('contain', 'Sorry! We don\'t have any results for bogus insurance')
+  })
 });

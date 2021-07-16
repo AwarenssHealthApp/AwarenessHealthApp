@@ -33,9 +33,9 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
         value={searchInput}
         onChange={event => setSearchInput(event.target.value)}
       />
-      <button onClick={(event) => handleSearch(event)}>Search</button>
+      <button id='search-button' onClick={(event) => handleSearch(event)}>Search</button>
       {error &&
-        <p>{error}</p>}
+        <p id='search-error-message'>{error}</p>}
     </form>
   )
 }
