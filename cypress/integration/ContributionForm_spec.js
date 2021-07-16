@@ -97,7 +97,6 @@ describe('ContributionForm View', () => {
       .get('form input[name="lastName"]').type('White')
       .get('form input[name="specialty"]').type('trans health')
       .get('form input[name="insurance"]').type('sliding scale')
-      .get('form input[name="address"]').type('123 Main St')
     })
 
   });
