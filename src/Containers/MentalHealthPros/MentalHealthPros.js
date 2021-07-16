@@ -3,7 +3,7 @@ import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext'
-import SearchBar from '../../Components/SearchBar/SearchBar'
+import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
@@ -48,7 +48,7 @@ const MentalHealthPros = () => {
 
   return(
     <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
-      <SearchBar providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
+      <SearchByInsurance providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
       <h2 className='mhp-sub-title'>Mental health professionals here</h2>
       <section>{allMentalHealthPros}
         <Link to='/'>

@@ -3,7 +3,7 @@ import Card from '../../Components/Card/Card';
 import { retrievePageData } from '../../utils/apiCalls';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import SearchBar from '../../Components/SearchBar/SearchBar'
+import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -47,7 +47,7 @@ const Doctors = () => {
 
   return(
     <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
-      <SearchBar providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
+      <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
       <h2 className='dr-sub-title'>Doctors here</h2>
       <section>{allDoctors}
       <Link to='/'>
