@@ -3,9 +3,8 @@ describe('Doctors Display', () => {
   beforeEach(() => {
     cy.fixture('mockDr.json')
       .then(mockData => {
-        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctors&state=South%Dakota', {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
           statusCode: 201,
-          delay: 100,
           body: mockData
         })
       })
@@ -14,7 +13,7 @@ describe('Doctors Display', () => {
 
 
   it('Should be able to open to the main page', () => {
-  cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/')
   });
 
   it('Should acknowledge the presence of list of of doctors with a sub title', () => {
