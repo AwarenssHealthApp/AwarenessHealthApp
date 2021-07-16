@@ -5,7 +5,7 @@ function DarkModeSwitch() {
   const { toggleDarkMode } = useContext(ThemeContext)
   return (
     <>
-      <button onClick={() => toggleDarkMode()}>Dark Mode</button>
+      <button className='dark-mode-button' onClick={() => toggleDarkMode()}>Dark Mode</button>
     </>
   )
 }

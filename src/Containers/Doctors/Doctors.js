@@ -43,7 +43,7 @@ const Doctors = () => {
   return(
     <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
       <h2 className='dr-sub-title'>Doctors here</h2>
-      <section>{allDoctors}
+      <section className='all-drs'>{allDoctors}
       <Link to='/'>
       <button className='home-button'>Home</button>
       </Link>
