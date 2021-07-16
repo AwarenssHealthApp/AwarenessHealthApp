@@ -46,8 +46,20 @@ describe('Doctors Display', () => {
       .get('.first-name').should('contain', 'sea lion')
       .get('.last-name').should('contain', 'Drowzee')
       .get('.address').should('contain', 'Raymon')
-  
+      .get('.all-drs').should('have.length', 1)
     });
+
+  it('Should toggle between light and dark mode on click of dark mode button', () => {
+    cy.get('#doctors-button').click()
+      .location('pathname').should('eq', '/doctors')
+
+    c.get('.dark-mode-button').should('be.visible')
+      .get('.dark-mode-button').should('contain', 'Dark')
+      .get('.dark-mode-button').click()
+
+      .get('.dark-mode-button').invoke('val', 25).trigger('change')
+
+  });
 
 
   it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
@@ -59,7 +71,7 @@ describe('Doctors Display', () => {
       .get('.accept-button').should('contain', 'Love')
 
       .get('.deny-button').should('be.visible')
-      .get('.deny-button').should('contain', 'D')
+      .get('.deny-button').should('contain', 'Love')
       });
 
   it('Should return to the main page when the home button is clicked', () => {

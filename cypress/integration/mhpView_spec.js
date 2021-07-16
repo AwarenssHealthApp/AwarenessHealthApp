@@ -35,9 +35,14 @@ describe('Mental Health Professionals Display', () => {
   });
 
   it('Should toggle between light and dark mode on click of dark mode button', () => {
-    cy.get('.dark-mode-button').should('be.visible')
+    cy.get('#mental-health-pros-button').click()
+      .location('pathname').should('eq', '/mental_health_professionals')
+
+      .get('.dark-mode-button').should('be.visible')
       .get('.dark-mode-button').should('contain', 'Dark')
       .get('.dark-mode-button').click()
+
+      .get('.dark-mode-button').invoke('val', 25).trigger('change')
 
   });
 
@@ -51,7 +56,7 @@ describe('Mental Health Professionals Display', () => {
       .get('.first-name').should('contain', 'beetle')
       .get('.last-name').should('contain', 'Machoke')
       .get('.address').should('contain', 'Schamberger')
-
+      .get('.all-mhp').should('have.length', 1)
     });
 
   it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
@@ -69,7 +74,7 @@ describe('Mental Health Professionals Display', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
 
-    cy.get('.home-button').should('be.visible')
+      .get('.home-button').should('be.visible')
       .get('.home-button').should('contain', 'Home')
       .get('.home-button').click()
       .location('pathname').should('eq', '/')
