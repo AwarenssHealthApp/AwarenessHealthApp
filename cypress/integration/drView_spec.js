@@ -2,15 +2,16 @@ describe('Doctors Display', () => {
 
   beforeEach(() => {
     cy.fixture('mockDr.json')
-      .then(mockDr => {
-        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=South Dakota', {
+      .then(mockData => {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=South+Dakota', {
           statusCode: 201,
           delay: 100,
-          body: mockDr
+          body: mockData
         })
       })
     cy.visit('http://localhost:3000/')
   });
+
 
   it('Should be able to open to the main page', () => {
   cy.url().should('eq', 'http://localhost:3000/')
@@ -29,6 +30,7 @@ describe('Doctors Display', () => {
   it('Should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').should('contain', 'Doctors')
       .get('#doctors-button').click()
+      
 
       .location('pathname').should('eq', '/doctors')
       .get('h2').last().should('contain', 'Doctors here')
@@ -41,9 +43,9 @@ describe('Doctors Display', () => {
 
       .get('.provider-card').should('be.visible')
       .get('.first-name').should('be.visible')
-      .get('.first-name').should('contain', 'sea lion')
-      .get('.last-name').should('contain', 'Drowzee')
-      .get('.address').should('contain', 'Raymon')
+      .get('.first-name').should('contain', 'gnat')
+      .get('.last-name').should('contain', 'Slowpoke')
+      .get('.address').should('contain', 'Daphnechester')
     });
 
 
