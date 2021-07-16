@@ -31,7 +31,6 @@ describe('Doctors Display', () => {
     cy.get('#doctors-button').should('contain', 'Doctors')
       .get('#doctors-button').click()
 
-
       .location('pathname').should('eq', '/doctors')
       .get('h2').last().should('contain', 'Doctors here')
   });
@@ -53,7 +52,7 @@ describe('Doctors Display', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
 
-    c.get('.dark-mode-button').should('be.visible')
+    cy.get('.dark-mode-button').should('be.visible')
       .get('.dark-mode-button').should('contain', 'Dark')
       .get('.dark-mode-button').click()
 

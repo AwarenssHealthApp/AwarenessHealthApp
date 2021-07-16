@@ -52,12 +52,12 @@ describe('Show landing page of Head To Toe', () => {
       .location('pathname').should('eq', '/mental_health_professionals')
 
       .get('#submit-button').click()
-      .location('pathname').should('eq', '/submit')  
+      .location('pathname').should('eq', '/submit')
   });
 
   it('Should display the mission statement of our project', () => {
     cy.get('.mission').should('be.visible')
-      .get('.mission').should('contain', 'A')
+      .get('.mission').should('contain', 'A place')
   });
 
 });
