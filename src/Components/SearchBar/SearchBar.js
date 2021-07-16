@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 
-const SearchBar = ({ doctorList, setFilteredDoctorList }) => {
+const SearchBar = ({ doctorList, setFilteredDoctorList, mentalHealthProsList, setFilteredMentalHealthProsList }) => {
   const [searchInput, setSearchInput] = useState('')
+  const providerType = doctorList ? doctorList : mentalHealthProsList
+  const setFilteredList = setFilteredDoctorList ? setFilteredDoctorList : setMentalHealthProsList
 
   const handleSearch = (event) => {
     event.preventDefault()
-    const searchResults = filterDoctors()
-    setFilteredDoctorList(searchResults)
+    const searchResults = filterProvider()
+    setFilteredList(searchResults)
     setSearchInput('')
   }
 
-  const filterDoctors = () => {
-    const filteredDoctors = doctorList.filter(doctor => {
+  const filterProvider = () => {
+    const filteredProviders = providerType.filter(doctor => {
       return doctor.insurances.find(insurance => {
         return insurance.company.toUpperCase().includes(searchInput.toUpperCase())
       })
     })
-    return filteredDoctors
+    return filteredProviders
   }
 
   return(
