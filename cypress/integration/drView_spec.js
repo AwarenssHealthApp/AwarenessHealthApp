@@ -84,7 +84,7 @@ describe('Doctors Display', () => {
       .get('form input[name="search"]').should('have.value', '')
   })
 
-  it.only('Should be able to filter the cards based on the search parameter', () => {
+  it('Should be able to filter the cards based on the search parameter', () => {
     cy.get('#doctors-button').click()
       .get('form input[name="search"]').type('S')
       .get('#search-button').click()
