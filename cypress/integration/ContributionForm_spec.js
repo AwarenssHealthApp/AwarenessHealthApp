@@ -63,24 +63,34 @@ describe('ContributionForm View', () => {
       .get('form input[name="firstName"]')
   });
 
-  // describe('ContributionForm Error Handling', () => {
-  //   beforeEach(() => {
-  //     cy.get('form input[name="firstName"]').type('Betty')
-  //       .get('form input[name="lastName"]').type('White')
-  //       .get('form input[name="specialty"]').type('trans health')
-  //       .get('form input[name="insurance"]').type('sliding scale')
-  //       .get('form input[name="address"]').type('123 Main St')
-  //   })
-  //   it('Should return an error message if the user does not fill out all input fields',() => {
-  //     cy.get('form > button').click()
-  //       .get('.error-msg').should('have.text', 'Error: Please fill out all input fields')
-  //   })
-  //   it('Should display a message stating that the suggestion was successfully receieved', () => {
-  //     .intercept('POST', 'backendAPI', {
-  //       statusCode: 200
-  //     })
-  //     .get('form > button').click()
-  //     .get('.confirm-msg').should('have.text', 'Thank you for your suggestion! We will review your submission for approval.')
-  //   })
-  // })
+  describe('ContributionForm Error Handling', () => {
+    beforeEach(() => {
+
+      cy.fixture('mockPost.json')
+        .then(mockPost => {
+          cy.intercept('POST', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals', {
+            statusCode: 200,
+            delay: 100,
+            body: mockPost
+          })
+        })
+      cy.visit('http://localhost:3000')
+
+      .get('form input[name="firstName"]').type('Betty')
+      .get('form input[name="lastName"]').type('White')
+      .get('form input[name="specialty"]').type('trans health')
+      .get('form input[name="insurance"]').type('sliding scale')
+      .get('form input[name="address"]').type('123 Main St')
+    })
+
+  });
+
+    it('Should sadly return an error message if the user does not fill out all input fields',() => {
+      cy.get('.contribution-button').should('be.visible')
+        .get('.contribution-button').should('contain', 'Submit')
+        .get('.contribution-button').click()
+
+        .get('.error-msg').should('have.text', 'Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
+    });
+
 });
