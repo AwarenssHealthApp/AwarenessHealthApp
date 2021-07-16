@@ -47,7 +47,7 @@ const Doctors = () => {
 
   return(
     <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
-      <SearchBar doctorList={doctorList} setFilteredDoctorList={setFilteredDoctorList}/>
+      <SearchBar providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
       <h2 className='dr-sub-title'>Doctors here</h2>
       <section className='all-drs'>{allDoctors}
       <Link to='/'>
