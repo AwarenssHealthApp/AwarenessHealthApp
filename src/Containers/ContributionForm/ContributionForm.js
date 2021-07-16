@@ -43,7 +43,7 @@ function ContributionForm(props) {
         setError(null)
         sendRequest(data)
       } else {
-        setError('At a minimum, please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider.')
+        setError('Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
       }
   }
 
@@ -153,9 +153,9 @@ function ContributionForm(props) {
           value={phone}
           onChange={event => setPhone(event.target.value)}
         />
-        <button onClick={(event) => handleClick(event)}>Submit</button>
+        <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit</button>
         {error &&
-          <p>{error}</p>
+          <p className='error-msg'>{error}</p>
         }
       </form>
     </>
