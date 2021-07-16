@@ -50,7 +50,7 @@ const MentalHealthPros = () => {
     <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
       <SearchByInsurance providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
       <h2 className='mhp-sub-title'>Mental health professionals here</h2>
-      <section>{allMentalHealthPros}
+      <section className='all-mhp'>{allMentalHealthPros}
         <Link to='/'>
         <button className='home-button'>Home</button>
         </Link>
