@@ -3,7 +3,7 @@ describe('Router Flow', () => {
     beforeEach(() => {
       cy.fixture('mockDr.json')
         .then(mockData => {
-          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
+          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctors&state=Colorado', {
             statusCode: 201,
             delay: 100,
             body: mockData
@@ -32,27 +32,41 @@ describe('Router Flow', () => {
       .get('h2').last().should('contain', 'Doctors here')
   });
 
-  it('should return to the main page when the back button is clicked', () => {
+  it('Should return from the doctors list page to the main page when the back button is clicked', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
+
       .go('back')
       .location('pathname').should('eq', '/')
   });
 
-  it('should navigate to the mental health pro page when the mental health pro button is pressed', () => {
+  it('Should navigate to the mental health pro page when the mental health pro button is pressed', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
   });
 
-  it('should return to the main page when the back button is clicked', () => {
+  it('Should return from the MHP page to the main page when the back button is clicked', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
+
       .go('back')
       .location('pathname').should('eq', '/')
   });
 
   it('should display the sumbit page when the sumbit button is pressed', () => {
-    cy.get('#submit-button').click()
+    cy.get('#submit-button').should('be.visible')
+      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').click()
       .location('pathname').should('eq', '/submit')
   });
+
+  it('Should return to the main page from submit page when the back button is clicked', () => {
+    cy.get('#submit-button').should('be.visible')
+      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').click()
+      .location('pathname').should('eq', '/submit')
+
+      .go('back')
+      .location('pathname').should('eq', '/')
+  })
 });
