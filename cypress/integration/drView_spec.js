@@ -31,7 +31,7 @@ describe('Doctors Display', () => {
       .get('#doctors-button').click()
 
       .location('pathname').should('eq', '/doctors')
-      .get('h2').last().should('contain', 'Doctors here')
+      .get('.dr-sub-title').should('contain', 'Doctors here')
   });
 
   it('Should display the list of doctors for our users to see', () => {
@@ -41,9 +41,9 @@ describe('Doctors Display', () => {
 
       .get('.provider-card').should('be.visible')
       .get('.first-name').should('be.visible')
-      .get('.first-name').should('contain', 'sea lion')
-      .get('.last-name').should('contain', 'Drowzee')
-      .get('.address').should('contain', 'Raymon')
+      .get('.first-name').should('contain', 'gnat')
+      .get('.last-name').should('contain', 'Slowpoke')
+      .get('.address').should('contain', 'Daphnechester')
       .get('.all-drs').should('have.length', 1)
     });
 
@@ -101,9 +101,9 @@ describe('Doctors Display', () => {
     cy.get('#doctors-button').click()
       .get('form input[name="search"]').type('S')
       .get('#search-button').click()
-      .get('section').children('.provider-card-wrapper').should('have.length', 8)
+      .get('section').children('.provider-card-wrapper').should('have.length', 2)
 
-      .get('form input[name="search"]').type('nobis')
+      .get('form input[name="search"]').type('Reichel')
       .get('#search-button').click()
       .get('section').children('.provider-card-wrapper').should('have.length', 1)
   })
