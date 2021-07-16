@@ -27,9 +27,21 @@ describe('Show landing page of Head To Toe', () => {
   });
 
   it('Should display the form, dr and mhp buttons for user', () => {
-    cy.get('.App-buttons').should('be.visible')
-      .get('.App-buttons').should('contain', 't')
-      .get('.App-buttons').should('have.css', 'font-family', 'opendyslexic')
+    cy.get('#doctors-button').should('be.visible')
+      .get('#doctors-button').should('contain', 'Doctors')
+
+      .get('#mental-health-pros-button').should('be.visible')
+      .get('#mental-health-pros-button').should('contain', 'Mental')
+
+      .get('#submit-button').should('be.visible')
+      .get('#submit-button').should('contain', 'Submit')
+
+      .get('.dark-mode-button').should('be.visible')
+      .get('.dark-mode-button').should('contain', 'Dark')
+  });
+
+  it('Should have buttons with accessability friendly font', () => {
+    cy.get('.App-buttons').should('have.css', 'font-family', 'opendyslexic')
   });
 
   it('Should allow the user to navigate away to their chosen page upon click', () => {
@@ -37,10 +49,10 @@ describe('Show landing page of Head To Toe', () => {
       .location('pathname').should('eq', '/doctors')
 
       .get('#mental-health-pros-button').click()
-        .location('pathname').should('eq', '/mental_health_professionals')
+      .location('pathname').should('eq', '/mental_health_professionals')
 
       .get('#submit-button').click()
-      .location('pathname').should('eq', '/submit')
+      .location('pathname').should('eq', '/submit')  
   });
 
   it('Should display the mission statement of our project', () => {
