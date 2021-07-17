@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 * {
   box-sizing: border-box;
   font-family: 'opendyslexic';
@@ -6,12 +8,14 @@
 }
 
 html, body {
-  background: url('../../assets/images/peacefulOceanImage.png');
   background-repeat: no-repeat;
-  background-size: cover;
+
   height: 100%;
   overflow: scroll;
   width: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
