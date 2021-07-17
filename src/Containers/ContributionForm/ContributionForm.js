@@ -105,7 +105,7 @@ function ContributionForm(props) {
         />
         <input
           type='text'
-          placeholder='Specialty'
+          placeholder='Specialties (e.g. Transgender, Trauma and PTSD, ADHD)'
           name='specialties'
           value={specialties}
           onChange={event => handleChange(setSpecialties, event)}
