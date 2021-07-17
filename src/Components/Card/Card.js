@@ -1,7 +1,7 @@
 import React from 'react';
 import './_card.scss';
 
-const Card = ({ firstName, lastName, street, unit, city, state, zip, speciality, phoneNum, key, vetted }) => {
+const Card = ({ firstName, lastName, street, unit, city, state, zip, speciality, phoneNum, vetted }) => {
   return (
     <section className='provider-card-wrapper'>
       <article className='provider-card'>

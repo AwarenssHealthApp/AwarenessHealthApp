@@ -8,6 +8,7 @@ import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsura
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
   const [filteredMentalHealthProsList, setFilteredMentalHealthProsList] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     let mounted = true;
@@ -17,6 +18,7 @@ const MentalHealthPros = () => {
           setMentalHealthProsList(mhps.data.attributes.list)
         }
       })
+      .catch(error => setError(error.message))
     return () => mounted = false;
   }, [])
 
@@ -50,6 +52,9 @@ const MentalHealthPros = () => {
     <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
       <SearchByInsurance providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
       <h2 className='mhp-sub-title'>Mental health professionals here</h2>
+      {error &&
+        <h2>{error}</h2>
+      }
       <section className='all-mhp'>{allMentalHealthPros}
         <Link to='/'>
         <button className='home-button'>Home</button>
