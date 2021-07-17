@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export const DropDown = (props) => {
   const {
     options,
@@ -26,4 +28,10 @@ export const DropDown = (props) => {
       </select>
     </>
   )
+}
+
+DropDown.propTypes = {
+  options: PropTypes.array,
+  label: PropTypes.string,
+  handleChange: PropTypes.func
 }
