@@ -1,8 +1,8 @@
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
+import Header from '../Header/Header';
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
-import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
 import './_app.scss';
 import background from '../../assets/images/peacefulOceanImage.png';
@@ -13,21 +13,7 @@ function App() {
     <div className='App' style={{
             backgroundImage: `url(${background})`}}>
       <ThemeContextProvider>
-        <header>
-          <h1 className='App-title'>Head To Toe</h1>
-          <nav className='nav-bar'>
-            <Link to='/doctors'>
-              <button className='App-buttons' id='doctors-button'>Doctors</button>
-            </Link>
-            <Link to='/mental_health_professionals'>
-              <button className='App-buttons' id='mental-health-pros-button'>Mental Health Professionals</button>
-            </Link>
-            <Link to='/submit'>
-              <button className='App-buttons' id='submit-button'>Submit</button>
-            </Link>
-            <DarkModeSwitch />
-          </nav>
-        </header>
+        <Header />
         <Switch>
           <Route path='/submit' render={() => {
             return(
