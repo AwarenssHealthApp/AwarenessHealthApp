@@ -19,47 +19,30 @@ function ContributionForm(props) {
 
   const handleClick = (event) => {
     event.preventDefault()
+    let data = {
+      first_name: firstName,
+      last_name: lastName,
+      profession: profession,
+      specialties: specialties || null,
+      insurance: insurances,
+      street: street || null,
+      unit: unit || null,
+      city: city || null,
+      state: state,
+      zip: zip || null,
+      phone: phone || null
+    }
     if(firstName &&
       lastName &&
       insurances &&
       state &&
-      profession === 'mhp') {
-        const data = {
-          first_name: firstName,
-          last_name: lastName,
-          profession: profession,
-          specialties: specialties || null,
-          insurance: insurances,
-          cost: cost || null,
-          street: street || null,
-          unit: unit || null,
-          city: city || null,
-          state: state,
-          zip: zip || null,
-          phone: phone || null
-        }
+      profession === 'doctor') {
         setError(null)
         sendRequest(data)
-      } else if(firstName &&
-          lastName &&
-          insurances &&
-          state &&
-          profession) {
-            const data = {
-              first_name: firstName,
-              last_name: lastName,
-              profession: profession,
-              specialties: specialties || null,
-              insurance: insurances,
-              street: street || null,
-              unit: unit || null,
-              city: city || null,
-              state: state,
-              zip: zip || null,
-              phone: phone || null
-            }
-            setError(null)
-            sendRequest(data)
+      } else if(profession === 'mhp') {
+          data = {...data, cost}
+          setError(null)
+          sendRequest(data)
       } else {
         setError('Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
       }
