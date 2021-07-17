@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { DropDown } from '../../Components/DropDown/DropDown'
-import { addContribution } from '../../utils/apiCalls'
-import Error from '../../Components/Error/Error'
+import { DropDown } from '../../Components/DropDown/DropDown';
+import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
+import { addContribution } from '../../utils/apiCalls';
+import Error from '../../Components/Error/Error';
 
 function ContributionForm(props) {
   const [state, setState] = useState('')
@@ -109,6 +110,15 @@ function ContributionForm(props) {
           name='specialties'
           value={specialties}
           onChange={event => handleChange(setSpecialties, event)}
+        />
+        <Checkboxes
+          options={[
+            'Aetna', 'Anthem', 'Blue Cross BlueShield National', 'Blue Cross and Blue Shield of Nebraska', 'Bright Health', 'Cigna', 'Cigna HealthSpring', 'Colorado Access', 'Coventry', 'Denver Health',
+            'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
+            'Out of Network'
+          ]}
+          label={insurances}
+          handleChange={event => handleChange(setInsurances, event)}
         />
         <input
           type='text'
