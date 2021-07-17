@@ -5,13 +5,10 @@ import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
 import { Route, Switch } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
 import './_app.scss';
-import background from '../../assets/images/peacefulOceanImage.png';
-
 
 function App() {
   return (
-    <div className='App' style={{
-            backgroundImage: `url(${background})`}}>
+    <div className='App' >
       <ThemeContextProvider>
         <Header />
         <Switch>
