@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
 
-function ContributionForm(props) {
+function ContributionForm() {
   const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
