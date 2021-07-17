@@ -38,7 +38,6 @@ const Doctors = () => {
       state={doctor.state}
       zip={doctor.zip}
       phone={doctor.phone}
-      vetted={doctor.vetted}
       specialties={doctor.specialties}
       insurances={doctor.insurances}
       />
