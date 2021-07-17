@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
+import Error from '../../Components/Error/Error'
 
 function ContributionForm(props) {
   const [state, setState] = useState('')
@@ -173,7 +174,7 @@ function ContributionForm(props) {
         />
         <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit</button>
         {error &&
-          <p className='error-msg'>{error}</p>
+          <Error error={error} />
         }
       </form>
     </>
