@@ -132,13 +132,6 @@ function ContributionForm(props) {
           label={insurances}
           handleChange={event => handleChangeCheckbox(setInsurances, event)}
         />
-        <input
-          type='text'
-          placeholder='Insurance'
-          name='insurances'
-          value={insurances}
-          onChange={event => handleChange(setInsurances, event)}
-        />
         {profession === 'mhp' &&
           <input
           type='text'
