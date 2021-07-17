@@ -80,7 +80,9 @@ function ContributionForm(props) {
 
   const handleChangeCheckbox = (setFunction, event) => {
     if(insurances.includes(event.target.value)) {
-      console.log('caught it')
+      setFunction(
+        insurances.filter(item => item !== event.target.value)
+      )
     } else {
       setFunction(
         [...insurances, event.target.value]
