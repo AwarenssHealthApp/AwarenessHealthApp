@@ -15,7 +15,6 @@ const Doctors = () => {
       .then(doctors => {
         if(mounted) {
           setDoctorList(doctors.data.attributes.list)
-          console.log(doctors)
         }
       })
     return () => mounted = false;
