@@ -24,14 +24,13 @@ function ContributionForm(props) {
       lastName &&
       insurances &&
       state &&
-      profession) {
+      profession === 'doctor') {
         const data = {
           first_name: firstName,
           last_name: lastName,
           profession: profession,
           specialties: specialties || null,
           insurance: insurances,
-          cost: cost || null,
           street: street || null,
           unit: unit || null,
           city: city || null,
@@ -39,9 +38,29 @@ function ContributionForm(props) {
           zip: zip || null,
           phone: phone || null
         }
-        console.log(data)
         setError(null)
         sendRequest(data)
+      } else if(firstName &&
+          lastName &&
+          insurances &&
+          state &&
+          profession) {
+            const data = {
+              first_name: firstName,
+              last_name: lastName,
+              profession: profession,
+              specialties: specialties || null,
+              insurance: insurances,
+              cost: cost || null,
+              street: street || null,
+              unit: unit || null,
+              city: city || null,
+              state: state,
+              zip: zip || null,
+              phone: phone || null
+            }
+            setError(null)
+            sendRequest(data)
       } else {
         setError('Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
       }
@@ -109,13 +128,6 @@ function ContributionForm(props) {
           name='insurances'
           value={insurances}
           onChange={event => setInsurances([event.target.value])}
-        />
-        <input
-          type='text'
-          placeholder='Cost'
-          name='cost'
-          value={cost}
-          onChange={event => setCost(event.target.value)}
         />
         <input
           type='text'
