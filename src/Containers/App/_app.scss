@@ -9,7 +9,9 @@
 
 html, body {
   background-repeat: no-repeat;
-
+  background-color: $Teal;
+  background-image: linear-gradient($SkyBlue, $Teal, $ForestGreen);
+  background-size: cover;
   height: 100%;
   overflow: scroll;
   width: 100%;
