@@ -78,6 +78,16 @@ function ContributionForm(props) {
     setFunction(value)
   }
 
+  const handleChangeCheckbox = (setFunction, event) => {
+    if(insurances.includes(event.target.value)) {
+      console.log('caught it')
+    } else {
+      setFunction(
+        [...insurances, event.target.value]
+      )
+    }
+  }
+
   return (
     <>
       <form>
@@ -118,7 +128,7 @@ function ContributionForm(props) {
             'Out of Network'
           ]}
           label={insurances}
-          handleChange={event => handleChange(setInsurances, event)}
+          handleChange={event => handleChangeCheckbox(setInsurances, event)}
         />
         <input
           type='text'
