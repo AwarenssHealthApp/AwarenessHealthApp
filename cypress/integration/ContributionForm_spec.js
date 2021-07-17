@@ -106,7 +106,7 @@ describe('ContributionForm View', () => {
         .get('.contribution-button').should('contain', 'Submit')
         .get('.contribution-button').click()
 
-        .get('.error-msg').should('have.text', 'Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
+        .get('.error-msg').should('have.text', 'Error: Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
     });
 
 });
