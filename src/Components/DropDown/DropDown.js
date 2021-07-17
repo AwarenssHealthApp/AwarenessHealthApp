@@ -14,10 +14,10 @@ export const DropDown = (props) => {
         id={label}
         onChange={handleChange}
       >
-          <option value=''>--Please choose an option--</option>
+          <option key='choose-option' value=''>--Please choose an option--</option>
           {options.map(item => (
             <option
-              key={'option' + item.endpoint || 'option' + item}
+              key={item.endpoint || item}
               value={item.endpoint || item}
             >
               {item.text || item}
