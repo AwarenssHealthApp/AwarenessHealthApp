@@ -21,8 +21,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
         <h2 className='first-name'>{firstName}</h2>
         <h2 className='last-name'>{lastName}</h2>
         <h3 className='specialties'>Specializes in {allListItems(specialties)}</h3>
+        <h3 className='insurances'>Accepts: {allListItems(insurances)}</h3>
         <p className='address'>{street} {unit} {city}, {state} {zip} {phone}</p>
-        <p className='insurances'>Accepts {allListItems(insurances)}</p>
         <button className='accept-button'>Love</button>
         <button className='deny-button'>Don't Love</button>
       </article>
