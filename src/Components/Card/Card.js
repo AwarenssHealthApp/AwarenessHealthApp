@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './_card.scss';
 
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances }) => {
   const allSpecialties = specialties.map(specialty => {
-    return specialty.name + ', '
+    return specialty.name
   })
   const allInsurances = insurances.map(insurance => {
-    return insurance.company + ', '
+    return insurance.company
   })
   return (
     <section className='provider-card-wrapper'>
@@ -22,6 +23,23 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
     </section>
   )
 
+}
+
+Card.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  street: PropTypes.string,
+  unit: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  zip: PropTypes.string,
+  specialties: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
+  })),
+  phone: PropTypes.string,
+  insurances: PropTypes.arrayOf(PropTypes.shape({
+    company: PropTypes.string
+  }))
 }
 
 export default Card;
