@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { StateSelectContext } from '../../contexts/StateSelectContext';
 
-export const DropDown = () => {
+export const DropDown = (props) => {
   const { setState } = useContext(StateSelectContext)
+
 
   return (
     <>

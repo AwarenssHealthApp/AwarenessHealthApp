@@ -89,6 +89,11 @@ function ContributionForm(props) {
     setPhone('')
   }
 
+  const handleChange = (setFunction, event) => {
+    const value = event.target.value;
+    setFunction(value)
+  }
+
   return (
     <>
       <form>
@@ -98,14 +103,14 @@ function ContributionForm(props) {
           placeholder='First Name'
           name='firstName'
           value={firstName}
-          onChange={event => setFirstName(event.target.value)}
+          onChange={event => handleChange(setFirstName, event)}
         />
         <input
           type='text'
           placeholder='Last Name'
           name='lastName'
           value={lastName}
-          onChange={event => setLastName(event.target.value)}
+          onChange={event => handleChange(setLastName, event)}
         />
         <div>
           <label htmlFor='profession-select'>Select their profession:</label>
@@ -120,14 +125,14 @@ function ContributionForm(props) {
           placeholder='Specialty'
           name='specialties'
           value={specialties}
-          onChange={event => setSpecialties([event.target.value])}
+          onChange={event => handleChange(setSpecialties, event)}
         />
         <input
           type='text'
           placeholder='Insurance'
           name='insurances'
           value={insurances}
-          onChange={event => setInsurances([event.target.value])}
+          onChange={event => handleChange(setInsurances, event)}
         />
         {profession === 'mhp' &&
           <input
@@ -135,7 +140,7 @@ function ContributionForm(props) {
           placeholder='Cost'
           name='cost'
           value={cost}
-          onChange={event => setCost(event.target.value)}
+          onChange={event => handleChange(setCost, event)}
           />
         }
         <input
@@ -143,36 +148,37 @@ function ContributionForm(props) {
           placeholder='Street'
           name='street'
           value={street}
-          onChange={event => setStreet(event.target.value)}
+          onChange={event => handleChange(setStreet, event)}
         />
         <input
           type='text'
           placeholder='Unit'
           name='unit'
           value={unit}
-          onChange={event => setUnit(event.target.value)}
+          onChange={event => handleChange(setUnit, event)}
         />
         <input
           type='text'
           placeholder='City'
           name='city'
           value={city}
-          onChange={event => setCity(event.target.value)}
+          onChange={event => handleChange(setCity, event)}
         />
-        <DropDown />
+        <DropDown
+        />
         <input
           type='text'
           placeholder='Zip Code'
           name='zip'
           value={zip}
-          onChange={event => setZip(event.target.value)}
+          onChange={event => handleChange(setZip, event)}
         />
         <input
           type='text'
           placeholder='Phone Number'
           name='phone'
           value={phone}
-          onChange={event => setPhone(event.target.value)}
+          onChange={event => handleChange(setPhone, event)}
         />
         <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit</button>
         {error &&
