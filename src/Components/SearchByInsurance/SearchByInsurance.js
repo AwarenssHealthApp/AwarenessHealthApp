@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   const [searchInput, setSearchInput] = useState('')
@@ -38,6 +39,11 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
         <p id='search-error-message'>{error}</p>}
     </form>
   )
+}
+
+SearchByInsurance.propTypes = {
+  providerList: PropTypes.array,
+  setFilteredProviderList: PropTypes.func
 }
 
 export default SearchByInsurance
