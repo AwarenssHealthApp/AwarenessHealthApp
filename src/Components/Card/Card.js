@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import './_card.scss';
 
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances }) => {
-  const allSpecialties = specialties.map(specialty => {
-    return specialty.name
-  })
+  const allSpecialties = () => {
+    let tempSpecialties = []
+    specialties.forEach(specialty => {
+      tempSpecialties.push(specialty.name)
+    })
+    return tempSpecialties.join(', ')
+  }
   const allInsurances = insurances.map(insurance => {
     return insurance.company
   })
@@ -14,7 +18,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
       <article className='provider-card'>
         <h2 className='first-name'>{firstName}</h2>
         <h2 className='last-name'>{lastName}</h2>
-        <h3 className='specialties'>Specializes in {allSpecialties}</h3>
+        <h3 className='specialties'>Specializes in {allSpecialties()}</h3>
         <p className='address'>{street} {unit} {city}, {state} {zip} {phone}</p>
         <p className='insurances'>Accepts {allInsurances}</p>
         <button className='accept-button'>Love</button>
