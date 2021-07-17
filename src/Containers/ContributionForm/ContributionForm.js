@@ -165,6 +165,9 @@ function ContributionForm(props) {
           onChange={event => handleChange(setCity, event)}
         />
         <DropDown
+          options={[]}
+          label='state'
+          handleChange={event => handleChange(setState, event)}
         />
         <input
           type='text'
