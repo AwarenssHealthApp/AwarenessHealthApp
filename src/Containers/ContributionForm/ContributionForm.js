@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { StateSelectContext } from '../../contexts/StateSelectContext';
 import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
 
 function ContributionForm(props) {
-  const { state, setState } = useContext(StateSelectContext)
+  const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [specialties, setSpecialties] = useState([])
@@ -114,12 +113,12 @@ function ContributionForm(props) {
         />
         <DropDown
           options={[
-              { endpoint:'mhp', text: 'Mental Health Professional' }, { endpoint: 'doctor', text: 'Doctor'}
+              { endpoint:'mhp', text: 'Mental Health Professional' },
+              { endpoint: 'doctor', text: 'Doctor'}
             ]}
           label='profession'
           handleChange={event => handleChange(setProfession, event)}
         />
-
         <input
           type='text'
           placeholder='Specialty'
