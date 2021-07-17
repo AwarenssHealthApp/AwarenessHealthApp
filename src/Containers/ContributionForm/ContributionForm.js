@@ -24,13 +24,14 @@ function ContributionForm(props) {
       lastName &&
       insurances &&
       state &&
-      profession === 'doctor') {
+      profession === 'mhp') {
         const data = {
           first_name: firstName,
           last_name: lastName,
           profession: profession,
           specialties: specialties || null,
           insurance: insurances,
+          cost: cost || null,
           street: street || null,
           unit: unit || null,
           city: city || null,
@@ -51,7 +52,6 @@ function ContributionForm(props) {
               profession: profession,
               specialties: specialties || null,
               insurance: insurances,
-              cost: cost || null,
               street: street || null,
               unit: unit || null,
               city: city || null,
@@ -129,6 +129,15 @@ function ContributionForm(props) {
           value={insurances}
           onChange={event => setInsurances([event.target.value])}
         />
+        {profession === 'mhp' &&
+          <input
+          type='text'
+          placeholder='Cost'
+          name='cost'
+          value={cost}
+          onChange={event => setCost(event.target.value)}
+          />
+        }
         <input
           type='text'
           placeholder='Street'
