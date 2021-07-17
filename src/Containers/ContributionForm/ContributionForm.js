@@ -4,7 +4,7 @@ import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
 import { addContribution } from '../../utils/apiCalls';
 import Error from '../../Components/Error/Error';
 
-function ContributionForm(props) {
+function ContributionForm() {
   const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
