@@ -8,6 +8,7 @@ import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsura
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
   const [filteredDoctorList, setFilteredDoctorList] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     let mounted = true;
@@ -17,6 +18,7 @@ const Doctors = () => {
           setDoctorList(doctors.data.attributes.list)
         }
       })
+      .catch(error => setError(error.message))
     return () => mounted = false;
   }, [])
 
@@ -49,6 +51,9 @@ const Doctors = () => {
     <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
       <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
       <h2 className='dr-sub-title'>Doctors here</h2>
+      {error &&
+        <h2>{error}</h2>
+      }
       <section className='all-drs'>{allDoctors}
       <Link to='/'>
       <button className='home-button'>Home</button>
