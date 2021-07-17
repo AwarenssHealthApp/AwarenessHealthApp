@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import { StateSelectContext } from '../../contexts/StateSelectContext';
 
 export const DropDown = (props) => {
-  const { setState } = useContext(StateSelectContext)
   const {
     options,
     label,
