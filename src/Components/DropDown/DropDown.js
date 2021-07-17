@@ -8,7 +8,7 @@ export const DropDown = (props) => {
     label,
     handleChange
   } = props
-  console.log(options)
+
   return (
     <>
       <label htmlFor={label}>Choose an option:</label>
@@ -19,13 +19,12 @@ export const DropDown = (props) => {
         onChange={handleChange}
       >
           <option value=''>--Please choose an option--</option>
-          <option value='Alabama'>Alabama</option>
           {options.map(item => (
             <option
-              key={'option' + item}
-              value={item}
+              key={'option' + item.endpoint || 'option' + item}
+              value={item.endpoint || item}
             >
-              {item}
+              {item.text || item}
             </option>
           ))}
       </select>

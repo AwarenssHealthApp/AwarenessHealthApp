@@ -112,14 +112,14 @@ function ContributionForm(props) {
           value={lastName}
           onChange={event => handleChange(setLastName, event)}
         />
-        <div>
-          <label htmlFor='profession-select'>Select their profession:</label>
-          <select name='profession' id='profession-select' onChange={event => setProfession(event.target.value)}>
-              <option value=''>--Please choose an option--</option>
-              <option value='mhp'>Mental Health Professional</option>
-              <option value='doctor'>Doctor</option>
-          </select>
-        </div>
+        <DropDown
+          options={[
+              { endpoint:'mhp', text: 'Mental Health Professional' }, { endpoint: 'doctor', text: 'Doctor'}
+            ]}
+          label='profession'
+          handleChange={event => handleChange(setProfession, event)}
+        />
+
         <input
           type='text'
           placeholder='Specialty'
