@@ -10,7 +10,7 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
     if (searchResults.length) {
       setFilteredProviderList(searchResults)
     } else {
-      setError(`Sorry! We don\'t have any results for ${searchInput}`)
+      setError(`Sorry! We don't have any results for ${searchInput}`)
     }
     setSearchInput('')
   }
