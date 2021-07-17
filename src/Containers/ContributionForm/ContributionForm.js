@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { DropDown } from '../../Components/DropDown/DropDown'
 import { addContribution } from '../../utils/apiCalls'
 
