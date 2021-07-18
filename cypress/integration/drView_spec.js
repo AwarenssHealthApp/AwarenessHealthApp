@@ -44,8 +44,10 @@ describe('Doctors Display', () => {
       .get('.first-name').should('contain', 'gnat')
       .get('.last-name').should('contain', 'Slowpoke')
       .get('.address').should('contain', 'Daphnechester')
+      .get('.specialties').should('contain', 'Orc, Sylvan, Undercommon')
+      .get('.insurances').should('contain', 'Schinner, Kreiger and Stokes, Yundt-Cronin, Herman-Bogan')
       .get('.all-drs').should('have.length', 1)
-    });
+  });
 
   it('Should toggle between light and dark mode on click of dark mode button', () => {
     cy.get('#doctors-button').click()
@@ -70,7 +72,7 @@ describe('Doctors Display', () => {
 
       .get('.deny-button').should('be.visible')
       .get('.deny-button').should('contain', 'Love')
-      });
+  });
 
   it('Should return to the main page when the home button is clicked', () => {
     cy.get('#doctors-button').click()
