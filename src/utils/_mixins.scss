@@ -1,1 +1,12 @@
 /*~~~~~~ MIXINS ~~~~~~ */
+
+@mixin displayFlexColumnCenter( $location: center, $direction: column) {
+  display: flex;
+  align-items: $location;
+  flex-direction: $direction;
+}
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
