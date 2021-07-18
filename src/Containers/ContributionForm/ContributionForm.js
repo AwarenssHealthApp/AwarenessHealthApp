@@ -52,25 +52,12 @@ function ContributionForm(props) {
 
   const sendRequest = (data) => {
     addContribution(data)
-    .then(clearInputs())
-    .catch(error => {
-      setError(error.message)
-    })
-  }
-
-  const clearInputs = () => {
-    setFirstName('')
-    setLastName('')
-    setSpecialties('')
-    setInsurances('')
-    setCost('')
-    setProfession('')
-    setStreet('')
-    setUnit('')
-    setCity('')
-    setState('')
-    setZip('')
-    setPhone('')
+      .then(setTimeout((()=>{
+        window.location.reload()
+        }), 2000))
+      .catch(error => {
+        setError(error.message)
+      })
   }
 
   const handleChange = (setFunction, event) => {
@@ -114,6 +101,7 @@ function ContributionForm(props) {
               { endpoint: 'doctor', text: 'Doctor'}
             ]}
           label='profession'
+          value={profession}
           handleChange={event => handleChange(setProfession, event)}
         />
         <input
@@ -130,6 +118,7 @@ function ContributionForm(props) {
             'Out of Network'
           ]}
           label={insurances}
+          value={insurances}
           handleChange={event => handleChangeCheckbox(setInsurances, event)}
         />
         {profession === 'mhp' &&
@@ -171,6 +160,7 @@ function ContributionForm(props) {
             'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
           ]}
           label='state'
+          value={state}
           handleChange={event => handleChange(setState, event)}
         />
         <input
