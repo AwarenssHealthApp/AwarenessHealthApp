@@ -12,10 +12,11 @@ export const Checkboxes = (props) => {
         {options.map(item => (
           <div key={item}>
             <input
-              type="checkbox"
+              type='checkbox'
               id={item}
               name={item}
               value={item}
+
               onChange={handleChange}
             />
             <label htmlFor={item}>{item}</label>
