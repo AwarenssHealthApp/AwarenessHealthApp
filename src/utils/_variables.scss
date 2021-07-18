@@ -9,9 +9,78 @@ $BabyBlue: #924900;
 $vogueBlue: #29434a;
 $locknessBlue: #101f24;
 
+$silverBlue: #d5dfe0;
 
 $shadowBlue: #071517;
 
 $paleBlue: #d1edf0;
 
 $gunMetalGrey: #86898a;
+
+
+
+//
+// $themes: (
+//         default: (
+//                 bg: white,
+//                 card-bg: white,
+//                 text: navy,
+//                 text-secondary: green,
+//                 link: red,
+//                 hover: purple,
+//                 border: black
+//         ),
+//         dark: (
+//
+//                 bg: linear-gradient(white, grey, yellow),
+//                 card-bg: black,
+//                 text: white,
+//                 text-secondary: pink,
+//                 link: white,
+//                 hover: lavender,
+//                 border: white
+//         ),
+// );
+
+//
+// .doctors-container {
+//   @include themed() {
+//     color: t(#fff);
+//     background: t(#000000);
+//   }
+//
+//   position: fixed;
+//   width: 100%;
+//   overflow-y: auto;
+//   height: 100vh;
+//   padding-bottom: 2px * 2;
+//
+//   @media (max-width: 1650) {
+//     overflow-x: hidden;
+//     padding: 0 2px;
+//   }
+// }
+//
+// .provider-card {
+//   position: absolute;
+//   top: 2%;
+//   left: calc(50% - #{100% / 2});;
+//   height: 100% - 45px;
+//   width: 100%;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: top center;
+//
+// }
+//
+// .badge {
+//   margin-right: 3px;
+//   padding: 4px 10px;
+//
+//   @include themed() {
+//     background: t(#000000);
+//     color: t(#000000);
+//     border: 1px solid t(#000000);
+//   }
+// }
+>>>>>>> f3f4d1a... Fill in mixin and variable files with more working parts and futrure theme use
