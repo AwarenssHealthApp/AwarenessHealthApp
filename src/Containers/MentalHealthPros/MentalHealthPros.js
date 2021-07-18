@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../contexts/ThemeContext'
-import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
+import { ThemeContext } from '../../contexts/ThemeContext';
+import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
+import Error from '../../Components/Error/Error';
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
@@ -53,7 +54,7 @@ const MentalHealthPros = () => {
       <SearchByInsurance providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
       <h2 className='mhp-sub-title'>Mental health professionals here</h2>
       {error &&
-        <h2>{error}</h2>
+        <Error error={error} />
       }
       <section className='all-mhp'>{allMentalHealthPros}
         <Link to='/'>

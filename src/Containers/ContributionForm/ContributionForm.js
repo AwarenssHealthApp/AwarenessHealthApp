@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { DropDown } from '../../Components/DropDown/DropDown'
-import { addContribution } from '../../utils/apiCalls'
+import { DropDown } from '../../Components/DropDown/DropDown';
+import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
+import { addContribution } from '../../utils/apiCalls';
+import Error from '../../Components/Error/Error';
 
 function ContributionForm() {
   const [state, setState] = useState('')
@@ -50,30 +52,29 @@ function ContributionForm() {
 
   const sendRequest = (data) => {
     addContribution(data)
-    .then(clearInputs())
-    .catch(error => {
-      setError(error.message)
-    })
-  }
-
-  const clearInputs = () => {
-    setFirstName('')
-    setLastName('')
-    setSpecialties('')
-    setInsurances('')
-    setCost('')
-    setProfession('')
-    setStreet('')
-    setUnit('')
-    setCity('')
-    setState('')
-    setZip('')
-    setPhone('')
+      .then(setTimeout((()=>{
+        window.location.reload()
+        }), 2000))
+      .catch(error => {
+        setError(error.message)
+      })
   }
 
   const handleChange = (setFunction, event) => {
     const value = event.target.value;
     setFunction(value)
+  }
+
+  const handleChangeCheckbox = (setFunction, event) => {
+    if(insurances.includes(event.target.value)) {
+      setFunction(
+        insurances.filter(item => item !== event.target.value)
+      )
+    } else {
+      setFunction(
+        [...insurances, event.target.value]
+      )
+    }
   }
 
   return (
@@ -100,21 +101,25 @@ function ContributionForm() {
               { endpoint: 'doctor', text: 'Doctor'}
             ]}
           label='profession'
+          value={profession}
           handleChange={event => handleChange(setProfession, event)}
         />
         <input
           type='text'
-          placeholder='Specialty'
+          placeholder='Specialties (e.g. Transgender, Trauma and PTSD, ADHD)'
           name='specialties'
           value={specialties}
           onChange={event => handleChange(setSpecialties, event)}
         />
-        <input
-          type='text'
-          placeholder='Insurance'
-          name='insurances'
+        <Checkboxes
+          options={[
+            'Aetna', 'Anthem', 'Blue Cross BlueShield National', 'Blue Cross and Blue Shield of Nebraska', 'Bright Health', 'Cigna', 'Cigna HealthSpring', 'Colorado Access', 'Coventry', 'Denver Health',
+            'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
+            'Out of Network'
+          ]}
+          label={insurances}
           value={insurances}
-          onChange={event => handleChange(setInsurances, event)}
+          handleChange={event => handleChangeCheckbox(setInsurances, event)}
         />
         {profession === 'mhp' &&
           <input
@@ -155,6 +160,7 @@ function ContributionForm() {
             'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
           ]}
           label='state'
+          value={state}
           handleChange={event => handleChange(setState, event)}
         />
         <input
@@ -173,7 +179,7 @@ function ContributionForm() {
         />
         <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit</button>
         {error &&
-          <p className='error-msg'>{error}</p>
+          <Error error={error} />
         }
       </form>
     </>

@@ -3,7 +3,8 @@ import Card from '../../Components/Card/Card';
 import { retrievePageData } from '../../utils/apiCalls';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
+import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
+import Error from '../../Components/Error/Error';
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -51,7 +52,7 @@ const Doctors = () => {
       <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
       <h2 className='dr-sub-title'>Doctors here</h2>
       {error &&
-        <h2>{error}</h2>
+        <Error error={error} />
       }
       <section className='all-drs'>{allDoctors}
       <Link to='/'>

@@ -30,10 +30,9 @@ describe('ContributionForm View', () => {
       .get('form input[name="specialties"]').should('have.value', 'trans health')
   });
 
-  it('Should have a controlled input field for insurance whose value reflects the data typed into the form', () => {
-
-    cy.get('form input[name="insurances"]').type('sliding scale')
-      .get('form input[name="insurances"]').should('have.value', 'sliding scale')
+  it('Should have controlled checkboxes field for insurance whose value reflects the boxes selected', () => {
+    cy.get('#Aetna').check()
+      .get('#Aetna').should('be.checked')
   });
 
   it('Should have a controlled input field for street whose value reflects the data typed into the form', () => {
@@ -106,7 +105,7 @@ describe('ContributionForm View', () => {
         .get('.contribution-button').should('contain', 'Submit')
         .get('.contribution-button').click()
 
-        .get('.error-msg').should('have.text', 'Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
+        .get('.error-msg').should('have.text', 'Error: Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
     });
 
 });
