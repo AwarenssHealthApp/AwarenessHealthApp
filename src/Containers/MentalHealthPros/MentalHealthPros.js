@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
 import Error from '../../Components/Error/Error';
 import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
+import { retrievePageData } from '../../utils/apiCalls';
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
