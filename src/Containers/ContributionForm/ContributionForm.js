@@ -8,7 +8,8 @@ import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { addContribution } from '../../utils/apiCalls';
 
 
-function ContributionForm() {
+function ContributionForm(props) {
+
   const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
