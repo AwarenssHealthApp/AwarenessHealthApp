@@ -23,7 +23,7 @@ html, body {
 .App {
   @include displayFlexColumnCenter();
   text-align: center;
-  width: 100%;
+  width: 100vw;
 }
 
 .header-wrapper {
