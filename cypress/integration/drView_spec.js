@@ -61,18 +61,17 @@ describe('Doctors Display', () => {
 
   });
 
-
-  it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
-    cy.get('#doctors-button').should('be.visible')
-      .get('#doctors-button').click()
-      .location('pathname').should('eq', '/doctors')
-
-      .get('.accept-button').should('be.visible')
-      .get('.accept-button').should('contain', 'Love')
-
-      .get('.deny-button').should('be.visible')
-      .get('.deny-button').should('contain', 'Love')
-  });
+  // it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
+  //   cy.get('#doctors-button').should('be.visible')
+  //     .get('#doctors-button').click()
+  //     .location('pathname').should('eq', '/doctors')
+  //
+  //     .get('.accept-button').should('be.visible')
+  //     .get('.accept-button').should('contain', 'Love')
+  //
+  //     .get('.deny-button').should('be.visible')
+  //     .get('.deny-button').should('contain', 'Love')
+  // });
 
   it('Should return to the main page when the home button is clicked', () => {
     cy.get('#doctors-button').click()

@@ -27,8 +27,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
         <h3 className='specialties'>Speciaties: {allListItems(specialties)}</h3>
         <h3 className='insurances'>Insurance: {allListItems(insurances)}</h3>
         <p className='address'>{street} {unit} {city}, {state} {zip} {phone}</p>
-        <button className='accept-button'>Love</button>
-        <button className='deny-button'>Don't Love</button>
+        // <button className='accept-button'>Love</button>
+        // <button className='deny-button'>Don't Love</button>
       </article>
     </section>
   )
