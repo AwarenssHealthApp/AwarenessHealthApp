@@ -10,6 +10,7 @@ function ContributionForm() {
   const [lastName, setLastName] = useState('')
   const [specialties, setSpecialties] = useState([])
   const [insurances, setInsurances] = useState([])
+  const [typedInsurances, setTypedInsurances] = useState('')
   const [cost, setCost] = useState('')
   const [profession, setProfession] = useState('')
   const [street, setStreet] = useState('')
@@ -130,11 +131,18 @@ function ContributionForm() {
           options={[
             'Aetna', 'Anthem', 'Blue Cross BlueShield National', 'Blue Cross and Blue Shield of Nebraska', 'Bright Health', 'Cigna', 'Cigna HealthSpring', 'Colorado Access', 'Coventry', 'Denver Health',
             'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
-            'Out of Network'
+            'Out of Network', 'Other'
           ]}
           label='insurances'
           value={insurances}
           handleChange={event => handleChangeCheckbox(setInsurances, event)}
+        />
+        <input
+          type='text'
+          placeholder='Insurances (Seperated by a comma)'
+          name='typedInsurances'
+          value={typedInsurances}
+          onChange={event => handleChange(setTypedInsurances, event)}
         />
         {profession === 'mhp' &&
           <input
