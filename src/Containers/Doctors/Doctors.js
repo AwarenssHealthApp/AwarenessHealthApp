@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
 import Error from '../../Components/Error/Error';
+import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { retrievePageData } from '../../utils/apiCalls';
 
 const Doctors = () => {
@@ -50,14 +51,20 @@ const Doctors = () => {
   return(
     <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
       <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
-      <h2 className='dr-sub-title'>Doctors here</h2>
-      {error &&
-        <Error error={error} />
-      }
-      <section className='all-drs'>{allDoctors}
+
+      <DarkModeSwitch />
       <Link to='/'>
       <button className='home-button'>Home</button>
       </Link>
+
+      <h2 className='dr-sub-title'>Doctors</h2>
+
+      {error &&
+        <Error error={error} />
+      }
+
+      <section className='all-drs'>{allDoctors}
+
       </section>
     </div>
   )
