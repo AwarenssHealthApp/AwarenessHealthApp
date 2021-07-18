@@ -3,6 +3,8 @@
 * {
   box-sizing: border-box;
   font-family: 'opendyslexic';
+  font-style: normal;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -15,29 +17,17 @@ html, body {
   height: 100%;
   overflow: scroll;
   width: 100%;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  @include displayFlexColumnCenter();
   text-align: center;
   width: 100%;
 }
 
-.App-title {
-  font-size: 5em;
-  margin-bottom: 8%;
-}
-
-.nav-bar {
-  margin: 4%;
-}
-
-.App-buttons {
-  padding: 1%;
-  border-radius: 2%;
+.mission {
+  margin-top: 7%;
+  color: $locknessBlue;
 }
