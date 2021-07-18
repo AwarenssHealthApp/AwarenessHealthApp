@@ -1,6 +1,5 @@
 @import '../../index.scss';
 
-
 .main-title,
 .mission {
   color: $locknessBlue;
@@ -11,9 +10,6 @@
   color: $locknessBlue;
   border-radius: 6%;
 }
-
-
-
 
 /*~~~~~~ RESPONSIVE STYLES ~~~~~~ */
 
@@ -30,25 +26,18 @@
   }
 }
 
-
 @media screen and (max-width: 735px) {
-
   .main-title {
-    color: $locknessBlue;
     font-size: 4.5em;
     margin-bottom: 3%;
   }
 
   .main-buttons {
-    padding: 1%;
+    padding: 2%;
     border-radius: 8%;
-    color: $locknessBlue;
     margin-bottom: 10%;
-
   }
-
 }
-
 
 @media screen and (max-width: 725px) {
 
@@ -84,7 +73,6 @@
     border-radius: 8%;
     background-color: $paleBlue;
     color: $locknessBlue;
-
   }
 
 }
