@@ -1,1 +1,43 @@
 @import '../../index.scss';
+
+.doctors-container {
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column;
+  padding: .5%;
+   -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+     box-shadow:         inset 0 0 10px #000000;
+}
+
+.dr-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  margin: 1% 0 3% 0;
+}
+
+.home-button,
+.search-ins-button,
+.insSearch-input,
+.dark-mode-button {
+    margin: 0 3px 0 3px;
+    color: $locknessBlue;
+}
+
+.dr-settings-buttons {
+  display: flex;
+  flex-direction: flex-end;
+}
+
+.home-button,
+ {
+  padding: 3%;
+}
+
+
+.all-drs,
+.dr-sub-title {
+    // color: $locknessBlue;
+}
