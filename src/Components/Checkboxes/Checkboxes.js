@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export const Checkboxes = (props) => {
   const {
     options,
@@ -24,4 +26,10 @@ export const Checkboxes = (props) => {
         ))}
     </>
   )
+}
+
+Checkboxes.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  label: PropTypes.arrayOf(PropTypes.object),
+  handleChange: PropTypes.func
 }
