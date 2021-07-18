@@ -6,6 +6,8 @@ import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsura
 import Error from '../../Components/Error/Error';
 import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { retrievePageData } from '../../utils/apiCalls';
+import ThemeContextProvider from '../../contexts/ThemeContext';
+import './_doctors.scss';
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])
@@ -49,23 +51,34 @@ const Doctors = () => {
   const theme = darkMode ? dark : light;
 
   return(
-    <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
-      <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
+    <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
+      style={{ color: theme.color, background: theme.background }}>
 
-      <DarkModeSwitch />
-      <Link to='/'>
-      <button className='home-button'>Home</button>
-      </Link>
+      <div className='base'>
 
-      <h2 className='dr-sub-title'>Doctors</h2>
+        <section className='dr-button-wrapper'>
 
-      {error &&
-        <Error error={error} />
-      }
+          <article> <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
+          </article>
 
-      <section className='all-drs'>{allDoctors}
+          <article className='dr-settings-buttons'> <DarkModeSwitch />
+            <Link to='/'>
+            <button className='home-button'>Home</button>
+            </Link>
+          </article>
 
-      </section>
+        </section>
+
+        <h2 className='dr-sub-title'>Informed Doctors</h2>
+
+        {error &&
+          <Error error={error} />
+        }
+
+        <section className='all-drs'>
+          {allDoctors}
+        </section>
+      </div>
     </div>
   )
 }

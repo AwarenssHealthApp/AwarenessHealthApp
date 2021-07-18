@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <h1 className='main-title'>Head To Toe</h1>
       <nav className='nav-bar'>
-        <section className='main-button-wrapper'>
+        <article className='main-button-wrapper'>
           <Link to='/doctors'>
             <button className='main-buttons' id='doctors-button'>Doctors</button>
           </Link>
@@ -17,7 +17,7 @@ const Header = () => {
           <Link to='/submit'>
             <button className='main-buttons' id='submit-button'>Submit</button>
           </Link>
-        </section>
+        </article>
       </nav>
     </header>
   )

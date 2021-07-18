@@ -8,35 +8,37 @@ import './_app.scss';
 
 function App() {
   return (
-    <div className='App' >
+    <main className='App' >
       <ThemeContextProvider>
-        <Header />
-        <Switch>
-          <Route path='/submit' render={() => {
-            return(
-                <ContributionForm />
-            )
-          }} />
-          <Route path='/doctors' render={() => {
-            return(
-              <Doctors />
-            )
-          }} />
-          <Route path='/mental_health_professionals' render={() => {
-            return(
-              <MentalHealthPros />
-            )
-          }} />
+        <section className='header-wrapper'>
+          <Header />
+        </section>
+          <Switch>
+            <Route path='/submit' render={() => {
+              return(
+                  <ContributionForm />
+              )
+            }} />
+            <Route path='/doctors' render={() => {
+              return(
+                <Doctors />
+              )
+            }} />
+            <Route path='/mental_health_professionals' render={() => {
+              return(
+                <MentalHealthPros />
+              )
+            }} />
           <Route exact path ='/' render={() => {
             return(
-              <main>
+              <article className='mission-wrapper'>
                 <p className='mission'>A place to find queer affirming support</p>
-              </main>
+              </article>
             )
           }} />
         </Switch>
       </ThemeContextProvider>
-    </div>
+    </main>
   );
 }
 
