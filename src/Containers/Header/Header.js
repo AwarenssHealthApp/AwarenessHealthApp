@@ -1,5 +1,4 @@
 import React from 'react';
-import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
         <Link to='/submit'>
           <button className='App-buttons' id='submit-button'>Submit</button>
         </Link>
-        <DarkModeSwitch />
+
       </nav>
     </header>
   )

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
 import Error from '../../Components/Error/Error';
+import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 
 const MentalHealthPros = () => {
   const [mentalHealthProsList, setMentalHealthProsList] = useState([])
@@ -52,6 +53,12 @@ const MentalHealthPros = () => {
   return(
     <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
       <SearchByInsurance providerList={mentalHealthProsList} setFilteredProviderList={setFilteredMentalHealthProsList} />
+
+      <DarkModeSwitch />
+      <Link to='/'>
+      <button className='home-button'>Home</button>
+      </Link>
+
       <h2 className='mhp-sub-title'>Mental health professionals here</h2>
       {error &&
         <Error error={error} />
