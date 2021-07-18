@@ -55,6 +55,8 @@ describe('Mental Health Professionals Display', () => {
       .get('.first-name').should('contain', 'panda')
       .get('.last-name').should('contain', 'Dodrio')
       .get('.address').should('contain', 'Hamillside')
+      .get('.specialties').should('contain', 'Celestial')
+      .get('.insurances').should('contain', 'O\'Keefe-Price, Conn-Erdman')
       .get('.all-mhp').should('have.length', 1)
     });
 
