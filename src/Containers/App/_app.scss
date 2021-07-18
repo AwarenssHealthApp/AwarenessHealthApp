@@ -17,8 +17,6 @@ html, body {
   height: 100%;
   overflow: scroll;
   width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
@@ -27,7 +25,22 @@ html, body {
   width: 100%;
 }
 
+.header-wrapper {
+  -webkit-box-shadow: 8px 8px 6px -6px $ShadowBlue;
+   -moz-box-shadow: 8px 8px 6px -6px $ShadowBlue;
+      box-shadow: 8px 8px 6px -6px $ShadowBlue;
+  padding: 1%;
+  margin-bottom: 5%;
+}
+
 .mission {
   margin-top: 7%;
   color: $locknessBlue;
+}
+
+
+@media screen and (max-width: 320px) {
+  .header-wrapper {
+    box-shadow: none;
+  }
 }
