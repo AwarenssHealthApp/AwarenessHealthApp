@@ -1,0 +1,78 @@
+@import '../../index.scss';
+
+.main-title,
+.mission {
+  color: $locknessBlue;
+}
+
+.main-buttons {
+  background-color: $silverBlue;
+  color: $locknessBlue;
+  border-radius: 6%;
+}
+
+/*~~~~~~ RESPONSIVE STYLES ~~~~~~ */
+
+@media screen and (max-width: 1275px) {
+
+  .main-title {
+    font-size: 6.5em;
+    margin-bottom: 1%
+  }
+
+  .main-buttons {
+    margin: 0 3px 0 3px;
+    padding: 1.5%;
+  }
+}
+
+@media screen and (max-width: 725px) {
+
+  .main-title {
+    font-size: 4.5em;
+    margin-bottom: 3%;
+  }
+
+  .main-buttons {
+    padding: 2%;
+    border-radius: 8%;
+    margin-bottom: 10%;
+  }
+}
+
+
+@media screen and (max-width: 732px) {
+  .main-buttons {
+    padding: 2%;
+    border-radius: 8%;
+  }
+
+  .main-title {
+    font-size: 3.3em;
+  }
+
+}
+
+@media screen and (max-width: 392px) {
+
+  .main-title {
+    @include displayFlexColumnCenter();
+    margin-top: 5%;
+    margin-bottom: 8%;
+    font-size: 3em;
+  }
+
+  .main-button-wrapper {
+    flex-direction: column;
+    margin: 4%;
+  }
+
+  .main-buttons {
+    padding: 2.2%;
+    margin: 3%;
+    border-radius: 8%;
+    background-color: $paleBlue;
+    color: $locknessBlue;
+  }
+
+}
