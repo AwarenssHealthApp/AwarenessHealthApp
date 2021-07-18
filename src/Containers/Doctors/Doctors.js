@@ -63,7 +63,7 @@ const Doctors = () => {
 
           <article className='dr-settings-buttons'> <DarkModeSwitch />
             <Link to='/'>
-            <button className='home-button'>Home</button>
+            <button className='dr-home-button'>Home</button>
             </Link>
           </article>
 
