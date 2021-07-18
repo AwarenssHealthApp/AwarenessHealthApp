@@ -1,15 +1,25 @@
 @import '../../index.scss';
 
 .provider-card-wrapper {
+  background-color: #EAEAF4;
+}
+
+.card-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .provider-card {
-  border: 3px thin black;
+  border: 3px medium black;
   box-shadow: 8px 11px 20px 5px $gunMetalGrey;
   margin: 2%;
   border-radius: 2%;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .first-name,
