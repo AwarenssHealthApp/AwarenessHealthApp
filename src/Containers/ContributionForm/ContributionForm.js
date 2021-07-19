@@ -25,7 +25,7 @@ function ContributionForm() {
       first_name: firstName,
       last_name: lastName,
       profession: profession,
-      specialties: makeList() || null,
+      specialties: specialties || null,
       insurance: insurances,
       street: street || null,
       unit: unit || null,
@@ -39,10 +39,12 @@ function ContributionForm() {
       insurances &&
       state &&
       profession === 'doctor') {
+        data.specialties = makeList()
         setError(null)
         sendRequest(data)
       } else if(profession === 'mhp') {
           data = {...data, cost}
+          data.specialties = makeList()
           setError(null)
           sendRequest(data)
       } else {
