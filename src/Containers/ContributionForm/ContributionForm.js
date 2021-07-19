@@ -65,6 +65,15 @@ function ContributionForm() {
       })
   }
 
+  const handleTypedInsurance = () => {
+    const isOtherChecked = insurances.find(insurance => insurance === 'Other')
+    const insurancesToAdd = typedInsurances.split(', ')
+    if (isOtherChecked()) {
+      const filteredInsurances = insurances.filter(insurance => insurance !== 'Other')
+      setInsurances([filteredInsurances, insurancesToAdd])
+    }
+  }
+
   const handleChange = (setFunction, event) => {
     const value = event.target.value;
     setFunction(value)
