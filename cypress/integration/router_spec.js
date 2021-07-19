@@ -8,6 +8,13 @@ describe('Router Flow', () => {
             body: mockData
           })
         })
+      cy.fixture('mockMHP.json')
+        .then(mockMHP => {
+          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=mhp&state=Colorado', {
+            statusCode: 201,
+            body: mockMHP
+          })
+        })
       cy.visit('http://localhost:3000/')
     });
 
