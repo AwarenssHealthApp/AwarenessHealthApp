@@ -16,7 +16,7 @@ const MentalHealthPros = () => {
     retrievePageData('mhp', 'Colorado')
       .then(mhps => {
         if(mounted) {
-          setMentalHealthProsList(mhps.data.attributes.list)
+          setMentalHealthProsList(mhps.data.attributes.mhps)
         }
       })
       .catch(error => setError(error.message))

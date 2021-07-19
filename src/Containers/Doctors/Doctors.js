@@ -16,7 +16,7 @@ const Doctors = () => {
     retrievePageData('doctor', 'Colorado')
       .then(doctors => {
         if(mounted) {
-          setDoctorList(doctors.data.attributes.list)
+          setDoctorList(doctors.data.attributes.doctors)
         }
       })
       .catch(error => setError(error.message))
