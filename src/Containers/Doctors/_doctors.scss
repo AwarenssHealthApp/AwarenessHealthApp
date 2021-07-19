@@ -1,5 +1,8 @@
 @import '../../index.scss';
 
+
+/*~~~~~~ LOWER PAGE VIEW ~~~~~~ */
+
 .bottom-dr-view {
  display: flex;
  width: 100%;
@@ -14,6 +17,8 @@
      box-shadow:         inset 0 0 10px #000000;
 }
 
+/*~~~~~~ LEFT BUTTON PANEL ~~~~~~ */
+
 .dr-button-wrapper {
     display: flex;
     flex-direction: row;
@@ -23,6 +28,7 @@
     flex-wrap: wrap;
     width: 25%;
     margin-right: 1%;
+    padding: 1%;
 }
 
 .left-framing-line {
@@ -33,6 +39,7 @@
 .insSearch-input {
   margin: 20px 10px  5px 0;
   padding: 3%;
+  width: fit-content;
 }
 .search-ins-button,
 .dr-home-button,
@@ -47,10 +54,9 @@
 }
 
 .dr-home-button {
-  margin-right: 5px;
+  margin-right: 20px;
   padding: 8%;
   font-size: 1.5em;
-
 }
 
 .dark-mode-button {
@@ -60,9 +66,11 @@
 
 .dr-settings-buttons {
   display: flex;
-  margin-bottom: 15%
-
+  justify-content: space-between;
+  margin-bottom: 15%;
 }
+
+/*~~~~~~ RIGHT SIDE STYLES ~~~~~~ */
 
 .provider-subtitle {
   display: flex;
@@ -77,4 +85,34 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+/*~~~~~~ RESPONSIVE DESIGN ~~~~~~ */
+
+@media screen and (max-width: 984px) {
+  .all-drs {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .all-drs {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+
+  .insSearch-input {
+    // margin: 20px 10px  5px 0;
+    // padding: 3%;
+    width: fit-content;
+  }
+
 }
