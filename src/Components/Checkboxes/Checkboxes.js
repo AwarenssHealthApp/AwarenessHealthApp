@@ -30,6 +30,6 @@ export const Checkboxes = (props) => {
 
 Checkboxes.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string),
-  label: PropTypes.arrayOf(PropTypes.object),
+  label: PropTypes.string,
   handleChange: PropTypes.func
 }
