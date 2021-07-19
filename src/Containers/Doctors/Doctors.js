@@ -57,16 +57,17 @@ const Doctors = () => {
       <div className='bottom-dr-view'>
 
         <section className='dr-button-wrapper'>
+          <div className='left-framing-line'>
+            <article> <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
+            </article>
 
-          <article> <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
-          </article>
-
-          <article className='dr-settings-buttons'> <DarkModeSwitch />
-            <Link to='/'>
-            <button className='dr-home-button'>Home</button>
-            </Link>
-          </article>
-
+            <article className='dr-settings-buttons'>
+              <DarkModeSwitch />
+              <Link to='/'>
+              <button className='dr-home-button'>Home</button>
+              </Link>
+            </article>
+          </div>
         </section>
 
         <section className='bottom-right-container'>

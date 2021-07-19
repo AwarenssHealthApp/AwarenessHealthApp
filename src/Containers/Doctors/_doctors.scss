@@ -17,31 +17,40 @@
 .dr-button-wrapper {
     display: flex;
     flex-direction: row;
-    background: #f0f8fc;
-    color: #f0f8fc;
+    background:#f0f8fc;
     justify-content: space-evenly;
     align-content: flex-start;
     flex-wrap: wrap;
-    padding: 1%;
     width: 25%;
     margin-right: 1%;
+}
+
+.left-framing-line {
+  border-top: 1px solid $paleBlue;
+  width: 20vw;
 }
 
 .insSearch-input {
   margin: 20px 10px  5px 0;
   padding: 3%;
 }
+.search-ins-button,
+.dr-home-button,
+.dark-mode-button {
+  background-color: $paleBlue;
+  color: $locknessBlue;
+}
 
 .search-ins-button {
   margin: 2px 142px 25px 0;
   padding: 4%;
-  color: $locknessBlue;
 }
 
 .dr-home-button {
   margin-right: 5px;
   padding: 8%;
   font-size: 1.5em;
+
 }
 
 .dark-mode-button {
@@ -51,7 +60,8 @@
 
 .dr-settings-buttons {
   display: flex;
-  color: $locknessBlue;
+  margin-bottom: 15%
+
 }
 
 .provider-subtitle {
@@ -59,6 +69,7 @@
   justify-content: center;
   width: 100%;
   padding: 2%;
+  font-size: 1.5em;
 }
 
 .all-drs {
