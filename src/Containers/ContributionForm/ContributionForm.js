@@ -22,7 +22,10 @@ function ContributionForm() {
   const [submitionMessage, setSubmitionMessage] = useState('')
   const [error, setError] = useState('')
   useEffect((modifiedInsurances) => {
-    makePostRequest()
+    let mounted = false
+    if (mounted || state) {
+      makePostRequest()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[modifiedInsurances])
 
@@ -64,13 +67,17 @@ function ContributionForm() {
         data.specialties = makeList()
         setError(null)
         sendRequest(data)
-      } else if(profession === 'mhp') {
-          data = {...data, cost}
-          data.specialties = makeList()
-          setError(null)
-          sendRequest(data)
-      } else {
-        setError('Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
+    } else if(firstName &&
+      lastName &&
+      insurances &&
+      state &&
+      profession === 'mhp') {
+        data = {...data, cost}
+        data.specialties = makeList()
+        setError(null)
+        sendRequest(data)
+    } else {
+      setError('Please fill out the First Name, Last Name, Profession, Insurance, and State fields for this provider, at minimum.')
       }
   }
 
@@ -104,7 +111,7 @@ function ContributionForm() {
   }
 
   const makeList = () => {
-    if(specialties) {
+    if(specialties.length) {
       const splitList = specialties.split(', ')
       return splitList
     } else {
