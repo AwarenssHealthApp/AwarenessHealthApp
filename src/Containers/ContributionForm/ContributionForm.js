@@ -25,7 +25,7 @@ function ContributionForm() {
       first_name: firstName,
       last_name: lastName,
       profession: profession,
-      specialties: specialties || null,
+      specialties: makeList(specialties) || null,
       insurance: insurances,
       street: street || null,
       unit: unit || null,
@@ -75,6 +75,11 @@ function ContributionForm() {
         [...insurances, event.target.value]
       )
     }
+  }
+
+  const makeList = (stateValue) => {
+    const splitList = stateValue.split(', ')
+    return splitList
   }
 
   return (
