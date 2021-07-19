@@ -25,7 +25,7 @@ function ContributionForm() {
       first_name: firstName,
       last_name: lastName,
       profession: profession,
-      specialties: makeList(specialties) || null,
+      specialties: makeList() || null,
       insurance: insurances,
       street: street || null,
       unit: unit || null,
@@ -54,7 +54,7 @@ function ContributionForm() {
     addContribution(data)
       .then(setTimeout((()=>{
         window.location.reload()
-        }), 2000))
+      }), 2000))
       .catch(error => {
         setError(error.message)
       })
@@ -77,9 +77,13 @@ function ContributionForm() {
     }
   }
 
-  const makeList = (stateValue) => {
-    const splitList = stateValue.split(', ')
-    return splitList
+  const makeList = () => {
+    if(specialties) {
+      const splitList = specialties.split(', ')
+      return splitList
+    } else {
+      return []
+    }
   }
 
   return (
@@ -122,7 +126,7 @@ function ContributionForm() {
             'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
             'Out of Network'
           ]}
-          label={insurances}
+          label='insurances'
           value={insurances}
           handleChange={event => handleChangeCheckbox(setInsurances, event)}
         />
