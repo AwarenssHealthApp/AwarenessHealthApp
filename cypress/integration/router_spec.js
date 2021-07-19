@@ -3,9 +3,8 @@ describe('Router Flow', () => {
     beforeEach(() => {
       cy.fixture('mockDr.json')
         .then(mockData => {
-          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctors&state=Colorado', {
+          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
             statusCode: 201,
-            delay: 100,
             body: mockData
           })
         })
