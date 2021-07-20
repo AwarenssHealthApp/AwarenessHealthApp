@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Card from '../../Components/Card/Card';
-import { retrievePageData } from '../../utils/apiCalls';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
 import Error from '../../Components/Error/Error';
+import { retrievePageData } from '../../utils/apiCalls';
 
 const Doctors = () => {
   const [doctorList, setDoctorList] = useState([])

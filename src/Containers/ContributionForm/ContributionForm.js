@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { DropDown } from '../../Components/DropDown/DropDown';
-import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
-import { addContribution } from '../../utils/apiCalls';
+import { Checkboxes } from '../../Components/Checkboxes/Checkboxes'
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import Error from '../../Components/Error/Error';
+import { addContribution } from '../../utils/apiCalls';
+
 
 function ContributionForm() {
   const [state, setState] = useState('')
@@ -93,6 +96,9 @@ function ContributionForm() {
     }
   }
 
+  const { darkMode, light, dark } = useContext(ThemeContext);
+  const theme = darkMode ? dark : light;
+
   const handleChange = (setFunction, event) => {
     const value = event.target.value;
     setFunction(value)
@@ -121,10 +127,18 @@ function ContributionForm() {
 
   return (
     <>
+
       <form>
         <h2>Contribution Form</h2>
+
         {submissionMessage &&
           <h2>{submissionMessage}</h2>}
+
+
+        <Link to='/'>
+        <button className='home-button'>Home</button>
+        </Link>
+
         <input
           type='text'
           placeholder='First Name'
@@ -233,6 +247,9 @@ function ContributionForm() {
           <Error error={error} />
         }
       </form>
+
+      </section>
+
     </>
   )
 }
