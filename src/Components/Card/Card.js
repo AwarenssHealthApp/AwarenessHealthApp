@@ -23,8 +23,10 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
     <div className='provider-card-wrapper'>
       <section className='card-grid'>
         <article className='provider-card'>
-          <h2 className='first-name'>{firstName}</h2>
-          <h2 className='last-name'>{lastName}</h2>
+          <div className='name-frame'>
+            <h2 className='first-name'>{firstName}</h2>
+            <h2 className='last-name'>{lastName}</h2>
+          </div>
           <h3 className='specialties'>Specialties: {allListItems(specialties)}</h3>
           <h3 className='insurances'>Insurance: {allListItems(insurances)}</h3>
           <p className='address'>{street} {unit} {city}, {state} {zip} {phone}</p>
