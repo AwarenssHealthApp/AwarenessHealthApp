@@ -1,76 +1,15 @@
 @import '../../index.scss';
 
 
+
 /*~~~~~~ LOWER PAGE VIEW ~~~~~~ */
 
-.bottom-dr-view {
+.bottom-page-view {
  display: flex;
  width: 100%;
-}
+ background-size: contain;
 
-.doctors-container {
-  border-radius: 3px;
-  display: flex;
-  padding: .5%;
-   -moz-box-shadow:    inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-     box-shadow:         inset 0 0 10px #000000;
 }
-
-/*~~~~~~ LEFT BUTTON PANEL ~~~~~~ */
-
-.dr-button-wrapper {
-    display: flex;
-    flex-direction: row;
-    background:#f0f8fc;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    width: 25%;
-    margin-right: 1%;
-    padding: 1%;
-}
-
-.left-framing-line {
-  border-top: 1px solid $paleBlue;
-  width: 20vw;
-}
-
-.insSearch-input {
-  margin: 20px 10px  5px 0;
-  padding: 3%;
-  width: fit-content;
-}
-.search-ins-button,
-.dr-home-button,
-.dark-mode-button {
-  background-color: $paleBlue;
-  color: $locknessBlue;
-}
-
-.search-ins-button {
-  margin: 2px 142px 25px 0;
-  padding: 4%;
-}
-
-.dr-home-button {
-  margin-right: 20px;
-  padding: 8%;
-  font-size: 1.5em;
-}
-
-.dark-mode-button {
-  margin-right: 10px;
-  font-size: 1.1em;
-}
-
-.dr-settings-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15%;
-}
-
-/*~~~~~~ RIGHT SIDE STYLES ~~~~~~ */
 
 .provider-subtitle {
   display: flex;
@@ -81,6 +20,7 @@
 }
 
 .all-drs {
+
   width: fit-content;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -98,12 +38,19 @@
   }
 }
 
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 732px) {
   .all-drs {
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .all-drs {
+    display: flex;
+    flex-direction: column;
   }
 }
 
