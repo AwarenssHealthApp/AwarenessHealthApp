@@ -3,7 +3,7 @@
        "id": null,
        "type": "doctor",
        "attributes": {
-           "list": [
+           "doctors": [
                {
                    "id": 80,
                    "first_name": "gnat",

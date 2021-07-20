@@ -3,7 +3,7 @@
         "id": null,
         "type": "mhp",
         "attributes": {
-            "list": [
+            "mhps": [
                 {
                     "id": 62,
                     "first_name": "panda",
