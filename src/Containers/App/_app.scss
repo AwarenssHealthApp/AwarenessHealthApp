@@ -32,9 +32,23 @@ html, body {
 
 }
 
+.mission-wrapper {
+  justify-content: center;
+  display: flex;
+
+}
+
 .mission {
+  width: 60%;
+  height: 100%;
+  padding: 1vw;
   margin-top: 7%;
   color: $locknessBlue;
+  display: flex;
+  border-radius: 8px;
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
 }
 
 @media screen and (max-width: 1255px) {
@@ -45,7 +59,7 @@ html, body {
   }
 }
 
-@media screen and (max-width: 733px) {
+@media screen and (max-width: 1033px) {
   .header-wrapper {
     padding: 1%;
     -webkit-box-shadow: 8px 8px 6px -6px $shadowBlue;
@@ -61,6 +75,13 @@ html, body {
     -webkit-box-shadow: 0 8px 6px -6px $shadowBlue;
      -moz-box-shadow: 0 8px 6px -6px $shadowBlue;
       box-shadow: 0 8px 6px -6px $shadowBlue;
+  }
+
+
+  .mission {
+    width: 65%;
+    height: 65%;
+    padding: 1vw;
   }
 }
 

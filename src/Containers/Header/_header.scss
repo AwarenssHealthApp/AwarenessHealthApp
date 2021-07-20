@@ -8,7 +8,7 @@
 .main-buttons {
   background-color: $paleBlue;
   color: $locknessBlue;
-  border-radius: 6%;
+  border-radius: 6px;
 }
 
 /*~~~~~~ RESPONSIVE STYLES ~~~~~~ */
@@ -34,7 +34,7 @@
 
   .main-buttons {
     padding: 2%;
-    border-radius: 8%;
+
     margin-bottom: 10%;
   }
 }
@@ -48,7 +48,7 @@
 
   .main-buttons {
     padding: 2%;
-    border-radius: 8%;
+
     margin-bottom: 10%;
   }
 }
@@ -70,7 +70,7 @@
   .main-buttons {
     padding: 2.2%;
     margin: 3%;
-    border-radius: 8%;
+
     background-color: $paleBlue;
     color: $locknessBlue;
   }

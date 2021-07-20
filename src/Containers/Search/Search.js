@@ -29,8 +29,11 @@ console.log({ doctorList,
   let setFilteredProviderList;
 
   if(pathname === '/doctors' ) {
+
     providerList = doctorList;
+
     setFilteredProviderList = setFilteredDoctorList
+
   } else if (pathname === '/mental_health_professionals') {
     console.log({mentalHealthProsList, setFilteredMentalHealthProsList})
     providerList = mentalHealthProsList;
