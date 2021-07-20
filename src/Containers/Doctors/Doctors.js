@@ -1,35 +1,35 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
+import { ProviderContext } from '../../contexts/ProviderContext';
 import Error from '../../Components/Error/Error';
-import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
-import { retrievePageData } from '../../utils/apiCalls';
-import ThemeContextProvider from '../../contexts/ThemeContext';
 import './_doctors.scss';
 
 const Doctors = () => {
-  const [doctorList, setDoctorList] = useState([])
-  const [filteredDoctorList, setFilteredDoctorList] = useState([])
   const [error, setError] = useState('')
+
+  const { darkMode, light, dark } = useContext(ThemeContext);
+  const theme = darkMode ? dark : light;
+
+  const { doctorList, setDoctorList, filteredDoctorList } = useContext(ProviderContext)
 
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
       .then(doctors => { console.log('doctors', doctors)
-
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
         }
       })
-      .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again in a moment.'))
+      .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
   }, [])
 
   const doctorsToDisplay = filteredDoctorList.length ? filteredDoctorList : doctorList
 
-  const allDoctors = doctorsToDisplay.map(doctor => {
+  const allDoctors = doctorsToDisplay?.map(doctor => {
     return(
       <Card
       id={doctor.id}
@@ -48,28 +48,11 @@ const Doctors = () => {
     )
   })
 
-  const { darkMode, light, dark } = useContext(ThemeContext);
-  const theme = darkMode ? dark : light;
-
   return(
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
       style={{ color: theme.color, background: theme.background }}>
 
       <div className='bottom-dr-view'>
-
-        <section className='dr-button-wrapper'>
-          <div className='left-framing-line'>
-            <article> <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
-            </article>
-
-            <article className='dr-settings-buttons'>
-              <DarkModeSwitch />
-              <Link to='/'>
-              <button className='dr-home-button'>Home</button>
-              </Link>
-            </article>
-          </div>
-        </section>
 
         <section className='bottom-right-container'>
           <div className='provider-subtitle'>
