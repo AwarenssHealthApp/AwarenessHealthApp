@@ -30,6 +30,10 @@ export const Checkboxes = (props) => {
 
 Checkboxes.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string),
+<<<<<<< HEAD
   label: PropTypes.string,
+=======
+  label: PropTypes.arrayOf(PropTypes.string),
+>>>>>>> 9c7b17d (Add thank you message on successful submition)
   handleChange: PropTypes.func
 }

@@ -17,6 +17,7 @@ function ContributionForm() {
   const [city, setCity] = useState('')
   const [zip, setZip] = useState('')
   const [phone, setPhone] = useState('')
+  const [submitionMessage, setSubmitionMessage] = useState('')
   const [error, setError] = useState('')
 
   const handleClick = (event) => {
@@ -54,6 +55,7 @@ function ContributionForm() {
 
   const sendRequest = (data) => {
     addContribution(data)
+      .then(setSubmitionMessage('Thank you for your submition'))
       .then(setTimeout((()=>{
         window.location.reload()
       }), 2000))
@@ -92,6 +94,8 @@ function ContributionForm() {
     <>
       <form>
         <h2>Contribution Form</h2>
+        {submitionMessage &&
+          <h2>{submitionMessage}</h2>}
         <input
           type='text'
           placeholder='First Name'
