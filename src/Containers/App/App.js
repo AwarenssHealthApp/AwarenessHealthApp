@@ -1,17 +1,23 @@
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
 import Header from '../Header/Header';
+import Search from '../Search/Search';
+import NavBar from '../NavBar/NavBar';
 import MentalHealthPros from '../MentalHealthPros/MentalHealthPros';
 import { Route, Switch } from 'react-router-dom';
 import ThemeContextProvider from '../../contexts/ThemeContext';
+import { ProviderContextProvider } from '../../contexts/ProviderContext';
 import './_app.scss';
 
 function App() {
   return (
     <main className='App' >
       <ThemeContextProvider>
+        <ProviderContextProvider>
         <section className='header-wrapper'>
+          <NavBar />
           <Header />
+            <Search/>
         </section>
           <Switch>
             <Route path='/submit' render={() => {
@@ -36,7 +42,10 @@ function App() {
               </article>
             )
           }} />
+
         </Switch>
+
+        </ProviderContextProvider>
       </ThemeContextProvider>
     </main>
   );

@@ -8,7 +8,7 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   const handleSearch = (event) => {
     event.preventDefault()
     const searchResults = filterProvider()
-    if (searchResults.length) {
+    if (searchResults?.length) {
       setFilteredProviderList(searchResults)
     } else {
       setError(`Sorry! We don't have any results for ${searchInput}`)
@@ -17,7 +17,7 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   }
 
   const filterProvider = () => {
-    const filteredProviders = providerList.filter(provider => {
+    const filteredProviders = providerList?.filter(provider => {
       return provider.insurances.find(insurance => {
         return insurance.company.toUpperCase().includes(searchInput.toUpperCase())
       })
