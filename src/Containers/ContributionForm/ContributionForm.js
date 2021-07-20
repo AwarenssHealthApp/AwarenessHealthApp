@@ -3,10 +3,9 @@ import { DropDown } from '../../Components/DropDown/DropDown';
 import { Checkboxes } from '../../Components/Checkboxes/Checkboxes'
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { addContribution } from '../../utils/apiCalls';
 import Error from '../../Components/Error/Error';
 import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
-import { addContribution } from '../../utils/apiCalls';
-
 
 function ContributionForm(props) {
 
@@ -97,9 +96,6 @@ function ContributionForm(props) {
       makePostRequest()
     }
   }
-
-  const { darkMode, light, dark } = useContext(ThemeContext);
-  const theme = darkMode ? dark : light;
 
   const handleChange = (setFunction, event) => {
     const value = event.target.value;
@@ -251,5 +247,3 @@ function ContributionForm(props) {
     </>
   )
 }
-
-export default ContributionForm

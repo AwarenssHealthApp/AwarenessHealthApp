@@ -19,6 +19,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
     }
   }
 
+const Card = ({ firstName, lastName, street, unit, city, state, zip, specialities, phoneNum}) => {
+
   return (
 
     <div className='provider-card-wrapper'>
