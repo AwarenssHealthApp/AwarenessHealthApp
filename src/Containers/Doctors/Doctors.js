@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
-import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { ProviderContext } from '../../contexts/ProviderContext';
 import Error from '../../Components/Error/Error';
@@ -24,7 +23,7 @@ const Doctors = () => {
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
-      .then(doctors => { console.log('doctors', doctors)
+      .then(doctors => { 
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
           setDoctorsToDisplay(doctors.data.attributes.doctors)
@@ -32,7 +31,7 @@ const Doctors = () => {
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
-  }, [])
+  }, [setDoctorList])
 
   const allDoctors = doctorsToDisplay?.map(doctor => {
     return(
