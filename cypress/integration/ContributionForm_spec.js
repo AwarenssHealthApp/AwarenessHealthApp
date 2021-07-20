@@ -71,6 +71,12 @@ describe('ContributionForm View', () => {
       .get('form input[name="phone"]').should('have.value', '1-800-GOOD-DOC')
   });
 
+  it('Should have a controlled input field for adding insurance provider whose value reflects the data typed into the form', () => {
+
+    cy.get('form input[name="typedInsurances"]').type('New Insurance Co')
+      .get('form input[name="typedInsurances"]').should('have.value', 'New Insurance Co')
+  });
+
   it('should display the sumbit page when the sumbit button is pressed', () => {
 
     cy.get('#submit-button').click()
