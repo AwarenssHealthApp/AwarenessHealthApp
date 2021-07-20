@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 export const ThemeContext = createContext();
 
-
 const ThemeContextProvider = (props) => {
   const [light] = useState({
     background: '#d1edf0',
@@ -24,4 +23,4 @@ const ThemeContextProvider = (props) => {
   )
 }
 
-export default ThemeContextProvider
+export default ThemeContextProvider;
