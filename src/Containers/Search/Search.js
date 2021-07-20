@@ -10,27 +10,36 @@ const Search = () => {
   const { doctorList,
     setDoctorList,
     filteredDoctorList,
-    setFilterDoctorList,
+    setFilteredDoctorList,
     mentalHealthProsList,
     setMentalHealthProsList,
     filteredMentalHealthProsList,
     setFilteredMentalHealthProsList } = useContext(ProviderContext)
-
+console.log({ doctorList,
+  setDoctorList,
+  filteredDoctorList,
+  setFilteredDoctorList,
+  mentalHealthProsList,
+  setMentalHealthProsList,
+  filteredMentalHealthProsList,
+  setFilteredMentalHealthProsList })
   const location = useLocation()
+  const pathname = location.pathname
   let providerList;
   let setFilteredProviderList;
 
-  if(location === '/doctors' ) {
+  if(pathname === '/doctors' ) {
     providerList = doctorList;
-    setFilteredProviderList = setFilterDoctorList
-  } else if (location === '/mental_health_professionals') {
+    setFilteredProviderList = setFilteredDoctorList
+  } else if (pathname === '/mental_health_professionals') {
+    console.log({mentalHealthProsList, setFilteredMentalHealthProsList})
     providerList = mentalHealthProsList;
     setFilteredProviderList = setFilteredMentalHealthProsList;
   }
 
   return (
-    <div>
-      {(location === '/doctors' || location === '/mental_health_professionals') &&
+    <div className='search-container'>
+      {(pathname === '/doctors' || pathname === '/mental_health_professionals') &&
         <article> <SearchByInsurance providerList={providerList} setFilteredProviderList={setFilteredProviderList}/>
         </article>
       }
