@@ -29,13 +29,14 @@ describe('Router Flow', () => {
   it('should display the navigation buttons on the main page', () => {
     cy.get('#doctors-button').should('contain', 'Doctors')
       .get('#mental-health-pros-button').should('contain', 'Mental Health Professionals')
-      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').should('contain', 'Suggest')
   });
 
   it('should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
-      .get('h2').should('contain', 'Doctors here')
+      .get('h2').last().should('contain', 'Doctors')
+
   });
 
   it('Should return from the doctors list page to the main page when the back button is clicked', () => {
@@ -61,14 +62,14 @@ describe('Router Flow', () => {
 
   it('should display the sumbit page when the sumbit button is pressed', () => {
     cy.get('#submit-button').should('be.visible')
-      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').should('contain', 'Suggest')
       .get('#submit-button').click()
       .location('pathname').should('eq', '/submit')
   });
 
   it('Should return to the main page from submit page when the back button is clicked', () => {
     cy.get('#submit-button').should('be.visible')
-      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').should('contain', 'Suggest')
       .get('#submit-button').click()
       .location('pathname').should('eq', '/submit')
 
