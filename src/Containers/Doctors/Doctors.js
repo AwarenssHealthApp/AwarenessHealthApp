@@ -17,12 +17,13 @@ const Doctors = () => {
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
-      .then(doctors => {
+      .then(doctors => { console.log('doctors', doctors)
+
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
         }
       })
-      .catch(error => setError(error.message))
+      .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again in a moment.'))
     return () => mounted = false;
   }, [])
 

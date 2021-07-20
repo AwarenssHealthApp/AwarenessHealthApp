@@ -15,7 +15,7 @@ const Header = () => {
             <button className='main-buttons' id='mental-health-pros-button'>Mental Health Professionals</button>
           </Link>
           <Link to='/submit'>
-            <button className='main-buttons' id='submit-button'>Submit</button>
+            <button className='main-buttons' id='submit-button'>Suggest A Provider</button>
           </Link>
         </article>
       </nav>
