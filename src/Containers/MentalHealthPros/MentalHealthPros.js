@@ -15,19 +15,27 @@ const MentalHealthPros = () => {
 
   const { mentalHealthProsList, setMentalHealthProsList, filteredMentalHealthProsList } = useContext(ProviderContext)
 
+  const [mentalHealthProsToDisplay, setMentalHealthProsToDisplay] = useState(mentalHealthProsList)
+
+  useEffect(() => {
+    setMentalHealthProsToDisplay(filteredMentalHealthProsList)
+  }, [filteredMentalHealthProsList])
+
+
   useEffect(() => {
     let mounted = true;
     retrievePageData('mhp', 'Colorado')
-      .then(mhps => {
+      .then(mhps => { {console.log('mhps', mhps)}
         if(mounted) {
-          setMentalHealthProsList(mhps.data.attributes.list)
+
+          setMentalHealthProsList(mhps.data.attributes.mhps)
+          setMentalHealthProsToDisplay(mhps.data.attributes.mhps)
         }
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
   }, [])
 
-  const mentalHealthProsToDisplay = filteredMentalHealthProsList.length ? filteredMentalHealthProsList : mentalHealthProsList
 
   const allMentalHealthPros = mentalHealthProsToDisplay?.map(mentalHealthPro => {
     return(

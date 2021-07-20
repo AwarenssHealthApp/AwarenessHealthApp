@@ -8,6 +8,7 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   const handleSearch = (event) => {
     event.preventDefault()
     const searchResults = filterProvider()
+
     if (searchResults?.length) {
       setFilteredProviderList(searchResults)
     } else {
@@ -15,6 +16,7 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
     }
     setSearchInput('')
   }
+
 
   const filterProvider = () => {
     const filteredProviders = providerList?.filter(provider => {
@@ -26,17 +28,19 @@ const SearchByInsurance = ({ providerList, setFilteredProviderList }) => {
   }
 
   return(
-    <form>
-      <input className='insSearch-input'
-        type='text'
-        placeholder='Search by Insurance'
-        name='search'
-        value={searchInput}
-        onChange={event => setSearchInput(event.target.value)}
-      />
-      <button className='search-ins-button' id='search-button' onClick={(event) => handleSearch(event)}>Search</button>
-      {error &&
-        <p id='search-error-message'>{error}</p>}
+    <form >
+      <section className='search-container'>
+        <input className='insSearch-input'
+          type='text'
+          placeholder='Search by Insurance'
+          name='search'
+          value={searchInput}
+          onChange={event => setSearchInput(event.target.value)}
+        />
+        <button className='search-ins-button' id='search-button' onClick={(event) => handleSearch(event)}>Search By Insurance</button>
+        {error &&
+          <p id='search-error-message'>{error}</p>}
+      </section>
     </form>
   )
 }

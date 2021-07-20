@@ -15,19 +15,24 @@ const Doctors = () => {
 
   const { doctorList, setDoctorList, filteredDoctorList } = useContext(ProviderContext)
 
+  const [doctorsToDisplay, setDoctorsToDisplay] = useState(doctorList)
+
+  useEffect(() => {
+    setDoctorsToDisplay(filteredDoctorList)
+  }, [filteredDoctorList])
+
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
       .then(doctors => { console.log('doctors', doctors)
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
+          setDoctorsToDisplay(doctors.data.attributes.doctors)
         }
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
   }, [])
-
-  const doctorsToDisplay = filteredDoctorList.length ? filteredDoctorList : doctorList
 
   const allDoctors = doctorsToDisplay?.map(doctor => {
     return(
