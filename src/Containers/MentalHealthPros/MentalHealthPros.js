@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { retrievePageData } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
-import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { ProviderContext } from '../../contexts/ProviderContext';
 import Error from '../../Components/Error/Error';
@@ -25,16 +24,15 @@ const MentalHealthPros = () => {
   useEffect(() => {
     let mounted = true;
     retrievePageData('mhp', 'Colorado')
-      .then(mhps => { {console.log('mhps', mhps)}
+      .then(mhps => {
         if(mounted) {
-
           setMentalHealthProsList(mhps.data.attributes.mhps)
           setMentalHealthProsToDisplay(mhps.data.attributes.mhps)
         }
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
-  }, [])
+  }, [setMentalHealthProsList])
 
 
   const allMentalHealthPros = mentalHealthProsToDisplay?.map(mentalHealthPro => {
