@@ -14,36 +14,36 @@ function App() {
     <main className='App' >
       <ThemeContextProvider>
         <ProviderContextProvider>
-        <section className='header-wrapper'>
           <NavBar />
-          <Header />
-            <Search/>
-        </section>
-          <Switch>
-            <Route path='/submit' render={() => {
-              return(
-                  <ContributionForm />
-              )
-            }} />
-            <Route path='/doctors' render={() => {
-              return(
-                <Doctors />
-              )
-            }} />
-            <Route path='/mental_health_professionals' render={() => {
-              return(
-                <MentalHealthPros />
-              )
-            }} />
-          <Route exact path ='/' render={() => {
-            return(
-              <article className='mission-wrapper'>
-                <p className='mission'>A place to find queer affirming support</p>
-              </article>
-            )
-          }} />
+            <section className='header-wrapper'>
+              <Header />
+                <Search/>
+            </section>
+              <Switch>
+                <Route path='/submit' render={() => {
+                  return(
+                      <ContributionForm />
+                  )
+                }} />
+                <Route path='/doctors' render={() => {
+                  return(
+                    <Doctors />
+                  )
+                }} />
+                <Route path='/mental_health_professionals' render={() => {
+                  return(
+                    <MentalHealthPros />
+                  )
+                }} />
+              <Route exact path ='/' render={() => {
+                return(
+                  <article className='mission-wrapper'>
+                    <p className='mission'>A place to find queer affirming support</p>
+                  </article>
+                )
+              }} />
 
-        </Switch>
+            </Switch>
 
         </ProviderContextProvider>
       </ThemeContextProvider>
