@@ -29,7 +29,8 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
           </div>
           <h3 className='specialties'>Specialties: {allListItems(specialties)}</h3>
           <h3 className='insurances'>Insurance: {allListItems(insurances)}</h3>
-          <p className='address'>{street} {unit} {city}, {state} {zip} {phone}</p>
+          <p className='address'>{street} {unit} {city}, {state} {zip} </p>
+          <h4 className='phone-number'>{phone}</h4>
         </article>
       </section>
     </div>

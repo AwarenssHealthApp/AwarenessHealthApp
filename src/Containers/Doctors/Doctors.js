@@ -52,9 +52,8 @@ const Doctors = () => {
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
       style={{ color: theme.color, background: theme.background }}>
 
-      <div className='bottom-dr-view'>
-
-        <section className='bottom-right-container'>
+      <div className='bottom-page-view'>
+        <section className='providers-container'>
           <div className='provider-subtitle'>
             <h2 className='dr-sub-title'>Informed Doctors</h2>
             {error &&

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { addContribution } from '../../utils/apiCalls';
 import { DropDown } from '../../Components/DropDown/DropDown';
 import { Checkboxes } from '../../Components/Checkboxes/Checkboxes'
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { addContribution } from '../../utils/apiCalls';
 import Error from '../../Components/Error/Error';
 
 function ContributionForm() {

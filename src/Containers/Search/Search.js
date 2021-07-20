@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { ProviderContext } from '../../contexts/ProviderContext';
 import { useLocation } from 'react-router-dom';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
+import './_search.scss';
+
 
 
 const Search = () => {
@@ -27,15 +29,13 @@ const Search = () => {
   }
 
   return (
-  <div>
-  {(location === '/doctors' || location === '/mental_health_professionals') &&
-    <article> <SearchByInsurance providerList={providerList} setFilteredProviderList={setFilteredProviderList}/>
-    </article>
-  }
-  </div>
-)
-
-
+    <div>
+      {(location === '/doctors' || location === '/mental_health_professionals') &&
+        <article> <SearchByInsurance providerList={providerList} setFilteredProviderList={setFilteredProviderList}/>
+        </article>
+      }
+    </div>
+ )
 }
 
 export default Search;
