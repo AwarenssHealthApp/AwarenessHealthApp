@@ -128,7 +128,6 @@ function ContributionForm() {
 
   return (
     <>
-
       <form>
         <h2>Contribution Form</h2>
 
@@ -248,9 +247,6 @@ function ContributionForm() {
           <Error error={error} />
         }
       </form>
-
-      </section>
-
     </>
   )
 }

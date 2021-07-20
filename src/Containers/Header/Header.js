@@ -15,7 +15,6 @@ const Header = () => {
         <Link to='/submit'>
           <button className='App-buttons' id='submit-button'>Submit</button>
         </Link>
-
       </nav>
     </header>
   )
