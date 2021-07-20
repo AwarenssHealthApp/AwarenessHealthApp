@@ -16,14 +16,14 @@ describe('Show landing page of Head To Toe', () => {
   cy.url().should('eq', 'http://localhost:3000/')
   });
 
-  it('Should be show a background image covering the whole page', () => {
-    cy.get('.App').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/peacefulOceanImage.dfb3c4eb.png")')
+  it('Should be show a radial gradient covering the main page view', () => {
+    cy.get('html').should('have.css', 'background-image', 'linear-gradient(rgb(0, 73, 73), rgb(109, 182, 255), rgb(0, 146, 146))')
   });
 
   it('Should display the title on the main page', () => {
-  cy.get('.App-title').should('be.visible', 'Head To Toe')
-    .get('.App-title').should('contain', 'Head To Toe')
-    .get('.App-title').should('have.css', 'font-family', 'opendyslexic')
+  cy.get('.main-title').should('be.visible', 'Head To Toe')
+    .get('.main-title').should('contain', 'Head To Toe')
+    .get('.main-title').should('have.css', 'font-family', 'opendyslexic')
   });
 
   it('Should display the form, dr and mhp buttons for user', () => {
@@ -34,14 +34,14 @@ describe('Show landing page of Head To Toe', () => {
       .get('#mental-health-pros-button').should('contain', 'Mental')
 
       .get('#submit-button').should('be.visible')
-      .get('#submit-button').should('contain', 'Submit')
+      .get('#submit-button').should('contain', 'Suggest')
 
       .get('.dark-mode-button').should('be.visible')
       .get('.dark-mode-button').should('contain', 'Dark')
   });
 
   it('Should have buttons with accessability friendly font', () => {
-    cy.get('.App-buttons').should('have.css', 'font-family', 'opendyslexic')
+    cy.get('.main-buttons').should('have.css', 'font-family', 'opendyslexic')
   });
 
   it('Should allow the user to navigate away to their chosen page upon click', () => {
@@ -57,7 +57,7 @@ describe('Show landing page of Head To Toe', () => {
 
   it('Should display the mission statement of our project', () => {
     cy.get('.mission').should('be.visible')
-      .get('.mission').should('contain', 'A place')
+      .get('.mission').should('contain', 'At Head To Toe')
   });
 
 });

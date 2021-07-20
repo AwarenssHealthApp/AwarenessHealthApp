@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { DropDown } from '../../Components/DropDown/DropDown';
-import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
 import { addContribution } from '../../utils/apiCalls';
+import { DropDown } from '../../Components/DropDown/DropDown';
+import { Checkboxes } from '../../Components/Checkboxes/Checkboxes'
+import { Link } from 'react-router-dom';
 import Error from '../../Components/Error/Error';
 
 function ContributionForm() {
+
   const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -123,8 +125,15 @@ function ContributionForm() {
     <>
       <form>
         <h2>Contribution Form</h2>
+
         {submissionMessage &&
           <h2>{submissionMessage}</h2>}
+
+
+        <Link to='/'>
+        <button className='home-button'>Home</button>
+        </Link>
+
         <input
           type='text'
           placeholder='First Name'
@@ -237,4 +246,4 @@ function ContributionForm() {
   )
 }
 
-export default ContributionForm
+export default ContributionForm;

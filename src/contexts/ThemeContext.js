@@ -1,14 +1,14 @@
 import React, { createContext, useState } from 'react';
-export const ThemeContext = createContext()
+export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
   const [light] = useState({
-    background: 'white',
-    color: 'black'
+    background: '#d1edf0',
+    color: '#101f24'
   })
   const [dark] = useState({
-    background: 'black',
-    color: 'white'
+    background: '#101f24',
+    color: '#d1edf0'
   })
   const [darkMode, setDarkMode] = useState(false)
 
@@ -23,4 +23,4 @@ const ThemeContextProvider = (props) => {
   )
 }
 
-export default ThemeContextProvider
+export default ThemeContextProvider;

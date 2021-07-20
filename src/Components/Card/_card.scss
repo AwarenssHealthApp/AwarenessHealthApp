@@ -1,19 +1,42 @@
+@import '../../index.scss';
+
 .provider-card-wrapper {
+  bacground: $paleBlue;
+  background-size: cover;
+}
+
+
+
+.card-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .provider-card {
-  border: 3px solid black;
-  box-shadow: 8px 11px 20px 5px #86898a;
+  border: 3px medium black;
+  box-shadow: 8px 11px 20px 5px $gunMetalGrey;
   margin: 2%;
+  border-radius: 2%;
+  height: 35vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  text-align: left;
+  padding: 3px;
 }
 
+.name-frame {
+  border-bottom: 1px solid $gunMetalGrey;
+   padding: 0 0 10px 0;
+}
 
 .first-name,
 .last-name,
-.speciality,
-.vetted,
+.specialities,
+.insurances,
 .address {
   width: 100%;
   margin-bottom:2%;
@@ -24,8 +47,45 @@
   display: flex;
 }
 
-.accept-button,
-.deny-button {
-  border-radius: 2%;
-  padding: 1%;
-}
+  @media screen and (max-width: 725px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+      margin: 2%;
+      border-radius: 1%;
+      height: 45vw;
+      width: 60vw;
+      display: flex;
+      text-align: left;
+      padding: 5px;
+    }
+  }
+
+  @media screen and (max-width: 488px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+      margin: 2%;
+      border-radius: 1%;
+      height: 65vw;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 3px;
+    }
+  }
+
+  @media screen and (max-width: 325px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+        margin: 2%;
+        border-radius: 1%;
+        height: 70vw;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 3px;
+    }
+  }

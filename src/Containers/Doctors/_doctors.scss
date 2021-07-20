@@ -1,0 +1,51 @@
+@import '../../index.scss';
+
+
+.bottom-page-view {
+ display: flex;
+ width: 100%;
+ background-size: contain;
+
+}
+
+.provider-subtitle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2%;
+  font-size: 1.5em;
+}
+
+.all-drs {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+/*~~~~~~ RESPONSIVE DESIGN ~~~~~~ */
+
+@media screen and (max-width: 984px) {
+  .all-drs {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .all-drs {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .all-drs {
+    display: flex;
+    flex-direction: column;
+  }
+}

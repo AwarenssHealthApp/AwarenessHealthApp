@@ -1,31 +1,39 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Card from '../../Components/Card/Card';
 import { retrievePageData } from '../../utils/apiCalls';
-import { Link } from 'react-router-dom';
+import Card from '../../Components/Card/Card';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance';
+import { ProviderContext } from '../../contexts/ProviderContext';
 import Error from '../../Components/Error/Error';
+import './_doctors.scss';
 
 const Doctors = () => {
-  const [doctorList, setDoctorList] = useState([])
-  const [filteredDoctorList, setFilteredDoctorList] = useState([])
   const [error, setError] = useState('')
+
+  const { darkMode, light, dark } = useContext(ThemeContext);
+  const theme = darkMode ? dark : light;
+
+  const { doctorList, setDoctorList, filteredDoctorList } = useContext(ProviderContext)
+
+  const [doctorsToDisplay, setDoctorsToDisplay] = useState(doctorList)
+
+  useEffect(() => {
+    setDoctorsToDisplay(filteredDoctorList)
+  }, [filteredDoctorList])
 
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
-      .then(doctors => {
+      .then(doctors => { 
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
+          setDoctorsToDisplay(doctors.data.attributes.doctors)
         }
       })
-      .catch(error => setError(error.message))
+      .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
-  }, [])
+  }, [setDoctorList])
 
-  const doctorsToDisplay = filteredDoctorList.length ? filteredDoctorList : doctorList
-
-  const allDoctors = doctorsToDisplay.map(doctor => {
+  const allDoctors = doctorsToDisplay?.map(doctor => {
     return(
       <Card
       id={doctor.id}
@@ -44,21 +52,23 @@ const Doctors = () => {
     )
   })
 
-  const { darkMode, light, dark } = useContext(ThemeContext);
-  const theme = darkMode ? dark : light;
-
   return(
-    <div className='doctors-container' style={{ color: theme.color, background: theme.background }}>
-      <SearchByInsurance providerList={doctorList} setFilteredProviderList={setFilteredDoctorList}/>
-      <h2 className='dr-sub-title'>Doctors here</h2>
-      {error &&
-        <Error error={error} />
-      }
-      <section className='all-drs'>{allDoctors}
-      <Link to='/'>
-      <button className='home-button'>Home</button>
-      </Link>
-      </section>
+    <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
+      style={{ color: theme.color, background: theme.background }}>
+
+      <div className='bottom-page-view'>
+        <section className='providers-container'>
+          <div className='provider-subtitle'>
+            <h2 className='dr-sub-title'>Informed Doctors</h2>
+            {error &&
+              <Error error={error} />
+            }
+          </div>
+          <article className='all-drs'>
+            {allDoctors}
+          </article>
+        </section>
+      </div>
     </div>
   )
 }

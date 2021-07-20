@@ -60,24 +60,14 @@ describe('Mental Health Professionals Display', () => {
       .get('.all-mhp').should('have.length', 1)
     });
 
-  // it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
-  //   cy.get('#mental-health-pros-button').should('contain', 'Mental')
-  //     .get('#mental-health-pros-button').click()
-  //
-  //     .get('.accept-button').should('be.visible')
-  //     .get('.accept-button').should('contain', 'Love')
-  //
-  //     .get('.deny-button').should('be.visible')
-  //     .get('.deny-button').should('contain', 'Love')
-  //   });
 
   it('Should return to the main page when the back button is clicked', () => {
     cy.get('#mental-health-pros-button').click()
       .location('pathname').should('eq', '/mental_health_professionals')
 
-      .get('.home-button').should('be.visible')
-      .get('.home-button').should('contain', 'Home')
-      .get('.home-button').click()
+      .get('.navigation-button').should('be.visible')
+      .get('.navigation-button').should('contain', 'Home')
+      .get('.navigation-button').click()
       .location('pathname').should('eq', '/')
   });
 

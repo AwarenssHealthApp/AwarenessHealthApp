@@ -1,0 +1,43 @@
+@import '../../index.scss';
+
+.search-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 3px;
+
+}
+
+.insSearch-input {
+  padding: 3%;
+  width: fit-content;
+  margin-left: 1%;
+  margin-bottom: 25px;
+}
+
+
+.search-ins-button {
+  padding: 4%;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 735px) {
+
+  .search-container {
+    justify-content: space-between;
+  }
+
+  .insSearch-input {
+    margin-left: 25%;
+
+  }
+
+}
+
+  @media screen and (max-width: 360px) {
+
+    .insSearch-input {
+      margin-left: 10px;
+
+    }
+}

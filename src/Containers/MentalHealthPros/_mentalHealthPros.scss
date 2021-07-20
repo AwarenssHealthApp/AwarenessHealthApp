@@ -1,3 +1,8 @@
-.home-button {
-  padding: 20vw;
+@import '../../index.scss';
+
+.all-mhp {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
