@@ -19,7 +19,7 @@ function ContributionForm() {
   const [city, setCity] = useState('')
   const [zip, setZip] = useState('')
   const [phone, setPhone] = useState('')
-  const [submitionMessage, setSubmitionMessage] = useState('')
+  const [submissionMessage, setSubmissionMessage] = useState('')
   const [error, setError] = useState('')
   useEffect((modifiedInsurances) => {
     let mounted = false
@@ -36,7 +36,7 @@ function ContributionForm() {
 
   const sendRequest = (data) => {
     addContribution(data)
-      .then(setSubmitionMessage('Thank you for your submition'))
+      .then(setSubmissionMessage('Thank you for your submission'))
       .then(setTimeout((()=>{
         window.location.reload()
       }), 2000))
@@ -123,8 +123,8 @@ function ContributionForm() {
     <>
       <form>
         <h2>Contribution Form</h2>
-        {submitionMessage &&
-          <h2>{submitionMessage}</h2>}
+        {submissionMessage &&
+          <h2>{submissionMessage}</h2>}
         <input
           type='text'
           placeholder='First Name'
