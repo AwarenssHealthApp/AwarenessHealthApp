@@ -2,6 +2,7 @@
 
 .navigation-wrapper {
     display: flex;
+    justify-content: flex-end;
     padding: 3px;
     margin: 1%;
 }
@@ -54,4 +55,14 @@
       font-size: 1.5em;
       height: 55px;
       }
+
+
+
+    .dark-mode-button {
+      height: 55px;
+      font-size: 1.1em;
+
+    }
+
+
   }
