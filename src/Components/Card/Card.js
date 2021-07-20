@@ -19,10 +19,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
     }
   }
 
-const Card = ({ firstName, lastName, street, unit, city, state, zip, specialities, phoneNum}) => {
-
   return (
-
     <div className='provider-card-wrapper'>
       <section className='card-grid'>
         <article className='provider-card'>
@@ -35,24 +32,24 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialitie
       </section>
     </div>
   )
-
 }
 
-Card.propTypes = {
-  firstName: PropTypes.string,
-  lastName: PropTypes.string,
-  street: PropTypes.string,
-  unit: PropTypes.string,
-  city: PropTypes.string,
-  state: PropTypes.string,
-  zip: PropTypes.string,
-  specialties: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string
-  })),
-  phone: PropTypes.string,
-  insurances: PropTypes.arrayOf(PropTypes.shape({
-    company: PropTypes.string
-  }))
-}
+
+  Card.propTypes = {
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    street: PropTypes.string,
+    unit: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
+    zip: PropTypes.string,
+    specialties: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string
+    })),
+    phone: PropTypes.string,
+    insurances: PropTypes.arrayOf(PropTypes.shape({
+      company: PropTypes.string
+    }))
+  }
 
 export default Card;

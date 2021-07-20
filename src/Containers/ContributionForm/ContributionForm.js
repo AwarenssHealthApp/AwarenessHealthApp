@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { addContribution } from '../../utils/apiCalls';
 import Error from '../../Components/Error/Error';
-import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 
-function ContributionForm(props) {
+function ContributionForm() {
 
   const [state, setState] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -247,3 +246,5 @@ function ContributionForm(props) {
     </>
   )
 }
+
+export default ContributionForm;
