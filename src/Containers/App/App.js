@@ -11,10 +11,14 @@ import './_app.scss';
 
 function App() {
   return (
-    <main className='App' >
+
+    <main >
+
       <ThemeContextProvider>
         <ProviderContextProvider>
-          <NavBar />
+
+            <NavBar />
+                <div className='App'>
             <section className='header-wrapper'>
               <Header />
                 <Search/>
@@ -44,7 +48,7 @@ function App() {
               }} />
 
             </Switch>
-
+          </div>
         </ProviderContextProvider>
       </ThemeContextProvider>
     </main>
