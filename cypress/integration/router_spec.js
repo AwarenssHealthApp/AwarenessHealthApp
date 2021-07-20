@@ -35,7 +35,7 @@ describe('Router Flow', () => {
   it('should display the doctors page when the doctor button is pressed', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
-      .get('h2').last().should('contain', 'Doctors here')
+      .get('h2').should('contain', 'Doctors here')
   });
 
   it('Should return from the doctors list page to the main page when the back button is clicked', () => {
