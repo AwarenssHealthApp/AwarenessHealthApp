@@ -9,8 +9,10 @@ const Search = () => {
     setDoctorList,
     filteredDoctorList,
     setFilterDoctorList,
-
- } = useContext(ProviderContext)
+    mentalHealthProsList,
+    setMentalHealthProsList,
+    filteredMentalHealthProsList,
+    setFilteredMentalHealthProsList } = useContext(ProviderContext)
 
   const location = useLocation()
   let providerList;
@@ -19,6 +21,9 @@ const Search = () => {
   if(location === '/doctors' ) {
     providerList = doctorList;
     setFilteredProviderList = setFilterDoctorList
+  } else if (location === '/mental_health_professionals') {
+    providerList = mentalHealthProsList;
+    setFilteredProviderList = setFilteredMentalHealthProsList;
   }
 
   return (
