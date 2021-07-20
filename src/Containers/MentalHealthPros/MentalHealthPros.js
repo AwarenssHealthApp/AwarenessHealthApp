@@ -51,16 +51,22 @@ const MentalHealthPros = () => {
   })
 
   return(
-    <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
-      <div className='provider-subtitle'>
-          <h2 className='mhp-sub-title'>Informed Mental Health Professionals</h2>
-          {error &&
-            <Error error={error} />
-          }
-        </div>
-        <section className='all-mhp'>{allMentalHealthPros}
 
+    <div className='mhp-container' style={{ color: theme.color, background: theme.background }}>
+
+    <div className='bottom-page-view'>
+      <section className='providers-container'>
+        <div className='provider-subtitle'>
+            <h2 className='mhp-sub-title'>Informed Mental Health Professionals</h2>
+            {error &&
+              <Error error={error} />
+            }
+          </div>
+        <section className='all-mhp'>{allMentalHealthPros}
+        </section>
       </section>
+    </div>
+
     </div>
   )
 }
