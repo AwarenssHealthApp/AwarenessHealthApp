@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DropDown } from '../../Components/DropDown/DropDown';
 import { Checkboxes } from '../../Components/Checkboxes/Checkboxes';
 import { addContribution } from '../../utils/apiCalls';
@@ -11,6 +11,7 @@ function ContributionForm() {
   const [specialties, setSpecialties] = useState([])
   const [insurances, setInsurances] = useState([])
   const [typedInsurances, setTypedInsurances] = useState('')
+  const [modifiedInsurances, setModifiedInsurances] = useState([])
   const [cost, setCost] = useState('')
   const [profession, setProfession] = useState('')
   const [street, setStreet] = useState('')
@@ -20,15 +21,34 @@ function ContributionForm() {
   const [phone, setPhone] = useState('')
   const [submitionMessage, setSubmitionMessage] = useState('')
   const [error, setError] = useState('')
+  useEffect((modifiedInsurances) => {
+    makePostRequest()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[modifiedInsurances])
 
   const handleClick = (event) => {
     event.preventDefault()
+    handleTypedInsurance()
+  }
+
+  const sendRequest = (data) => {
+    addContribution(data)
+      .then(setSubmitionMessage('Thank you for your submition'))
+      .then(setTimeout((()=>{
+        window.location.reload()
+      }), 2000))
+      .catch(error => {
+        setError(error.message)
+      })
+  }
+
+  const makePostRequest = () => {
     let data = {
       first_name: firstName,
       last_name: lastName,
       profession: profession,
       specialties: specialties || null,
-      insurance: insurances,
+      insurance: modifiedInsurances.length ? modifiedInsurances : insurances,
       street: street || null,
       unit: unit || null,
       city: city || null,
@@ -54,23 +74,15 @@ function ContributionForm() {
       }
   }
 
-  const sendRequest = (data) => {
-    addContribution(data)
-      .then(setSubmitionMessage('Thank you for your submition'))
-      .then(setTimeout((()=>{
-        window.location.reload()
-      }), 2000))
-      .catch(error => {
-        setError(error.message)
-      })
-  }
-
   const handleTypedInsurance = () => {
     const isOtherChecked = insurances.find(insurance => insurance === 'Other')
     const insurancesToAdd = typedInsurances.split(', ')
-    if (isOtherChecked()) {
-      const filteredInsurances = insurances.filter(insurance => insurance !== 'Other')
-      setInsurances([filteredInsurances, insurancesToAdd])
+    if (isOtherChecked) {
+      let filteredInsurances = insurances.filter(insurance => insurance !== 'Other')
+      const allInsurances = filteredInsurances.concat(insurancesToAdd)
+      setModifiedInsurances(allInsurances)
+    } else {
+      makePostRequest()
     }
   }
 
