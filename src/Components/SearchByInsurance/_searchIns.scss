@@ -1,1 +1,9 @@
 @import '../../index.scss';
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.search-container {
+  display: flex;
+}
