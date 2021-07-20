@@ -1,15 +1,15 @@
 describe('Doctors Display', () => {
 
   beforeEach(() => {
-    cy.fixture('mockDr.json')
-      .then(mockData => {
-        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
-          statusCode: 201,
-          body: mockData
+      cy.fixture('mockDr.json')
+        .then(mockData => {
+          cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
+            statusCode: 201,
+            body: mockData
+          })
         })
-      })
-    cy.visit('http://localhost:3000/')
-  });
+      cy.visit('http://localhost:3000/')
+    });
 
 
   it('Should be able to open to the main page', () => {
@@ -31,7 +31,7 @@ describe('Doctors Display', () => {
       .get('#doctors-button').click()
 
       .location('pathname').should('eq', '/doctors')
-      .get('.dr-sub-title').should('contain', 'Doctors here')
+      .get('.dr-sub-title').should('contain', 'Doctors')
   });
 
   it('Should display the list of doctors for our users to see', () => {
@@ -61,32 +61,20 @@ describe('Doctors Display', () => {
 
   });
 
-  // it('Should display rating buttons for our users to give their opinions about our listed providers', () => {
-  //   cy.get('#doctors-button').should('be.visible')
-  //     .get('#doctors-button').click()
-  //     .location('pathname').should('eq', '/doctors')
-  //
-  //     .get('.accept-button').should('be.visible')
-  //     .get('.accept-button').should('contain', 'Love')
-  //
-  //     .get('.deny-button').should('be.visible')
-  //     .get('.deny-button').should('contain', 'Love')
-  // });
-
   it('Should return to the main page when the home button is clicked', () => {
     cy.get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
 
-      .get('.home-button').should('be.visible')
-      .get('.home-button').should('contain', 'Home')
-      .get('.home-button').click()
+      .get('.navigation-button').should('be.visible')
+      .get('.navigation-button').should('contain', 'Home')
+      .get('.navigation-button').click()
       .location('pathname').should('eq', '/')
   });
 
-  it('Should have a controlled input field for first name whose value reflects the data typed into the form', () => {
+  it('Should have a controlled input field for insurance whose value reflects the data typed into the form', () => {
     cy.get('#doctors-button').click()
-      .get('form input[name="search"]').type('Reichel')
-      .get('form input[name="search"]').should('have.value', 'Reichel')
+      .get('section input[name="search"]').type('Reichel')
+      .get('section input[name="search"]').should('have.value', 'Reichel')
   });
 
   it('Should clear the inputs when the search button is clicked', () => {
@@ -102,11 +90,11 @@ describe('Doctors Display', () => {
     cy.get('#doctors-button').click()
       .get('form input[name="search"]').type('S')
       .get('#search-button').click()
-      .get('section').children('.provider-card-wrapper').should('have.length', 2)
+      .get('.provider-card-wrapper').children('.card-grid').should('have.length', 2)
 
       .get('form input[name="search"]').type('Reichel')
       .get('#search-button').click()
-      .get('section').children('.provider-card-wrapper').should('have.length', 1)
+      .get('.provider-card-wrapper').children('.card-grid').should('have.length', 1)
   })
 
   it('Should be give an error message when there are no matching search results', () => {
