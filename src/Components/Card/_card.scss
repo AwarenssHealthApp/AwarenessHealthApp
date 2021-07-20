@@ -1,7 +1,11 @@
 @import '../../index.scss';
 
 .provider-card-wrapper {
+  bacground: $paleBlue;
+  background-size: cover;
 }
+
+
 
 .card-grid {
   display: flex;
@@ -14,7 +18,7 @@
   box-shadow: 8px 11px 20px 5px $gunMetalGrey;
   margin: 2%;
   border-radius: 2%;
-  height: 25vw;
+  height: 35vw;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -26,6 +30,7 @@
 
 .name-frame {
   border-bottom: 1px solid $gunMetalGrey;
+   padding: 0 0 10px 0;
 }
 
 .first-name,
@@ -42,18 +47,45 @@
   display: flex;
 }
 
-.accept-button,
-.deny-button {
-  border-radius: 2%;
-  padding: 1%;
-}
-
-@media screen and (max-width: 890px) {
-
-}
-@media screen and (max-width: 932px) {
-  .name-frame {
-  padding: 0 0 10px 0;
-
+  @media screen and (max-width: 725px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+      margin: 2%;
+      border-radius: 1%;
+      height: 45vw;
+      width: 60vw;
+      display: flex;
+      text-align: left;
+      padding: 5px;
+    }
   }
-}
+
+  @media screen and (max-width: 488px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+      margin: 2%;
+      border-radius: 1%;
+      height: 65vw;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 3px;
+    }
+  }
+
+  @media screen and (max-width: 325px) {
+    .provider-card {
+      box-shadow: 8px 11px 20px 5px #86898a;
+        margin: 2%;
+        border-radius: 1%;
+        height: 70vw;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 3px;
+    }
+  }
