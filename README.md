@@ -1,6 +1,14 @@
 # Head to Toe
 #### Connecting you with gender-affirming support
 
+<!-- PROJECT LOGO -->
+
+<!-- <p align="center">
+  <a href="https://github.com/Head-To-Toe/headToToe">
+    <img src="https://github.com/Head-To-Toe/headToToe/assets/headToToeOfficial.png">
+  </a>
+</p> -->
+
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
