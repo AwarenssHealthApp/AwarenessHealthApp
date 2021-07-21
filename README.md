@@ -30,7 +30,7 @@ We work together as a team of front end and back end stack developers putting th
 * A form to help contribute to our pool of resources
 * Light and dark mode viewing with the click of a button
 * Cypress testing to test user flows
-* Responsive and Responsible - can be used on all screen sizes with considerations for tabbing, color choices, and button sizing for ease of UX
+* Responsive design, lighthouse, color picker and font were all used to maintain accessibility; Our app can be used on all screen sizes with considerations for tabbing, color choices, and button sizing for ease of UX
 * Circle CI for build automation, testing and deployment of the app
 
 ## Link
@@ -117,6 +117,12 @@ This project brought new learning challenges as we stretched ourselves as a team
     </tr>
         <td><img src="https://avatars.githubusercontent.com/u/74944329?v=4" alt="A. Adrade" width="125" height="auto" /></td>
     </tr>
+</table>
+
+<table>
+<tr>
+    <td> Aiden Mcguire <a href="https://github.com/austinandrade/">GH</td>
+</tr>
 </table>
 
 <!-- CONTRIBUTORS -->
