@@ -10,25 +10,31 @@
 .form-directions {
   font-size: 1em;
 }
-.contribution-form {
+
+.responsive-form-wrapper {
   display: flex;
-  width: 100vw;
-  height: 100vw;
-  padding: 25px;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: left;
+}
+
+.contribution-form {
+    display: flex;
+    width: 100vw;
+    padding: 25px;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
 }
 
 .form-input {
   padding: 1.3vw;
   border-radius: 2px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
+
+/*~~~~~~ DR. DROP DOWN STYLES ~~~~~~ */
 
 .provider-menu {
   padding: 1vw;
-  border-radius: 2px;
+  border-radius: 1px;
   margin-bottom: 20px;
 }
 
@@ -38,4 +44,42 @@
   margin-bottom: 15px;
   width: 50%;
   height: 4.5vw;
+  overflow: scroll;
+}
+
+/*~~~~~~ CHECKBOX STYLES ~~~~~~ */
+
+.form-ins-container {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 2%;
+  -moz-box-shadow:    inset 0 0 8px #000000;
+  -webkit-box-shadow: inset 0 0 8px #000000;
+  box-shadow:         inset 0 0 8px #000000;
+  border-radius: 2px;
+  width: 52%;
+}
+
+.checkBox-label {
+  margin-bottom: 8px;
+}
+
+.checkbox-selection {
+  margin-bottom: 20px;
+}
+
+.insurance-by-comma {
+  padding: .5vw;
+  border-radius: 1px;
+  margin-bottom: 15px;
+  width: 70%;
+  height: 5vw;
+  overflow: scroll;
+  border-radius: 1px;
+}
+
+.provider-address-form {
+display: flex;
+flex-direction: column;
 }
