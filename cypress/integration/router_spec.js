@@ -33,9 +33,10 @@ describe('Router Flow', () => {
   });
 
   it('should display the doctors page when the doctor button is pressed', () => {
-    cy.get('#doctors-button').click()
+    cy.get('#doctors-button').should('contain', 'Doctors')
+      .get('#doctors-button').click()
       .location('pathname').should('eq', '/doctors')
-      .get('h2').last().should('contain', 'Psyduck')
+      .get('.dr-sub-title').last().should('contain', 'Informed Doctors')
 
   });
 
