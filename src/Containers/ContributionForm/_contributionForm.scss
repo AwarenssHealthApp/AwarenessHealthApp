@@ -1,1 +1,41 @@
 @import '../../index.scss';
+
+.contribution-title {
+  font-size: 1.4em;
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-directions {
+  font-size: 1em;
+}
+.contribution-form {
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  padding: 25px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.form-input {
+  padding: 1.3vw;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+.provider-menu {
+  padding: 1vw;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.drop-down-input {
+  padding: .5vw;
+  border-radius: 1px;
+  margin-bottom: 15px;
+  width: 50%;
+  height: 4.5vw;
+}
