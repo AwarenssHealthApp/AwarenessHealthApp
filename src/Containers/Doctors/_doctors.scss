@@ -2,10 +2,11 @@
 
 
 .bottom-page-view {
- display: flex;
- width: 100%;
- background-size: contain;
-
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .provider-subtitle {
@@ -13,6 +14,7 @@
   justify-content: center;
   width: 100%;
   padding: 2%;
+  margin-bottom: 5px;
 }
 
 .dr-sub-title {
@@ -39,7 +41,7 @@
 
 @media screen and (max-width: 755px) {
   .all-drs {
-    width: fit-content;
+
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
