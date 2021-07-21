@@ -13,7 +13,10 @@
   justify-content: center;
   width: 100%;
   padding: 2%;
-  font-size: 1.5em;
+}
+
+.dr-sub-title {
+  font-size: 1.6em;
 }
 
 .all-drs {
@@ -34,7 +37,7 @@
   }
 }
 
-@media screen and (max-width: 732px) {
+@media screen and (max-width: 755px) {
   .all-drs {
     width: fit-content;
     display: grid;
@@ -43,7 +46,7 @@
   }
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 320px) {
   .all-drs {
     display: flex;
     flex-direction: column;
