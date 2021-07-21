@@ -1,6 +1,13 @@
 # Head to Toe
 #### Connecting you with gender-affirming support
 
+<p>
+<p align="center">
+  <a href="https://github.com/Head-To-Toe/headToToe">
+    <img src="https://github.com/Head-To-Toe/headToToe/blob/main/assets/headToToeOfficial.png">
+  </a>
+</p>
+
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
@@ -102,18 +109,14 @@ This project brought new learning challenges as we stretched ourselves as a team
 
 #### Back End
 <table>
-    <tr>
+  <tr>
         <td> Austin Andrade <a href="https://github.com/austinandrade">GH</td>
-    </tr>
-    </tr>
+        <td> Aiden McGuire <a href="https://github.com/A-McGuire">GH</td>
+  </tr>
+  </tr>
         <td><img src="https://avatars.githubusercontent.com/u/74944329?v=4" alt="A. Adrade" width="125" height="auto" /></td>
-    </tr>
-</table>
-
-<table>
-<tr>
-    <td> Aiden Mcguire <a href="https://github.com/austinandrade/">GH</td>
-</tr>
+        <td><img src="https://avatars.githubusercontent.com/u/74434806?v=4" alt="A. McGuire" width="125" height="auto" /></td>
+  </tr>
 </table>
 
 <!-- CONTRIBUTORS -->
