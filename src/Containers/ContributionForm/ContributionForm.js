@@ -129,127 +129,158 @@ function ContributionForm() {
 
     return (
       <>
-        <section className='contribution-wrapper' style={{ color: theme.color, background: theme.background }}>
+        <section className='theme-wrapper' style={{ color: theme.color, background: theme.background }}>
 
           <form>
-            <h2>Contribution Form</h2>
+            <section className='contribution-title'>
 
-            {submissionMessage &&
-            <h2>{submissionMessage}</h2>}
+              <h2>Contribution Form</h2>
 
+              {submissionMessage &&
+              <h2>{submissionMessage}</h2>}
+            </section>
 
-            <Link to='/'>
-            <button className='home-button'>Home</button>
-            </Link>
+              <section className='contribution-form'>
+                <article className='form-name-wrapper'>
+                  <h3 className='form-directions'>Please Fill In Your Provider's First and Last Name</h3>
+                    <input
+                      className='form-input'
+                      type='text'
+                      placeholder='First Name'
+                      name='firstName'
+                      value={firstName}
+                      onChange={event => handleChange(setFirstName, event)}
+                    />
+                    <input
+                      className='form-input'
+                      type='text'
+                      placeholder='Last Name'
+                      name='lastName'
+                      value={lastName}
+                      onChange={event => handleChange(setLastName, event)}
+                    />
+                </article>
+                <section className='form-drop-down-wrapper'>
+                  <h3 className='form-directions'>Please Tell Us What Field Your Provider Works In</h3>
+                  <div className='provider-menu'>
+                  <DropDown
+                    options={[
+                        { endpoint:'mhp', text: 'Mental Health Professional' },
+                        { endpoint: 'doctor', text: 'Doctor'}
+                      ]}
+                    label='profession'
+                    value={profession}
+                    handleChange={event => handleChange(setProfession, event)}
+                  />
+                  </div>
+                  <h3 className='form-directions'>Tell Us Their Specialities</h3>
+                  <input
+                    className='drop-down-input'
+                    type='text'
+                    placeholder='Specialties (e.g. Transgender, Trauma and PTSD, ADHD)'
+                    name='specialties'
+                    value={specialties}
+                    onChange={event => handleChange(setSpecialties, event)}
+                  />
+                  </section>
+                <h3 className='form-directions'>This Next Section of the Form Has Two parts.</h3>
+                <div className='form-ins-container'>
+                  <section className='checkbox-selection'>
+                  <Checkboxes
+                    options={[
+                      'Aetna', 'Anthem', 'Blue Cross BlueShield National', 'Blue Cross and Blue Shield of Nebraska', 'Bright Health', 'Cigna', 'Cigna HealthSpring', 'Colorado Access', 'Coventry', 'Denver Health',
+                      'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
+                      'Out of Network', 'Other'
+                    ]}
+                    label='insurances'
+                    value={insurances}
+                    handleChange={event => handleChangeCheckbox(setInsurances, event)}
+                  />
+                  </section>
+                    <h3>If you didn't see the insurance you were looking for, please list them for us, separated by commas.</h3>
+                    <input
+                      className='insurance-by-comma'
+                      type='text'
+                      placeholder='Insurances (Seperated by a comma)'
+                      name='typedInsurances'
+                      value={typedInsurances}
+                      onChange={event => handleChange(setTypedInsurances, event)}
+                    />
+                </div>
+                  <article className='provider-address-form'>
+                    <h3 className='form-directions'>Please Fill In Your Suggested Provider's Office Address and Phone Number Below.</h3>
+                    {profession === 'mhp' &&
+                      <input
+                      className='form-input'
+                      type='text'
+                      placeholder='Cost'
+                      name='cost'
+                      value={cost}
+                      onChange={event => handleChange(setCost, event)}
+                    />
+                    }
+                    <input
+                      className='form-input'
+                      type='text'
+                      placeholder='Street'
+                      name='street'
+                      value={street}
+                      onChange={event => handleChange(setStreet, event)}
+                    />
+                    <input
+                      className='form-input'
+                      type='text'
+                      placeholder='Unit'
+                      name='unit'
+                      value={unit}
+                      onChange={event => handleChange(setUnit, event)}
+                    />
+                    <input
+                      className='form-input'
+                      type='text'
+                      placeholder='City'
+                      name='city'
+                      value={city}
+                      onChange={event => handleChange(setCity, event)}
+                    />
+                  <DropDown
+                    options={[
+                      'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+                      'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+                      'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
+                      'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+                      'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+                    ]}
+                    label='state'
+                    value={state}
+                    handleChange={event => handleChange(setState, event)}
+                  />
+                  <input
+                    className='form-input'
+                    type='text'
+                    placeholder='Zip Code'
+                    name='zip'
+                    value={zip}
+                    onChange={event => handleChange(setZip, event)}
+                  />
+                  <input
+                    className='form-input'
+                    type='text'
+                    placeholder='Phone Number'
+                    name='phone'
+                    value={phone}
+                    onChange={event => handleChange(setPhone, event)}
+                  />
+                </article>
+              </section>
+            <article className='form-button-wrapper'>
+              <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit Your Suggestion</button>
+              {error &&
+                <Error error={error} />
+              }
 
-            <input
-              type='text'
-              placeholder='First Name'
-              name='firstName'
-              value={firstName}
-              onChange={event => handleChange(setFirstName, event)}
-            />
-            <input
-              type='text'
-              placeholder='Last Name'
-              name='lastName'
-              value={lastName}
-              onChange={event => handleChange(setLastName, event)}
-            />
-            <DropDown
-              options={[
-                  { endpoint:'mhp', text: 'Mental Health Professional' },
-                  { endpoint: 'doctor', text: 'Doctor'}
-                ]}
-              label='profession'
-              value={profession}
-              handleChange={event => handleChange(setProfession, event)}
-            />
-            <input
-              type='text'
-              placeholder='Specialties (e.g. Transgender, Trauma and PTSD, ADHD)'
-              name='specialties'
-              value={specialties}
-              onChange={event => handleChange(setSpecialties, event)}
-            />
-            <Checkboxes
-              options={[
-                'Aetna', 'Anthem', 'Blue Cross BlueShield National', 'Blue Cross and Blue Shield of Nebraska', 'Bright Health', 'Cigna', 'Cigna HealthSpring', 'Colorado Access', 'Coventry', 'Denver Health',
-                'First Health', 'Friday Health Plans', 'Health First Colorado', 'Humana', 'Kaiser Permanente', 'Medicare Traditional', 'Multiplan', 'Oxford Health Plans', 'Rocky Mountain Health Plans', 'UnitedHealthcare',
-                'Out of Network', 'Other'
-              ]}
-              label='insurances'
-              value={insurances}
-              handleChange={event => handleChangeCheckbox(setInsurances, event)}
-            />
-            <input
-              type='text'
-              placeholder='Insurances (Seperated by a comma)'
-              name='typedInsurances'
-              value={typedInsurances}
-              onChange={event => handleChange(setTypedInsurances, event)}
-            />
-            {profession === 'mhp' &&
-              <input
-              type='text'
-              placeholder='Cost'
-              name='cost'
-              value={cost}
-              onChange={event => handleChange(setCost, event)}
-            />
-            }
-            <input
-              type='text'
-              placeholder='Street'
-              name='street'
-              value={street}
-              onChange={event => handleChange(setStreet, event)}
-            />
-            <input
-              type='text'
-              placeholder='Unit'
-              name='unit'
-              value={unit}
-              onChange={event => handleChange(setUnit, event)}
-            />
-            <input
-              type='text'
-              placeholder='City'
-              name='city'
-              value={city}
-              onChange={event => handleChange(setCity, event)}
-            />
-            <DropDown
-              options={[
-                'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
-                'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
-                'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
-                'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
-                'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-              ]}
-              label='state'
-              value={state}
-              handleChange={event => handleChange(setState, event)}
-            />
-            <input
-              type='text'
-              placeholder='Zip Code'
-              name='zip'
-              value={zip}
-              onChange={event => handleChange(setZip, event)}
-            />
-            <input
-              type='text'
-              placeholder='Phone Number'
-              name='phone'
-              value={phone}
-              onChange={event => handleChange(setPhone, event)}
-            />
-            <button className='contribution-button' onClick={(event) => handleClick(event)}>Submit Suggestion</button>
-
-            {error &&
-              <Error error={error} />
-            }
+            </article>
+            <h3 className='form-directions'>Thanks For Visiting Us Today</h3>
         </form>
       </section>
     </>

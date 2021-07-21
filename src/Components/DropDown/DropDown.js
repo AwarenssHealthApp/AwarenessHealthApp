@@ -11,11 +11,11 @@ export const DropDown = (props) => {
     <>
       <label htmlFor={label}>Choose an option:</label>
 
-      <select
-        name={label}
-        id={label}
-        onChange={handleChange}
-      >
+        <select
+          name={label}
+          id={label}
+          onChange={handleChange}
+        >
           <option key='choose-option' value=''>--Please choose an option--</option>
           {options.map(item => (
             <option
@@ -25,7 +25,8 @@ export const DropDown = (props) => {
               {item.text || item}
             </option>
           ))}
-      </select>
+       </select>
+
     </>
   )
 }
