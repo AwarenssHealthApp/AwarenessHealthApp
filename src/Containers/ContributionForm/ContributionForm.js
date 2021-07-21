@@ -2,10 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { addContribution } from '../../utils/apiCalls';
 import { DropDown } from '../../Components/DropDown/DropDown';
 import { Checkboxes } from '../../Components/Checkboxes/Checkboxes'
-import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import Error from '../../Components/Error/Error';
-import DarkModeSwitch from '../../Components/DarkModeSwitch/DarkModeSwitch';
 import './_contributionForm.scss';
 
 function ContributionForm() {

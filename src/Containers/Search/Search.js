@@ -4,16 +4,11 @@ import { useLocation } from 'react-router-dom';
 import SearchByInsurance from '../../Components/SearchByInsurance/SearchByInsurance'
 import './_search.scss';
 
-
-
 const Search = () => {
+
   const { doctorList,
-    setDoctorList,
-    filteredDoctorList,
     setFilteredDoctorList,
     mentalHealthProsList,
-    setMentalHealthProsList,
-    filteredMentalHealthProsList,
     setFilteredMentalHealthProsList } = useContext(ProviderContext)
 
   const location = useLocation()
@@ -26,9 +21,8 @@ const Search = () => {
     providerList = doctorList;
 
     setFilteredProviderList = setFilteredDoctorList
-
   } else if (pathname === '/mental_health_professionals') {
-    console.log({mentalHealthProsList, setFilteredMentalHealthProsList})
+
     providerList = mentalHealthProsList;
     setFilteredProviderList = setFilteredMentalHealthProsList;
   }
