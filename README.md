@@ -94,7 +94,8 @@ This project brought new learning challenges as we stretched ourselves as a team
 * To increase our audience from queer based resources to include more gender-based needs
 * To Expand the app to include all of the United States
 
-## Front End Authors
+## Authors
+#### Front End
 <table>
     <tr>
         <td> Angie Battillo <a href="https://github.com/battan40">GH</td>
@@ -108,16 +109,13 @@ This project brought new learning challenges as we stretched ourselves as a team
     </tr>
 </table>
 
-## Back End Authors
+#### Back End
 <table>
     <tr>
         <td> Austin Andrade <a href="https://github.com/austinandrade">GH</td>
-
     </tr>
     </tr>
         <td><img src="https://avatars.githubusercontent.com/u/74944329?v=4" alt="A. Adrade" width="125" height="auto" /></td>
-
-
     </tr>
 </table>
 
