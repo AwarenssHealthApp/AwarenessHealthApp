@@ -9,7 +9,7 @@ export const Checkboxes = (props) => {
 
   return (
     <>
-      <p htmlFor={label}>Select Insurance Providers</p>
+      <p className='checkBox-label' htmlFor={label}>Please Select All Insurance Carriers That Apply:</p>
 
         {options.map(item => (
           <div key={item}>

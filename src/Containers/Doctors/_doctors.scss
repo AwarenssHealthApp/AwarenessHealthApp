@@ -2,10 +2,11 @@
 
 
 .bottom-page-view {
- display: flex;
- width: 100%;
- background-size: contain;
-
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .provider-subtitle {
@@ -13,7 +14,11 @@
   justify-content: center;
   width: 100%;
   padding: 2%;
-  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.dr-sub-title {
+  font-size: 1.6em;
 }
 
 .all-drs {
@@ -34,16 +39,16 @@
   }
 }
 
-@media screen and (max-width: 732px) {
+@media screen and (max-width: 755px) {
   .all-drs {
-    width: fit-content;
+
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
   }
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 320px) {
   .all-drs {
     display: flex;
     flex-direction: column;

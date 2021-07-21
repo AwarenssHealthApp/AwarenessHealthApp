@@ -1,8 +1,47 @@
 @import '../../index.scss';
 
 .all-mhp {
-  width: fit-content;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+.mhp-sub-title {
+  font-size: 1.5em;
+}
+
+/*~~~~~~ RESPONSIVE DESIGN ~~~~~~ */
+
+@media screen and (max-width: 984px) {
+
+  .provider-subtitle {
+    @include displayFlexColumnCenter();
+    width: 100%;
+    padding: 2%;
+  }
+
+    .all-mhp {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding: 15%;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .all-mhp {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+      padding: 9%;
+
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .all-mhp {
+    display: flex;
+    flex-direction: column;
+  }
 }

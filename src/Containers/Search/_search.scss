@@ -5,20 +5,23 @@
   flex-wrap: nowrap;
   justify-content: center;
   margin-top: 3px;
-
 }
 
 .insSearch-input {
   padding: 3%;
   width: fit-content;
   margin-left: 1%;
+}
+
+.insSearch-input,
+.search-ins-button {
+  border-radius: 2px;
   margin-bottom: 25px;
 }
 
 
 .search-ins-button {
   padding: 4%;
-  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 735px) {
