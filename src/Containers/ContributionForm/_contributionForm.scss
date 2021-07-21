@@ -9,6 +9,7 @@
 
 .form-directions {
   font-size: 1em;
+  margin: 3px 0 8px 0;
 }
 
 .responsive-form-wrapper {
@@ -16,12 +17,12 @@
 }
 
 .contribution-form {
-    display: flex;
-    width: 100vw;
-    padding: 25px;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
+  display: flex;
+  width: 100vw;
+  padding: 25px;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
 }
 
 .form-input {
@@ -58,7 +59,8 @@
   -webkit-box-shadow: inset 0 0 8px #000000;
   box-shadow:         inset 0 0 8px #000000;
   border-radius: 2px;
-  width: 52%;
+  width: 51%;
+  margin-bottom: 15px;
 }
 
 .checkBox-label {
@@ -82,4 +84,17 @@
 .provider-address-form {
 display: flex;
 flex-direction: column;
+width: 35%;
+}
+
+.form-button-wrapper {
+  display: flex;
+}
+
+.contribution-button {
+  background-color: $locknessBlue;
+  color: $paleBlue;
+  border-radius: 3px;
+  margin: 0 3px 0 22px;
+  padding: 1.5%;
 }
