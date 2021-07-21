@@ -1,38 +1,48 @@
 # Head to Toe
 #### Connecting you with gender-affirming support
+
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
 * [Walkthrough](#walkthrough)
 * [Authors](#authors)
 * [Technologies](#technologies)
+
 ## Description
-This is an app for witches both wicked and good and all those that lie between.  Here, an inspirational quote from Ron Swanson is delivered to our witchy users, by a friendly kitten familiar with an invitation to cast a spell. Users have a place to cast and favorite their spells.
-Per the specs, React, Router, Asynchronous JavaScript, Cypress end to end acceptance testing, and conditional rendering were implemented. The Rubric & Spec for this(https://frontend.turing.edu/projects/module-3/niche-audience.html)
+
+This app is the brain child of so many of us looking for someone that accepts us where we are, and has the qualified skills to help us heal, or find ourselves at home in our bodies again.
+
+We work together as a team of front end and back end stack developers putting the needs of our users first.
 
 ## Notable Features
-* An amazing kitten image or giphy to deliver messages from Ron Swanson
- *The above is only true when the api delivers a truthy image url*
-* A hilarious or grimacing quote by Ron Swanson to lighten or darken the day
-* The choice to see favorited spells
+
+* A warm welcome using font and color-scheming that is inclusive
+* Navigation to a list of queer-informed mental health Professionals and gender-educated doctors
+* A form to help contribute to our pool of resources
+* Light and dark mode viewing with the click of a button
 * Cypress testing to test user flows
-* Responsive and Responsible - can be used on all screen sizes with considerations for tabbing, color choices, and button sizing for easer of UX
+* Responsive design, lighthouse, color picker and font were all used to maintain accessibility; Our app can be used on all screen sizes with considerations for tabbing, color choices, and button sizing for ease of UX
+* Circle CI for build automation, testing and deployment of the app
 
 ## Link
 * We are [Published](HeadToToe.surge.sh)
 
 ## Installation
 1. Clone this repo using:
-  * `git clone`  `https://github.com/battan40/KittensToWitches/tree/main/kittens-to-witches`
+  * `git clone`  `https://github.com/Head-To-Toe/headToToe`
 2. `cd` into your cloned directory
 3. Run `npm install`
 4. Run `npm start`
 
 #### Learn More
-You can learn more about creating apps using `React` and `JSX` here: [Create React App Documentation](https://create-react-app.dev/docs/getting-started/)
-You can learn more about implementing `Router` with `React` here: [React Router Docs](https://reactrouter.com/)
-Here is a resource we used to learn how to implement `Optional Chaining` with `JSX`: [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-For a learning `Context API`, this resource could be useful: [Context API](https://www.youtube.com/watch?v=v1s_rbZbqQI)
+* You can learn more about creating apps using `React` and `JSX` here: [Create React App Documentation](https://create-react-app.dev/docs/getting-started/)
+
+* You can learn more about implementing `Router` with `React` here: [React Router Docs](https://reactrouter.com/)
+
+* Here is a resource we used to learn how to implement `Optional Chaining` with `JSX`: [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+* For a learning `Context API`, this resource could be useful: [Context API](https://www.youtube.com/watch?v=v1s_rbZbqQI)
+* To dig into `Circle CI` we found the docs most useful: [CircleCI](https://circleci.com/docs/?utm_source=google&utm_medium=cpc&utm_content=docs&utm_campaign=sitelinkDocs&gclid=CjwKCAjwi9-HBhACEiwAPzUhHLMDz23k6ZmyjN7WtGtv5Rwq1F6lyz9eloeiQlLI1954Wj_kdxhgyBoC_XEQAvD_BwE)
+
 
 #### Cypress Testing
 1. Once the app is set up locally, from the root directory, install `Cypress`
@@ -41,35 +51,42 @@ For a learning `Context API`, this resource could be useful: [Context API](https
   * Run `npx cypress open`
 
 ## Walkthrough
-1. Once the app is accessed, a user is immediately shown a welcoming page with a newly randomized kitten image and Ron Swanson quote pairing on a SpellCard
-2. There is a form for the user to fill out with an invitation to cast a spell
-3. Once a spell is cast the spell card appears for the user to see.
-4. There is an option to favorite a spell.
-5. As well, the user can click on the link at the bottom of the page to visit their favorited spells
+1. Once the app is accessed, a user is immediately shown a welcoming page with a mission statement, and a button selection for navigation to doctors, mental health professionals, a suggestion form or the choice of seeing light and dark mode
 
-## Preview
-![Swansons](./src/assets/boys-men-swansons.png?raw=true)
+2. Upon navigation there will be is a form for the user to fill out to add a provider to our list of providers of mental and physical health
+
+3. Our users, upon button click could also simply access our lists of providers
+
+4. Light an dark mode become functional on pages that have excess lighting in the background for ease of use for our users who visually engage with the app
 
 ## Learning Goals
-* Further understand and implement modularity of Reacts Component structure with CSS styling
+
+* Deepen our understanding and implementation of the modularity of React
+* Use React-Hooks to connect and contain our components and containers
 * Build on React Application using router, propTypes and fetching
+* Implement Context API for the holding of global state management
 * Test all Component flows and Asynchronous JavaScript using cypress
 
 ## Evolution of the Project
-To better learn React, Cypress, Router was independent of my instructors. After carefully designing a project for an *extremely* niche audience. I did check in with my instructors to make sure I stayed on track with work/life balance goals.
+
+The project started with a broad vision of connecting all gender-related issues to their often broken up and hard to find resources.  As we came together as a team we narrowed our focus to get the app to take flight by beginning with reaching a queer audience of Colorado. From there, both a back end team and a front end team built out a github project board through a github organization, to help hold ourselves to the vision of the project.
+
+We intend to continue to work on this project as a team to make it ready for public use well after our experience at Turing School of Software Design.  This is a passion project through and through.
 
 ## Reflections
-Working with this project brought home user flow end to end testing for me. I have tested in a project since I started Turing perhaps in a rudimentary way.  The dynamism of cypress testing finally came through. There is literally always room to edit, DRY, or implement a technology more succinctly.  So, I know I have miles to go on all this material.  For me it is a sweet spot to truly grasp the reasons why we code the way we do, more than to simply grasp the how.
+
+This project brought new learning challenges as we stretched ourselves as a team to understand `Circleci`, `React Hooks` and `rebase`.  The joy in the struggle of learning and growing was that this team was a delight to work with and we all walked away with hands on practice in `Global State Management` and `CI`.  It was a gift to see a dream-app come together with folks that care about the mission of the app.
 
 ## Future Iterations
-* Build my own kitten image api with its own randomizer to be imported through a fetch call
-* Refactor all of modular files for best practice approaches, to ensure all user flows are accounted for
-* Access to the images individual alt tags
-* Implementing Aria inside the react component structure to verify that our page is truly accessible
-* Creating the ability to locally our users favorites
-* The ability to delete a spell
+
+* Security protection implementation to filter out bad actors
+* Make `CORS` more restrictive
+* Admin and Authorization
+* To increase our audience from queer based resources to include more gender-based needs
+* To Expand the app to include all of the United States
 
 ## Authors
+#### Front End
 <table>
     <tr>
         <td> Angie Battillo <a href="https://github.com/battan40">GH</td>
@@ -82,6 +99,71 @@ Working with this project brought home user flow end to end testing for me. I ha
         <td><img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="R. Martin" width="125" height="auto" /></td>
     </tr>
 </table>
+
+#### Back End
+<table>
+    <tr>
+        <td> Austin Andrade <a href="https://github.com/austinandrade">GH</td>
+    </tr>
+    </tr>
+        <td><img src="https://avatars.githubusercontent.com/u/74944329?v=4" alt="A. Adrade" width="125" height="auto" /></td>
+    </tr>
+</table>
+
+<table>
+<tr>
+    <td> Aiden Mcguire <a href="https://github.com/austinandrade/">GH</td>
+</tr>
+</table>
+
+<!-- CONTRIBUTORS -->
+### Contact The Whole Team
+
+##### Frontend Team
+Angela Battillo [![Github][github-shield]][angie-github-url] [![LinkedIn][linkedin-shield]][angie-linkedin-url] [![Email][email-shield]][angie-email-url] <br>
+Marceline Ball [![Github][github-shield]][marceline-github-url] [![LinkedIn][linkedin-shield]][marceline-linkedin-url] [![Email][email-shield]][marceline-email-url] <br>
+Riley Martin [![Github][github-shield]][riley-github-url] [![LinkedIn][linkedin-shield]][riley-linkedin-url] [![Email][email-shield]][riley-email-url] <br>
+
+##### Backend Team
+Austin Andrade [![Github][github-shield]][austin-github-url] [![LinkedIn][linkedin-shield]][austin-linkedin-url] [![Email][email-shield]][austin-email-url] <br>
+Aidan McGuire [![Github][github-shield]][aidan-github-url] [![LinkedIn][linkedin-shield]][aidan-linkedin-url] [![Email][email-shield]][aidan-email-url] <br>
+
+<!-- CONTACT -->
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Head-To-Toe/headToToe-be.svg?style=for-the-badge
+[contributors-url]: https://github.com/Head-To-Toe/headToToe-be/graphs/contributors
+[stars-url]: https://github.com/Head-To-Toe/headToToe-be/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Head-To-Toe/headToToe-be?style=for-the-badge
+[issues-url]: https://github.com/Head-To-Toe/headToToe-be/issues
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[github-shield]: https://img.shields.io/badge/-Github-black.svg?style=for-the-badge&logo=github&colorB=555
+[email-shield]: https://img.shields.io/badge/-Email-black.svg?style=for-the-badge&logo=gmail&colorB=555
+
+[angie-github-url]: https://github.com/battan40
+[marceline-github-url]: https://github.com/MarcelineBall
+[riley-github-url]: https://github.com/RMartin0717
+[austin-github-url]: https://github.com/austinandrade/
+[aidan-github-url]: https://github.com/A-McGuire
+
+
+[angie-email-url]: mailto:angela.battillo@gmail.com?subject=Hello%20Angie
+[marceline-email-url]: mailto:marcelineball@gmail.com?subject=Hello%20Marceline
+[riley-email-url]: mailto:riley.willow@gmail.com?subject=Hello%20Riley
+[austin-email-url]: mailto:austinmandrade@gmail.com?subject=Hello%20Austin
+[aidan-email-url]: mailto:aidanmcguire211@gmail.com?subject=Hello%20Aidan
+
+
+[angie-linkedin-url]: https://www.linkedin.com/in/angela-battillo/
+[marceline-linkedin-url]: https://www.linkedin.com/in/marceline-ball/
+[riley-linkedin-url]: https://www.linkedin.com/in/rmartin0717/
+[austin-linkedin-url]: https://www.linkedin.com/in/austinandrade/
+[aidan-linkedin-url]: https://www.linkedin.com/in/aidanmcguire/
+
 
 ## Technologies
 <table>
