@@ -32,7 +32,7 @@ We work together as a team of front end and back end stack developers putting th
 * Circle CI for build automation, testing and deployment of the app
 
 ## Link
-* We are [Published](https://HeadToToe.surge.sh)
+* We are [Published](https://headtotoe.surge.sh)
 
 ## Installation
 1. Clone this repo using:
