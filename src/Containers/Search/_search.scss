@@ -37,10 +37,23 @@
 
 }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 388px) {
 
     .insSearch-input {
-      margin-left: 10px;
+      margin-left: 10%;
+    }
+
+    .search-ins-button {
+    padding: 3%;
+    font-size: 1em;
+}
+}
+
+
+  @media screen and (max-width: 320px) {
+
+    .insSearch-input {
+      margin-left: 1%;
 
     }
 }
