@@ -1,9 +1,11 @@
 @import '../../index.scss';
 
+
 .card-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
 }
 
 .provider-card {
@@ -11,7 +13,7 @@
   box-shadow: 8px 11px 20px 5px #86898a;
   margin: 2%;
   border-radius: 2%;
-  height: 55vw;
+  height: 48vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -38,43 +40,48 @@
   display: flex;
 }
 
-  @media screen and (max-width: 725px) {
+
+  @media screen and (max-width: 985px) {
     .provider-card {
-      box-shadow: 8px 11px 20px 5px #86898a;
-      margin: 2%;
-      border-radius: 1%;
-      height: 75vw;
-      width: 80vw;
-      display: flex;
-      text-align: left;
-      padding: 5px;
+      width: 43vw;
     }
   }
 
-  @media screen and (max-width: 488px) {
+  @media screen and (max-width: 800px) {
     .provider-card {
-      box-shadow: 8px 11px 20px 5px #86898a;
-      margin: 2%;
-      border-radius: 1%;
-      height: 65vh;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      padding: 3px;
+      width: 48vw;
+      margin: 4%;
     }
   }
 
-  @media screen and (max-width: 325px) {
+  @media screen and (max-width: 715px) {
     .provider-card {
-      box-shadow: 8px 11px 20px 5px #86898a;
-        margin: 2%;
-        border-radius: 1%;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding: 3px;
+      padding: 8px;
+      width: 75vw;
     }
   }
+
+
+
+  @media screen and (max-width: 320px) {
+    .provider-card {
+      margin: 1%;
+      border-radius: 1%;
+    }
+  }
+
+  //
+  //
+  // @media screen and (max-width: 325px) {
+  //   .provider-card {
+  //     box-shadow: 8px 11px 20px 5px #86898a;
+  //       margin: 2%;
+  //       border-radius: 1%;
+  //       height: 70vh;
+  //       display: flex;
+  //       flex-direction: column;
+  //       flex-wrap: wrap;
+  //       justify-content: space-evenly;
+  //       padding: 3px;
+  //   }
+  // }
