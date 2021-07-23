@@ -21,20 +21,18 @@
     padding: 2%;
   }
 
-    .all-mhp {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-        padding: 15%;
+  .all-mhp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
   }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 715px) {
   .all-mhp {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 20px;
-      padding: 9%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
 
   }
 }
@@ -43,5 +41,6 @@
   .all-mhp {
     display: flex;
     flex-direction: column;
+
   }
 }
