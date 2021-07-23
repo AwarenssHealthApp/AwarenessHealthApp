@@ -9,6 +9,9 @@
   background-color: $paleBlue;
   color: $locknessBlue;
   border-radius: 4px;
+  margin: 0 3px 2px 3px;
+  padding: 2%;
+  font-size: .9em;
 }
 
 /*~~~~~~ RESPONSIVE STYLES ~~~~~~ */
@@ -20,10 +23,6 @@
     margin-bottom: 1%
   }
 
-  .main-buttons {
-    margin: 0 3px 0 3px;
-    padding: 1.5%;
-  }
 }
 
 
@@ -66,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: 392px) {
+@media screen and (max-width: 415px) {
 
   .main-title {
     @include displayFlexColumnCenter();
@@ -81,7 +80,8 @@
   }
 
   .main-buttons {
-    padding: 2.2%;
+    font-size: 1em;
+    padding: 3.5%;
     margin: 3%;
     background-color: $paleBlue;
     color: $locknessBlue;
