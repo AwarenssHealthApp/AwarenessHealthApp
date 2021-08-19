@@ -1,3 +1,4 @@
+import AdminApproval from '../AdminApproval/AdminApproval';
 import ContributionForm from '../ContributionForm/ContributionForm';
 import Doctors from '../Doctors/Doctors';
 import Header from '../Header/Header';
@@ -27,6 +28,11 @@ function App() {
                 <Route path='/submit' render={() => {
                   return(
                       <ContributionForm />
+                  )
+                }} />
+                <Route path='/admin_approval_form' render={() => {
+                  return(
+                    <AdminApproval />
                   )
                 }} />
                 <Route path='/doctors' render={() => {
