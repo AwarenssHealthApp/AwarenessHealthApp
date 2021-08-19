@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 //import API calls from '../../utils/apiCalls';
-import Card from '../../Components/Card/Card';
+// import Card from '../../Components/Card/Card';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import Error from '../../Components/Error/Error';
+// import Error from '../../Components/Error/Error';
 import './_adminApproval.scss';
 
 const Admin = () => {
