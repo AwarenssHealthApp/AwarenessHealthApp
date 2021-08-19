@@ -30,7 +30,7 @@ function App() {
                       <ContributionForm />
                   )
                 }} />
-                <Route path='/admin_approval_form' render={() => {
+                <Route path='/admin_approval_who_dis' render={() => {
                   return(
                     <AdminApproval />
                   )
