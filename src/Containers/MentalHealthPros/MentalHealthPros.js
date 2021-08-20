@@ -67,6 +67,9 @@ const MentalHealthPros = () => {
             {error &&
               <Error error={error} />
             }
+            {!mentalHealthProsToDisplay.length &&
+              <h4>Loading...</h4>
+            }
           </div>
         <section className='all-mhp'>{allMentalHealthPros}
         </section>

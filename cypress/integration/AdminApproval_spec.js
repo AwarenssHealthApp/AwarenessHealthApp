@@ -32,4 +32,7 @@ describe('AdminApproval', () => {
   it('Should display a message stating there are no unvetted suggestions if all providers are vetted', () => {
 
   })
+  it('Should display an error message when there is an error thrown in the fetch request', () => {
+
+  })
 })
