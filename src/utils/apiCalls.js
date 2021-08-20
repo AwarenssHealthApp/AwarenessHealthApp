@@ -28,4 +28,15 @@ const addContribution = (newData) => {
     })
 }
 
-export { retrievePageData, addContribution }
+const retrieveUnvetted = () => {
+  return fetch('https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false')
+    .then(response => {
+      if(!response.ok) {
+        throw new Error('Unable to retrieve server data')
+      } else {
+        return response.json()
+      }
+    })
+}
+
+export { retrievePageData, addContribution, retrieveUnvetted }
