@@ -29,6 +29,10 @@ const Admin = () => {
     approveContribution(id, profession)
     .then(() => {
       retrieveUnvetted()
+      .then(providers => {
+          setUnvettedDoctorsList(providers.data.attributes.doctors)
+          setUnvettedMhpsList(providers.data.attributes.mhps)
+      })
     })
   }
   //method to approve suggestion
