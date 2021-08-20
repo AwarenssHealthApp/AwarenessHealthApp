@@ -25,6 +25,12 @@ const Admin = () => {
     return () => mounted = false;
   }, [setUnvettedDoctorsList, setUnvettedMhpsList])
 
+  const approveProvider = (id, profession) => {
+    approveContribution(id, profession)
+    .then(() => {
+      retrieveUnvetted()
+    })
+  }
   //method to approve suggestion
     //make a PATCH request
 
@@ -50,7 +56,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
-        approveContribution={approveContribution}
+        approveProvider={approveProvider}
         providerType={'doctor'}
       />
     )
@@ -74,7 +80,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
-        approveContribution={approveContribution}
+        approveProvider={approveProvider}
         providerType={'mhp'}
       />
     )
