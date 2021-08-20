@@ -64,6 +64,9 @@ const Doctors = () => {
               {error &&
                 <Error error={error} />
               }
+              {!doctorsToDisplay.length &&
+                <h4>Loading...</h4>
+              }
           </div>
           <article className='all-drs'>
             {allDoctors}
