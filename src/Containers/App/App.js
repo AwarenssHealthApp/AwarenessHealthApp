@@ -31,8 +31,6 @@ function App() {
                   )
                 }} />
                 <Route path='/admin_approval_who_dis' render={() => {
-                <Route path='/admin_approval_form' render={() => {
-                <Route path='/admin_approval_who_dis' render={() => {
                   return(
                     <AdminApproval />
                   )
