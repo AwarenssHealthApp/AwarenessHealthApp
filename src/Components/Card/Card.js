@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './_card.scss';
 
-const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances }) => {
+const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted }) => {
   const allListItems = (type) => {
     let tempListItems = []
     type.forEach(listItem => {
@@ -31,6 +31,12 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
           <h3 className='insurances'>Insurance: {allListItems(insurances)}</h3>
           <p className='address'>{street} {unit} {city}, {state} {zip} </p>
           <h4 className='phone-number'>{phone}</h4>
+          {!vetted &&
+            <div className='approve-deny-buttons'>
+              <button className='approve-button'>Approve</button>
+              <button className='deny-button'>Deny</button>
+            </div>
+          }
         </article>
       </section>
     </div>

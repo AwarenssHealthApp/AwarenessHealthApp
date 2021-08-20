@@ -48,6 +48,7 @@ const Doctors = () => {
       phone={doctor.phone}
       specialties={doctor.specialties}
       insurances={doctor.insurances}
+      vetted={doctor.vetted}
       />
     )
   })

@@ -53,7 +53,6 @@ const Admin = () => {
   })
 
   const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
-    console.log(unvetted.id, unvetted.first_name, "mhps")
     return(
       <Card
         id={`mhp-${unvetted.id}`}
