@@ -51,6 +51,7 @@ const Admin = () => {
         insurances={unvetted.insurances}
         cost={unvetted.cost}
         approveContribution={approveContribution}
+        providerType={'doctor'}
       />
     )
   })
@@ -74,6 +75,7 @@ const Admin = () => {
         insurances={unvetted.insurances}
         cost={unvetted.cost}
         approveContribution={approveContribution}
+        providerType={'mhp'}
       />
     )
   })
