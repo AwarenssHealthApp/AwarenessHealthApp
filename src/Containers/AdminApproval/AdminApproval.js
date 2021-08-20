@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { retrieveUnvetted } from '../../utils/apiCalls';
+import { retrieveUnvetted, approveContribution } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import Error from '../../Components/Error/Error';
@@ -50,6 +50,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
+        approveContribution={approveContribution}
       />
     )
   })
@@ -72,6 +73,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
+        approveContribution={approveContribution}
       />
     )
   })
