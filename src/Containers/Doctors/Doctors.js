@@ -23,7 +23,7 @@ const Doctors = () => {
   useEffect(() => {
     let mounted = true;
     retrievePageData('doctor', 'Colorado')
-      .then(doctors => { 
+      .then(doctors => {
         if(mounted) {
           setDoctorList(doctors.data.attributes.doctors)
           setDoctorsToDisplay(doctors.data.attributes.doctors)
@@ -60,9 +60,9 @@ const Doctors = () => {
         <section className='providers-container'>
           <div className='provider-subtitle'>
             <h2 className='dr-sub-title'>Informed Doctors</h2>
-            {error &&
-              <Error error={error} />
-            }
+              {error &&
+                <Error error={error} />
+              }
           </div>
           <article className='all-drs'>
             {allDoctors}
