@@ -23,7 +23,7 @@ const Admin = () => {
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
-  }, [setUnvettedDoctorsList] || [setUnvettedMhpsList])
+  }, [setUnvettedDoctorsList, setUnvettedMhpsList])
 
   //method to approve suggestion
 
