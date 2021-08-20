@@ -36,7 +36,7 @@ const Admin = () => {
   const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
     return(
       <Card
-        id={`doctor-${unvetted.id}`}
+        id={unvetted.id}
         key={`doctor-${unvetted.id}`}
         firstName={unvetted.first_name}
         lastName={unvetted.last_name}
@@ -60,7 +60,7 @@ const Admin = () => {
   const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
     return(
       <Card
-        id={`mhp-${unvetted.id}`}
+        id={unvetted.id}
         key={`mhp-${unvetted.id}`}
         firstName={unvetted.first_name}
         lastName={unvetted.last_name}
