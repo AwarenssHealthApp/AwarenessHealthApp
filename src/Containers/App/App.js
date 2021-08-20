@@ -30,15 +30,9 @@ function App() {
                       <ContributionForm />
                   )
                 }} />
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <Route path='/admin_approval_who_dis' render={() => {
-=======
                 <Route path='/admin_approval_form' render={() => {
->>>>>>> b00f734 (Route AdminApproval from App Component)
-=======
                 <Route path='/admin_approval_who_dis' render={() => {
->>>>>>> 6b9b8b6 (Implement ThemeContext for light and dark mode)
                   return(
                     <AdminApproval />
                   )
