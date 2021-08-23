@@ -34,10 +34,14 @@ const Admin = () => {
     .then(() => {
       retrieveUnvetted()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f95eddc... Remove unneccessary parse from patch request
       .then(providers => {
           setUnvettedDoctorsList(providers.data.attributes.doctors)
           setUnvettedMhpsList(providers.data.attributes.mhps)
       })
+<<<<<<< HEAD
     })
   }
 
@@ -164,6 +168,8 @@ const Admin = () => {
   }, [setUnvettedDoctorsList, setUnvettedMhpsList])
 
 =======
+=======
+>>>>>>> f95eddc... Remove unneccessary parse from patch request
     })
   }
 >>>>>>> 07b458c... Add approveProvider method to run get request following patch request

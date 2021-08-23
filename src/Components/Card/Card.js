@@ -5,6 +5,7 @@ import './_card.scss';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, id, providerType }) => {
 =======
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted }) => {
@@ -15,6 +16,9 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 =======
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveContribution, id, providerType }) => {
 >>>>>>> 0d55b57... Change id passed into card
+=======
+const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, id, providerType }) => {
+>>>>>>> f95eddc... Remove unneccessary parse from patch request
   const allListItems = (type) => {
     let tempListItems = []
     type.forEach(listItem => {
@@ -53,6 +57,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <button className='approve-button' id={id} onClick={() => approveProvider(getIdNumber(id), providerType)}>Approve</button>
 =======
               <button className='approve-button'>Approve</button>
@@ -63,6 +68,9 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 =======
               <button className='approve-button' onClick={() => approveContribution(id, providerType)}>Approve</button>
 >>>>>>> 0d55b57... Change id passed into card
+=======
+              <button className='approve-button' onClick={() => approveProvider(id, providerType)}>Approve</button>
+>>>>>>> f95eddc... Remove unneccessary parse from patch request
               <button className='deny-button'>Deny</button>
             </div>
           }
