@@ -47,9 +47,6 @@ const Admin = () => {
     })
   }
 
-
-  //pass in methods to approve and deny suggestions as props in each iteration of Card
-
   const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
     return(
       <Card
@@ -74,7 +71,6 @@ const Admin = () => {
     )
   })
 
-  //pass in methods to approve and deny suggestions as props in each iteration of Card
   const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
     return(
       <Card
