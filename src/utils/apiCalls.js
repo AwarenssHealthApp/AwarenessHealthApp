@@ -39,6 +39,7 @@ const retrieveUnvetted = () => {
     })
 }
 
+<<<<<<< HEAD
 const approveContribution = (id, profession) => {
   return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`, {
     method: 'PATCH',
@@ -63,3 +64,6 @@ const approveContribution = (id, profession) => {
 }
 
 export { retrievePageData, addContribution, retrieveUnvetted, approveContribution }
+=======
+export { retrievePageData, addContribution, retrieveUnvetted }
+>>>>>>> 6e69aec... Write GET request for unvetted providers
