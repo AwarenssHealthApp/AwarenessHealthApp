@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './_card.scss';
 
+<<<<<<< HEAD
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, id, providerType }) => {
+=======
+const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted }) => {
+>>>>>>> 279c32b... Implement conditional rendering on Card component to display approve and deny buttons if providers are not yet vetted
   const allListItems = (type) => {
     let tempListItems = []
     type.forEach(listItem => {
@@ -38,7 +42,11 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
           <h4 className='phone-number'>{phone}</h4>
           {!vetted &&
             <div className='approve-deny-buttons'>
+<<<<<<< HEAD
               <button className='approve-button' id={id} onClick={() => approveProvider(getIdNumber(id), providerType)}>Approve</button>
+=======
+              <button className='approve-button'>Approve</button>
+>>>>>>> 279c32b... Implement conditional rendering on Card component to display approve and deny buttons if providers are not yet vetted
               <button className='deny-button'>Deny</button>
             </div>
           }
