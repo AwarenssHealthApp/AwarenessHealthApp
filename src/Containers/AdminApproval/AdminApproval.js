@@ -3,7 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 import React, { useState, useEffect, useContext } from 'react';
-import { retrieveUnvetted, approveContribution } from '../../utils/apiCalls';
+import { retrieveUnvetted, approveContribution, denyContribution } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import Error from '../../Components/Error/Error';
@@ -47,8 +47,16 @@ const Admin = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 
-  //method to delete suggestion
-    //make a DELETE request
+  const denyProvider = (id, profession) => {
+    denyContribution(id, profession)
+    .then(() => {
+      retrieveUnvetted()
+      .then(providers => {
+          setUnvettedDoctorsList(providers.data.attributes.doctors)
+          setUnvettedMhpsList(providers.data.attributes.mhps)
+      })
+    })
+  }
 
 
   //pass in methods to approve and deny suggestions as props in each iteration of Card
@@ -71,6 +79,7 @@ const Admin = () => {
         insurances={unvetted.insurances}
         cost={unvetted.cost}
         approveProvider={approveProvider}
+        denyProvider={denyProvider}
         providerType={'doctor'}
       />
     )
@@ -95,6 +104,7 @@ const Admin = () => {
         insurances={unvetted.insurances}
         cost={unvetted.cost}
         approveProvider={approveProvider}
+        denyProvider={denyProvider}
         providerType={'mhp'}
       />
     )
