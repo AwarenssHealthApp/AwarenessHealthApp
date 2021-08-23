@@ -35,9 +35,7 @@ const Admin = () => {
       })
     })
   }
-  //method to approve suggestion
-    //make a PATCH request
-
+  
   //method to delete suggestion
     //make a DELETE request
 

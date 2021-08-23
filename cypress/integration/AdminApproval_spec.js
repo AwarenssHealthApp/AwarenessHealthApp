@@ -59,6 +59,7 @@ describe('AdminApproval', () => {
       .get('.first-name').should('contain', 'gnat')
       .get('.last-name').should('contain', 'Slowpoke')
       .get('.approve-button').first().click()
+
     cy.visit('http://localhost:3000/doctors')
 
     cy.get('.provider-card').should('be.visible')
@@ -68,6 +69,5 @@ describe('AdminApproval', () => {
       .get('.address').should('contain', 'Daphnechester')
       .get('.specialties').should('contain', 'Orc, Sylvan, Undercommon')
       .get('.insurances').should('contain', 'Schinner, Kreiger and Stokes, Yundt-Cronin, Herman-Bogan')
-
   })
 })
