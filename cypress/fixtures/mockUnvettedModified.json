@@ -4,7 +4,6 @@
        "type": "doctor",
        "attributes": {
            "doctors": [
-<<<<<<< HEAD
              {
                  "id": 92,
                  "first_name": "reindeer",
@@ -40,49 +39,4 @@
          ]
      }
  }
-=======
-               {
-                   "id": 80,
-                   "first_name": "gnat",
-                   "last_name": "Slowpoke",
-                   "state": "South Dakota",
-                   "city": "Daphnechester",
-                   "street": "4493 Marvin Extension",
-                   "unit": "Suite 249",
-                   "zip": "19384",
-                   "phone": "234-456-2244",
-                   "vetted": true,
-                   "specialties": [
-                       {
-                           "id": 2,
-                           "name": "Orc"
-                       },
-                       {
-                           "id": 4,
-                           "name": "Sylvan"
-                       },
-                       {
-                           "id": 1,
-                           "name": "Undercommon"
-                       }
-                   ],
-                   "insurances": [
-                       {
-                           "id": 14,
-                           "company": "Schinner, Kreiger and Stokes"
-                       },
-                       {
-                           "id": 4,
-                           "company": "Yundt-Cronin"
-                       },
-                       {
-                           "id": 5,
-                           "company": "Herman-Bogan"
-                       }
-                   ]
-               }
-           ]
-       }
-   }
->>>>>>> 302b5f5 (Create modified unvetted fixture)
 }
