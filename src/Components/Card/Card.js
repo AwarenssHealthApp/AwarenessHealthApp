@@ -19,6 +19,11 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
     }
   }
 
+  const getIdNumber = (id) => {
+    const providerId = id.split('-')
+    return providerId[1]
+  }
+
   return (
     <div className='provider-card-wrapper'>
       <section className='card-grid'>
@@ -33,7 +38,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
           <h4 className='phone-number'>{phone}</h4>
           {!vetted &&
             <div className='approve-deny-buttons'>
-              <button className='approve-button' id={id} onClick={() => approveProvider(id, providerType)}>Approve</button>
+              <button className='approve-button' id={id} onClick={() => approveProvider(getIdNumber(id), providerType)}>Approve</button>
               <button className='deny-button'>Deny</button>
             </div>
           }
