@@ -45,11 +45,16 @@ describe('AdminApproval', () => {
   })
 
   it('Should make a patch request when the user clicks the approve button', () => {
+<<<<<<< HEAD
     cy.fixture('mockVetted.json')
+=======
+    cy.fixture('mockUnvettedModified.json')
+>>>>>>> 3e24ea2... Add test for patch request
       .then(modifiedData => {
         cy.intercept('PATCH', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80', modifiedData)
       })
 
+<<<<<<< HEAD
     cy.fixture('mockVetted.json')
       .then(mockVettedData => {
         cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
@@ -61,6 +66,11 @@ describe('AdminApproval', () => {
       cy.fixture('mockUnvettedModified.json')
       .then(mockData => {
         cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
+=======
+    cy.fixture('mockUnvettedModified.json')
+      .then(mockData => {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
+>>>>>>> 3e24ea2... Add test for patch request
           statusCode: 201,
           body: mockData
         })
@@ -70,10 +80,13 @@ describe('AdminApproval', () => {
       .get('.first-name').should('contain', 'gnat')
       .get('.last-name').should('contain', 'Slowpoke')
       .get('.approve-button').first().click()
+<<<<<<< HEAD
 
     cy.visit('http://localhost:3000/admin_approval_who_dis')
       .get('.provider-card').should('have.length', 1)
 
+=======
+>>>>>>> 3e24ea2... Add test for patch request
     cy.visit('http://localhost:3000/doctors')
 
     cy.get('.provider-card').should('be.visible')
@@ -83,6 +96,7 @@ describe('AdminApproval', () => {
       .get('.address').should('contain', 'Daphnechester')
       .get('.specialties').should('contain', 'Orc, Sylvan, Undercommon')
       .get('.insurances').should('contain', 'Schinner, Kreiger and Stokes, Yundt-Cronin, Herman-Bogan')
+<<<<<<< HEAD
   })
 =======
   // beforeEach(() => {
@@ -152,6 +166,9 @@ describe('AdminApproval', () => {
 
   it('Should make a patch request when the user clicks the approve button', () => {
     
+=======
+
+>>>>>>> 3e24ea2... Add test for patch request
   })
 >>>>>>> 3f0c8c9... Merge rebase conflict
 })
