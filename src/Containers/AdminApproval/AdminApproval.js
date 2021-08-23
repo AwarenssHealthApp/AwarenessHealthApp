@@ -127,11 +127,15 @@ import React, { useContext } from 'react';
 //import API calls from '../../utils/apiCalls';
 =======
 import React, { useState, useEffect, useContext } from 'react';
+<<<<<<< HEAD
 import { retrieveUnvetted } from '../../utils/apiCalls';
 <<<<<<< HEAD
 >>>>>>> 37b50ea... Implement GET request for unvetted providers in AdminApproval
 // import Card from '../../Components/Card/Card';
 =======
+=======
+import { retrieveUnvetted, approveContribution } from '../../utils/apiCalls';
+>>>>>>> 350e432... Pass patch request into cards
 import Card from '../../Components/Card/Card';
 >>>>>>> 5a85d39... Display unvetted providers
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -183,6 +187,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
+        approveContribution={approveContribution}
       />
     )
   })
@@ -205,6 +210,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
+        approveContribution={approveContribution}
       />
     )
   })
