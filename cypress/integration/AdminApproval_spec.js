@@ -197,5 +197,38 @@ describe('AdminApproval', () => {
 =======
 >>>>>>> de997a6... Remove unnecessary comments
   })
+<<<<<<< HEAD
 >>>>>>> 3f0c8c9... Merge rebase conflict
+=======
+
+  it('Should have a delete request when the user clicks the deny button', () => {
+    cy.intercept('DELETE', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80')
+
+    cy.fixture('mockUnvettedModified.json')
+    .then(mockData => {
+      cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
+        statusCode: 201,
+        body: mockData
+      })
+    })
+
+    cy.get('.provider-card').should('be.visible')
+      .get('.first-name').should('contain', 'gnat')
+      .get('.last-name').should('contain', 'Slowpoke')
+      .get('.deny-button').first().click()
+
+    cy.visit('http://localhost:3000/admin_approval_who_dis')
+      .get('.provider-card').should('have.length', 1)
+
+    cy.get('.provider-card').should('be.visible')
+      .get('.first-name').should('be.visible')
+      .get('.first-name').should('contain', 'reindeer')
+      .get('.last-name').should('contain', 'Psyduck')
+      .get('.address').should('contain', 'Lake Nickychester')
+      .get('.specialties').should('contain', 'Deep Speech, Undercommon')
+      .get('.insurances').should('contain', 'Stamm-Renner, Reichel Group')
+
+  })
+
+>>>>>>> c05a1ae... Test for Delete functionality
 })
