@@ -66,6 +66,7 @@ const approveContribution = (id, profession) => {
   })
 }
 
+<<<<<<< HEAD
 export { retrievePageData, addContribution, retrieveUnvetted, approveContribution }
 <<<<<<< HEAD
 =======
@@ -73,3 +74,28 @@ export { retrievePageData, addContribution, retrieveUnvetted }
 >>>>>>> 6e69aec... Write GET request for unvetted providers
 =======
 >>>>>>> b5b3a80... Merge rebase conflict
+=======
+const denyContribution = (id, profession) => {
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'api-key': 'aidanisthebest',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      profession: profession,
+      id: id
+    })
+  })
+  .then(response => {
+    if(!response.ok) {
+      throw new Error('Unable to update server data')
+    } else {
+      return response
+    }
+  })
+}
+
+export { retrievePageData, addContribution, retrieveUnvetted, approveContribution, denyContribution }
+>>>>>>> dc433a7... Create delete request
