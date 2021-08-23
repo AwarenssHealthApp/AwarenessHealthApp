@@ -44,7 +44,7 @@ const retrieveUnvetted = () => {
 =======
 >>>>>>> b5b3a80... Merge rebase conflict
 const approveContribution = (id, profession) => {
-  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`, {
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`), {
     method: 'PATCH',
     headers: {
       'api-key': 'aidanisthebest',
