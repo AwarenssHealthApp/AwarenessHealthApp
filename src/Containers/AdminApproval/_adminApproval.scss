@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.all-unvetted {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+
+/*~~~~~~ RESPONSIVE DESIGN ~~~~~~ */
+
+@media screen and (max-width: 988px) {
+  .all-unvetted {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
