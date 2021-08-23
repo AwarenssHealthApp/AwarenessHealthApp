@@ -40,7 +40,7 @@ const retrieveUnvetted = () => {
 }
 
 const approveContribution = (id, profession) => {
-  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`), {
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`, {
     method: 'PATCH',
     headers: {
       'api-key': 'aidanisthebest',
@@ -57,7 +57,11 @@ const approveContribution = (id, profession) => {
     if(!response.ok) {
       throw new Error('Unable to update server data')
     } else {
+<<<<<<< HEAD
       return response
+=======
+      return response.json()
+>>>>>>> 1530bb8 (Add error handling to PATCH request)
     }
   })
 }
