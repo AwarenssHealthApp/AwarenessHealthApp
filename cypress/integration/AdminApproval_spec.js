@@ -46,14 +46,19 @@ describe('AdminApproval', () => {
 
   it('Should make a patch request when the user clicks the approve button', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     cy.fixture('mockVetted.json')
 =======
     cy.fixture('mockUnvettedModified.json')
 >>>>>>> 3e24ea2... Add test for patch request
+=======
+    cy.fixture('mockVetted.json')
+>>>>>>> ce3897e... Make patch test more accurate to use
       .then(modifiedData => {
         cy.intercept('PATCH', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80', modifiedData)
       })
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     cy.fixture('mockVetted.json')
       .then(mockVettedData => {
@@ -69,8 +74,20 @@ describe('AdminApproval', () => {
 =======
     cy.fixture('mockUnvettedModified.json')
       .then(mockData => {
+=======
+    cy.fixture('mockVetted.json')
+      .then(mockVettedData => {
+>>>>>>> ce3897e... Make patch test more accurate to use
         cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
 >>>>>>> 3e24ea2... Add test for patch request
+          statusCode: 201,
+          body: mockVettedData
+        })
+      })
+
+      cy.fixture('mockUnvettedModified.json')
+      .then(mockData => {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
           statusCode: 201,
           body: mockData
         })
@@ -86,11 +103,14 @@ describe('AdminApproval', () => {
     cy.visit('http://localhost:3000/admin_approval_who_dis')
       .get('.provider-card').should('have.length', 1)
 
+<<<<<<< HEAD
 =======
 >>>>>>> 3e24ea2... Add test for patch request
 =======
 
 >>>>>>> de997a6... Remove unnecessary comments
+=======
+>>>>>>> ce3897e... Make patch test more accurate to use
     cy.visit('http://localhost:3000/doctors')
 
     cy.get('.provider-card').should('be.visible')
