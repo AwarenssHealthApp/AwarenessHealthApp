@@ -167,7 +167,6 @@ const Admin = () => {
 
   //pass in methods to approve and deny suggestions as props in each iteration of Card
   const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
-    console.log(unvetted.id, unvetted.first_name, "doctors")
     return(
       <Card
         id={`doctor-${unvetted.id}`}
@@ -220,6 +219,9 @@ const Admin = () => {
             <h2 className='admin-sub-title'>Admin Approval</h2>
               {error &&
                 <Error error={error} />
+              }
+              {!unvettedDoctorsList.length && !unvettedMhpsList.length &&
+                <h4>Loading...</h4>
               }
           </div>
           <article className='all-unvetted'>

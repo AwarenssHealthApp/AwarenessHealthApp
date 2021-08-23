@@ -130,5 +130,11 @@ describe('AdminApproval', () => {
   it('Should display a message stating there are no unvetted suggestions if all providers are vetted', () => {
 
   })
+<<<<<<< HEAD
 >>>>>>> 042b861... Set up Cypress testing file
+=======
+  it('Should display an error message when there is an error thrown in the fetch request', () => {
+
+  })
+>>>>>>> b0cd125... Add loading message to each page that waits for a GET request to load
 })
