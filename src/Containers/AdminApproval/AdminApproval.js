@@ -35,16 +35,17 @@ const Admin = () => {
       })
     })
   }
-  
+
   //method to delete suggestion
     //make a DELETE request
 
 
   //pass in methods to approve and deny suggestions as props in each iteration of Card
+
   const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
     return(
       <Card
-        id={unvetted.id}
+        id={`doctor-${unvetted.id}`}
         key={`doctor-${unvetted.id}`}
         firstName={unvetted.first_name}
         lastName={unvetted.last_name}
@@ -68,7 +69,7 @@ const Admin = () => {
   const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
     return(
       <Card
-        id={unvetted.id}
+        id={`mhp-${unvetted.id}`}
         key={`mhp-${unvetted.id}`}
         firstName={unvetted.first_name}
         lastName={unvetted.last_name}
