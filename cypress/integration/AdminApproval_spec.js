@@ -77,13 +77,16 @@ describe('AdminApproval', () => {
   })
 
   it('Should have a delete request when the user clicks the deny button', () => {
-    cy.intercept('DELETE', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80')
+    cy.fixture('mockUnvetted.json')
+      .then(mockUnvetted => {
+        cy.intercept('DELETE', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80', mockUnvetted)
+      })
 
     cy.fixture('mockUnvettedModified.json')
-    .then(mockData => {
-      cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
-        statusCode: 201,
-        body: mockData
+      .then(mockData => {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
+          statusCode: 201,
+          body: mockData
       })
     })
 
