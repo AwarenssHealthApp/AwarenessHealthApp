@@ -6,6 +6,7 @@ import './_card.scss';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, id, providerType }) => {
 =======
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted }) => {
@@ -19,6 +20,9 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 =======
 const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, id, providerType }) => {
 >>>>>>> f95eddc... Remove unneccessary parse from patch request
+=======
+const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties, phone, insurances, vetted, approveProvider, denyProvider, id, providerType }) => {
+>>>>>>> 4b19193... Create denial button functionality
   const allListItems = (type) => {
     let tempListItems = []
     type.forEach(listItem => {
@@ -78,8 +82,12 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 >>>>>>> ce3897e... Make patch test more accurate to use
 =======
               <button className='approve-button' id={id} onClick={() => approveProvider(getIdNumber(id), providerType)}>Approve</button>
+<<<<<<< HEAD
 >>>>>>> 13d7431... Add function to get id number from the provider id property
               <button className='deny-button'>Deny</button>
+=======
+              <button className='deny-button' id={id} onClick={() => denyProvider(getIdNumber(id), providerType)}>Deny</button>
+>>>>>>> 4b19193... Create denial button functionality
             </div>
           }
         </article>
