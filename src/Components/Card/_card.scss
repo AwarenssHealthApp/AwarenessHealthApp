@@ -54,14 +54,12 @@
     }
   }
 
-  @media screen and (max-width: 715px) {
+  @media screen and (max-width: 720px) {
     .provider-card {
       padding: 8px;
-      width: 75vw;
+      width: 60vw;
     }
   }
-
-
 
   @media screen and (max-width: 320px) {
     .provider-card {
