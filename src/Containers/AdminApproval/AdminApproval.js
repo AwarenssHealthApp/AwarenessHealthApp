@@ -139,7 +139,8 @@ import Error from '../../Components/Error/Error';
 import './_adminApproval.scss';
 
 const Admin = () => {
-  const [unvettedList, setUnvettedList] = useState([])
+  const [unvettedDoctorsList, setUnvettedDoctorsList] = useState([])
+  const [unvettedMhpsList, setUnvettedMhpsList] = useState([])
   const [error, setError] = useState('')
   const { darkMode, light, dark } = useContext(ThemeContext);
   const theme = darkMode ? dark : light;
@@ -149,42 +150,65 @@ const Admin = () => {
     retrieveUnvetted()
       .then(providers => {
         if(mounted) {
-          setUnvettedList([...providers.data.attributes.doctors, ...providers.data.attributes.mhps])
+          setUnvettedDoctorsList(providers.data.attributes.doctors)
+          setUnvettedMhpsList(providers.data.attributes.mhps)
         }
       })
       .catch(error => setError('Oops, looks like our computer gnome is fixing something right now.  Please try again later'))
     return () => mounted = false;
-  }, [setUnvettedList])
+  }, [setUnvettedDoctorsList] || [setUnvettedMhpsList])
 
   //method to approve suggestion
 
   //method to delete suggestion
 
 
-  const allUnvetted = unvettedList?.map(unvetted => {
+  const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
+    console.log(unvetted.id, unvetted.first_name, "doctors")
     return(
       <Card
-      id={unvetted.id}
-      key={unvetted.id}
-      firstName={unvetted.first_name}
-      lastName={unvetted.last_name}
-      street={unvetted.street}
-      unit={unvetted.unit}
-      city={unvetted.city}
-      state={unvetted.state}
-      zip={unvetted.zip}
-      phone={unvetted.phone}
-      vetted={unvetted.vetted}
-      specialties={unvetted.specialties}
-      insurances={unvetted.insurances}
-      cost={unvetted.cost}
+        id={`doctor-${unvetted.id}`}
+        key={`doctor-${unvetted.id}`}
+        firstName={unvetted.first_name}
+        lastName={unvetted.last_name}
+        street={unvetted.street}
+        unit={unvetted.unit}
+        city={unvetted.city}
+        state={unvetted.state}
+        zip={unvetted.zip}
+        phone={unvetted.phone}
+        vetted={unvetted.vetted}
+        specialties={unvetted.specialties}
+        insurances={unvetted.insurances}
+        cost={unvetted.cost}
       />
     )
   })
-  //iterate over unvetted list to create cards
-    //update Card component to implement conditional rendering to display approve and delete buttons IF vetted = false
 
-  //return all cards
+  const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
+    console.log(unvetted.id, unvetted.first_name, "mhps")
+    return(
+      <Card
+        id={`mhp-${unvetted.id}`}
+        key={`mhp-${unvetted.id}`}
+        firstName={unvetted.first_name}
+        lastName={unvetted.last_name}
+        street={unvetted.street}
+        unit={unvetted.unit}
+        city={unvetted.city}
+        state={unvetted.state}
+        zip={unvetted.zip}
+        phone={unvetted.phone}
+        vetted={unvetted.vetted}
+        specialties={unvetted.specialties}
+        insurances={unvetted.insurances}
+        cost={unvetted.cost}
+      />
+    )
+  })
+
+  //update Card component to implement conditional rendering to display approve and delete buttons IF vetted = false
+
   return (
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
       style={{ color: theme.color, background: theme.background }}>
@@ -198,14 +222,18 @@ const Admin = () => {
               }
           </div>
           <article className='all-unvetted'>
-            {allUnvetted}
+            {allUnvettedDoctors}
+            {allUnvettedMhps}
           </article>
         </section>
       </div>
     </div>
   )
+<<<<<<< HEAD
 
 >>>>>>> 7a4dd7a... Route AdminApproval from App Component
+=======
+>>>>>>> 04b4584... Separate unvetted doctors and mhps to create unique ids and keys
 }
 
 //implement propTypes
