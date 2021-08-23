@@ -143,7 +143,7 @@ const Admin = () => {
   return (
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
       style={{ color: theme.color, background: theme.background }}>
-      <h1>Admin Approval Page</h1>
+      <h2 className='admin-sub-title'>Admin Approval</h2>
     </div>
   )
 
