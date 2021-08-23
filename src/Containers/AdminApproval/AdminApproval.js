@@ -159,10 +159,13 @@ const Admin = () => {
   }, [setUnvettedDoctorsList, setUnvettedMhpsList])
 
   //method to approve suggestion
+    //make a PATCH request
 
   //method to delete suggestion
+    //make a DELETE request
 
 
+  //pass in methods to approve and deny suggestions as props in each iteration of Card
   const allUnvettedDoctors = unvettedDoctorsList?.map(unvetted => {
     console.log(unvetted.id, unvetted.first_name, "doctors")
     return(
@@ -185,6 +188,7 @@ const Admin = () => {
     )
   })
 
+  //pass in methods to approve and deny suggestions as props in each iteration of Card
   const allUnvettedMhps = unvettedMhpsList?.map(unvetted => {
     return(
       <Card
@@ -205,8 +209,6 @@ const Admin = () => {
       />
     )
   })
-
-  //update Card component to implement conditional rendering to display approve and delete buttons IF vetted = false
 
   return (
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
