@@ -30,7 +30,11 @@ function App() {
                       <ContributionForm />
                   )
                 }} />
+<<<<<<< HEAD
                 <Route path='/admin_approval_who_dis' render={() => {
+=======
+                <Route path='/admin_approval_form' render={() => {
+>>>>>>> 7a4dd7a... Route AdminApproval from App Component
                   return(
                     <AdminApproval />
                   )
