@@ -14,15 +14,7 @@
                    "unit": "Suite 249",
                    "zip": "19384",
                    "phone": "234-456-2244",
-<<<<<<< HEAD
-<<<<<<< HEAD
                    "vetted": false,
-=======
-                   "vetted": true,
->>>>>>> 29204e0... Write tests for unvetted card display
-=======
-                   "vetted": false,
->>>>>>> 3f0c8c9... Merge rebase conflict
                    "specialties": [
                        {
                            "id": 2,

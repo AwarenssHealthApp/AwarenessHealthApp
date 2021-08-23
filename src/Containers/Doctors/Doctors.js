@@ -64,18 +64,10 @@ const Doctors = () => {
               {error &&
                 <Error error={error} />
               }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
               {!doctorsToDisplay.length &&
                 <h4>Loading...</h4>
               }
-=======
->>>>>>> 5a85d39... Display unvetted providers
-=======
-              {!doctorsToDisplay.length &&
-                <h4>Loading...</h4>
-              }
->>>>>>> b0cd125... Add loading message to each page that waits for a GET request to load
           </div>
           <article className='all-drs'>
             {allDoctors}
