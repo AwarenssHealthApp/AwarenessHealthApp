@@ -64,9 +64,12 @@ const Doctors = () => {
               {error &&
                 <Error error={error} />
               }
+<<<<<<< HEAD
               {!doctorsToDisplay.length &&
                 <h4>Loading...</h4>
               }
+=======
+>>>>>>> 5a85d39... Display unvetted providers
           </div>
           <article className='all-drs'>
             {allDoctors}
