@@ -81,12 +81,16 @@ describe('AdminApproval', () => {
       .get('.last-name').should('contain', 'Slowpoke')
       .get('.approve-button').first().click()
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     cy.visit('http://localhost:3000/admin_approval_who_dis')
       .get('.provider-card').should('have.length', 1)
 
 =======
 >>>>>>> 3e24ea2... Add test for patch request
+=======
+
+>>>>>>> de997a6... Remove unnecessary comments
     cy.visit('http://localhost:3000/doctors')
 
     cy.get('.provider-card').should('be.visible')
@@ -96,6 +100,7 @@ describe('AdminApproval', () => {
       .get('.address').should('contain', 'Daphnechester')
       .get('.specialties').should('contain', 'Orc, Sylvan, Undercommon')
       .get('.insurances').should('contain', 'Schinner, Kreiger and Stokes, Yundt-Cronin, Herman-Bogan')
+<<<<<<< HEAD
 <<<<<<< HEAD
   })
 =======
@@ -169,6 +174,8 @@ describe('AdminApproval', () => {
 =======
 
 >>>>>>> 3e24ea2... Add test for patch request
+=======
+>>>>>>> de997a6... Remove unnecessary comments
   })
 >>>>>>> 3f0c8c9... Merge rebase conflict
 })

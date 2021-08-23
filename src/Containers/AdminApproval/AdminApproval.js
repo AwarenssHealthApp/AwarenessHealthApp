@@ -44,6 +44,7 @@ const Admin = () => {
 <<<<<<< HEAD
     })
   }
+<<<<<<< HEAD
 
   //method to delete suggestion
     //make a DELETE request
@@ -176,6 +177,9 @@ const Admin = () => {
   //method to approve suggestion
     //make a PATCH request
 
+=======
+  
+>>>>>>> de997a6... Remove unnecessary comments
   //method to delete suggestion
     //make a DELETE request
 
