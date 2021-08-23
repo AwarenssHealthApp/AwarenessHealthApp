@@ -39,4 +39,27 @@ const retrieveUnvetted = () => {
     })
 }
 
-export { retrievePageData, addContribution, retrieveUnvetted }
+const approveContribution = (id, profession) => {
+  return fetch(`https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'api-key': 'aidanisthebest',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      profession: profession,
+      id: id,
+      vetted: true
+    })
+  })
+  .then(response => {
+    if(!response.ok) {
+      throw new Error('Unable to update server data')
+    } else {
+      return response
+    }
+  })
+}
+
+export { retrievePageData, addContribution, retrieveUnvetted, approveContribution }
