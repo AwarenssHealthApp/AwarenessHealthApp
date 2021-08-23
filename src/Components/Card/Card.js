@@ -33,7 +33,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
           <h4 className='phone-number'>{phone}</h4>
           {!vetted &&
             <div className='approve-deny-buttons'>
-              <button className='approve-button' onClick={() => approveProvider(id, providerType)}>Approve</button>
+              <button className='approve-button' id={id} onClick={() => approveProvider(id, providerType)}>Approve</button>
               <button className='deny-button'>Deny</button>
             </div>
           }

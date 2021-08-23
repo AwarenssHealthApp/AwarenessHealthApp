@@ -42,14 +42,22 @@ describe('AdminApproval', () => {
   })
 
   it('Should make a patch request when the user clicks the approve button', () => {
-    cy.fixture('mockUnvettedModified.json')
+    cy.fixture('mockVetted.json')
       .then(modifiedData => {
         cy.intercept('PATCH', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals/80', modifiedData)
       })
 
-    cy.fixture('mockUnvettedModified.json')
-      .then(mockData => {
+    cy.fixture('mockVetted.json')
+      .then(mockVettedData => {
         cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?type=doctor&state=Colorado', {
+          statusCode: 201,
+          body: mockVettedData
+        })
+      })
+
+      cy.fixture('mockUnvettedModified.json')
+      .then(mockData => {
+        cy.intercept('GET', 'https://head-to-toe-be.herokuapp.com/api/v1/medical_professionals?vetted=false', {
           statusCode: 201,
           body: mockData
         })
@@ -59,6 +67,9 @@ describe('AdminApproval', () => {
       .get('.first-name').should('contain', 'gnat')
       .get('.last-name').should('contain', 'Slowpoke')
       .get('.approve-button').first().click()
+
+    cy.visit('http://localhost:3000/admin_approval_who_dis')
+      .get('.provider-card').should('have.length', 1)
 
     cy.visit('http://localhost:3000/doctors')
 
