@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from 'react';
 import { retrieveUnvetted, approveContribution } from '../../utils/apiCalls';
 import Card from '../../Components/Card/Card';
@@ -119,10 +120,13 @@ import React from 'react';
 =======
 import React, { useState, useEffect, useContext } from 'react';
 >>>>>>> 4c6f804... Implement ThemeContext for light and dark mode
+=======
+import React, { useContext } from 'react';
+>>>>>>> cd865b2... Comment out imports not yet in use
 //import API calls from '../../utils/apiCalls';
-import Card from '../../Components/Card/Card';
+// import Card from '../../Components/Card/Card';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import Error from '../../Components/Error/Error';
+// import Error from '../../Components/Error/Error';
 import './_adminApproval.scss';
 
 const Admin = () => {
