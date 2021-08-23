@@ -33,6 +33,7 @@ const Admin = () => {
     approveContribution(id, profession)
     .then(() => {
       retrieveUnvetted()
+<<<<<<< HEAD
       .then(providers => {
           setUnvettedDoctorsList(providers.data.attributes.doctors)
           setUnvettedMhpsList(providers.data.attributes.mhps)
@@ -162,6 +163,10 @@ const Admin = () => {
     return () => mounted = false;
   }, [setUnvettedDoctorsList, setUnvettedMhpsList])
 
+=======
+    })
+  }
+>>>>>>> 07b458c... Add approveProvider method to run get request following patch request
   //method to approve suggestion
     //make a PATCH request
 
@@ -187,7 +192,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
-        approveContribution={approveContribution}
+        approveProvider={approveProvider}
         providerType={'doctor'}
       />
     )
@@ -211,7 +216,7 @@ const Admin = () => {
         specialties={unvetted.specialties}
         insurances={unvetted.insurances}
         cost={unvetted.cost}
-        approveContribution={approveContribution}
+        approveProvider={approveProvider}
         providerType={'mhp'}
       />
     )
