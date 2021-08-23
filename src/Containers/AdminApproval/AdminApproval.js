@@ -128,10 +128,14 @@ import React, { useContext } from 'react';
 =======
 import React, { useState, useEffect, useContext } from 'react';
 import { retrieveUnvetted } from '../../utils/apiCalls';
+<<<<<<< HEAD
 >>>>>>> 37b50ea... Implement GET request for unvetted providers in AdminApproval
 // import Card from '../../Components/Card/Card';
+=======
+import Card from '../../Components/Card/Card';
+>>>>>>> 5a85d39... Display unvetted providers
 import { ThemeContext } from '../../contexts/ThemeContext';
-// import Error from '../../Components/Error/Error';
+import Error from '../../Components/Error/Error';
 import './_adminApproval.scss';
 
 const Admin = () => {
@@ -152,13 +156,31 @@ const Admin = () => {
     return () => mounted = false;
   }, [setUnvettedList])
 
-  const handleClick = () => {
-    console.log(unvettedList)
-  }
   //method to approve suggestion
 
   //method to delete suggestion
 
+
+  const allUnvetted = unvettedList?.map(unvetted => {
+    return(
+      <Card
+      id={unvetted.id}
+      key={unvetted.id}
+      firstName={unvetted.first_name}
+      lastName={unvetted.last_name}
+      street={unvetted.street}
+      unit={unvetted.unit}
+      city={unvetted.city}
+      state={unvetted.state}
+      zip={unvetted.zip}
+      phone={unvetted.phone}
+      vetted={unvetted.vetted}
+      specialties={unvetted.specialties}
+      insurances={unvetted.insurances}
+      cost={unvetted.cost}
+      />
+    )
+  })
   //iterate over unvetted list to create cards
     //update Card component to implement conditional rendering to display approve and delete buttons IF vetted = false
 
@@ -166,8 +188,20 @@ const Admin = () => {
   return (
     <div className={'theme ' + (dark ? 'theme--dark' : 'theme--default')}
       style={{ color: theme.color, background: theme.background }}>
-      <h2 className='admin-sub-title'>Admin Approval</h2>
-      <button onClick={handleClick}>check fetch</button>
+
+      <div className='bottom-page-view'>
+        <section className='providers-container'>
+          <div className='provider-subtitle'>
+            <h2 className='admin-sub-title'>Admin Approval</h2>
+              {error &&
+                <Error error={error} />
+              }
+          </div>
+          <article className='all-unvetted'>
+            {allUnvetted}
+          </article>
+        </section>
+      </div>
     </div>
   )
 
