@@ -58,6 +58,7 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <button className='approve-button' id={id} onClick={() => approveProvider(getIdNumber(id), providerType)}>Approve</button>
 =======
               <button className='approve-button'>Approve</button>
@@ -71,6 +72,9 @@ const Card = ({ firstName, lastName, street, unit, city, state, zip, specialties
 =======
               <button className='approve-button' onClick={() => approveProvider(id, providerType)}>Approve</button>
 >>>>>>> f95eddc... Remove unneccessary parse from patch request
+=======
+              <button className='approve-button' id={id} onClick={() => approveProvider(id, providerType)}>Approve</button>
+>>>>>>> ce3897e... Make patch test more accurate to use
               <button className='deny-button'>Deny</button>
             </div>
           }
