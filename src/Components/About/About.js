@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const About = () => {
   //either make a blurbs component and connect it by conditionally rendering here ||
